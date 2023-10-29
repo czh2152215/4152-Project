@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to SmartArtGuide</title>
+  <style>
+      body {
+          font-family: 'Times New Roman', serif;
+          background-color: white;
+          margin: 0;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; /* Center horizontally */
+          align-items: center;     /* Center vertically */
+          height: 100vh;           /* Make body height equal to the viewport height */
+      }
+
+      .bg-image1 {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100vh;
+          background-size: cover;
+          background-repeat: no-repeat;
+          z-index: -1;
+      }
+
+      .bg-image1 {
+          center: 0;
+          background-image: url('/welcome_page.png');
+      }
+
+      h1, p {
+          font-weight: bold;
+          color: white;
+      }
+
+      h1 {
+          font-size: 6em;
+      }
+
+      p {
+          font-size: 4em;
+      }
+
+      /* Buttons styling */
+      .button {
+          padding: 15px 30px;
+          font-size: 1em;
+          margin: 10px;
+          cursor: pointer;
+          border: none;
+          border-radius: 20px; /* Rounded borders */
+          text-decoration: none; /* Remove the underline from links */
+          color: white; /* Text color */
+          background-color: #f56565; /* Red background */
+          transition: background-color 0.3s;
+      }
+
+      .button:hover {
+          background-color: #d53f52; /* Background color on mouse hover */
+      }
+
+  </style>
+</head>
+<body>
+<div class="bg-image1"></div>
+<div>  <!-- Text container -->
+  <h1>Welcome to SmartArtGuide</h1>
+  <p>Your ultimate guide to art!</p>
+
+  <!-- Buttons -->
+<!--  这里的path我不太懂，需要改一下-->
+  <%= link_to "Login Now", login_path, class: "button" %>
+  <%= link_to "Register Now", new_user_path, class: "button" %>
+  <%= link_to "Upload Photo", new_user_path, class: "button" %>
+</div>
+</body>
+</html>
+
