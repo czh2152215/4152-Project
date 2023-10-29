@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
 
       .bg-image1 {
           center: 0;
-          background-image: url('/welcome_page.png');
+          background-image: url('../photos/welcome_page.png');
       }
 
       h1, p {
@@ -74,9 +74,10 @@
 
   <!-- Buttons -->
 <!--  这里的path我不太懂，需要改一下-->
+  <p>test</p>
   <%= link_to "Login Now", login_path, class: "button" %>
-  <%= link_to "Register Now", new_user_path, class: "button" %>
-  <%= link_to "Upload Photo", new_user_path, class: "button" %>
+  <%= link_to "Register Now", register_path, class: "button" %>
+  <%= link_to "Upload Photo", upload_path, class: "button" %>
 </div>
 </body>
 </html>
