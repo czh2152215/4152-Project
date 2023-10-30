@@ -7,10 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-password1 = '123456'
+password1 = '111'
 
 
 # Create users with usernames, emails, and hashed passwords
-User.create(username: 'yr2453', email: 'yr2453@example.com', password: password1)
-User.create(username: 'user1', email: 'user1@example.com', password: password1)
-User.create(username: 'user2', email: 'user2@example.com', password: password1)
+User.create(username: 'admin', email: 'admin@admin.com', password: password1)
