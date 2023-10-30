@@ -17,6 +17,18 @@ class UsersController < ApplicationController
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    @user = User.find(session[:user_id])
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: '用户信息已更新'
+    else
+      render :edit
+    end
+  end
 
   private
 

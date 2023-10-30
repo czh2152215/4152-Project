@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  validates :username, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
+  validates :username, presence: { message: "username cannot be null" }, uniqueness: { message: "username has been used" }
+  validates :email, presence: { message: "email cannot be null" }, uniqueness: { message: "email has been used" }
 
   has_secure_password
 end
