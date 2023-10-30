@@ -17,3 +17,9 @@ Lingxi Zhou lz2648
 3. ArtworksController and its View: main, show
 4. LikesController and its View: like, cancel_like
 5. ImageSearchController and its view: upload 
+
+# Set up:
+ - Ruby version: 3.2.2
+ - Rails version: 7.1.1
+ - run 'bundle install' to installed Gem package
+ - run 'rails server -p 8080' to start the project, the project will run at localhost:8080
