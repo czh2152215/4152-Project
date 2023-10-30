@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-password1 = '111'
+password1 = BCrypt::Password.create('admin')
 
 
 # Create users with usernames, emails, and hashed passwords

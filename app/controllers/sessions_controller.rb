@@ -7,11 +7,13 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username_or_email]) ||
       User.find_by(email: params[:session][:username_or_email])
 
-    if user
+    # 这里添加对密码的验证
+    if user && user.authenticate(params[:session][:password])
       log_in(user)
-      redirect_to user_path(user)  # Replace with the desired redirection
+      redirect_to user_path(user)
     else
-      flash.now[:danger] = 'Invalid username/email and password combination'
+      Rails.logger.info("Logging in failed!")  # 添加这行日志记录
+      flash.now[:danger] = 'Invalid username/email and password combination，please try again'
       render 'login'
     end
   end

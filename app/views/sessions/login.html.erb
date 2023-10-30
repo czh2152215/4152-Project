@@ -31,9 +31,10 @@
             </div>
 
             <div class="text-center">
-              <%= f.submit 'Log In', class: "btn btn-primary" %>
+              <%= f.submit 'Log In', class: "btn btn-primary" , data: { turbo: "false" }%>
             </div>
           <% end %>
+
 
           <div class="mt-3 text-center">
             <%= link_to "Don't have an account? Sign Up", register_path %>
