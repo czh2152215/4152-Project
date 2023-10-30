@@ -65,4 +65,15 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'simplecov', require: false
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner-active_record'
+
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'rails-controller-testing', '~> 1.0'
+end
+
