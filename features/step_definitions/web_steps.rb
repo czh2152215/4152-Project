@@ -18,8 +18,8 @@ Then('I should see {string}') do |string|
   expect(page).to have_content(string)
 end
 
-Given('I am on the registration page') do
-  visit new_user_registration_path # Adjust the path as necessary
+Given(/^I am on the registration page$/) do
+  visit register_path # This corresponds to your custom route for registration
 end
 
 Then('I should be redirected to the homepage') do

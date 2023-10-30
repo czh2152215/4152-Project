@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#login', as: 'login'
   post 'login', to: 'sessions#create'
-  get 'logout', to: 'sessions#logout', as: 'logout'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'register', to: 'users#register', as: 'register'
   post 'register', to: 'users#create'
   get 'upload', to: 'image_search#upload', as: 'upload'

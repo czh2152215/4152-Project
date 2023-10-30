@@ -34,5 +34,16 @@ RSpec.describe SessionsController, type: :controller do
       end
     end
   end
+  describe "DELETE #destroy" do
+    before do
+      @user = FactoryBot.create(:user)
+      session[:user_id] = @user.id  # Simulate user login
+    end
 
+    it "logs out the user" do
+      delete :destroy  # This assumes your log_out action is a DELETE request to the destroy method
+      expect(session[:user_id]).to be_nil
+      expect(assigns(:current_user)).to be_nil
+    end
+  end
 end
