@@ -10,7 +10,9 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'POST create' do
     context 'with valid credentials' do
-      let!(:user) { create(:user, username: 'user1', email: 'user1@example.com', password: 'password') }
+      let!(:user) do
+        create(:user, username: 'user1', email: 'user1@example.com', password: 'password', password_confirmation: 'password')
+      end
 
       it 'logs in with username and redirects' do
         post :create, params: { session: { username_or_email: 'user1', password: 'password' } }
@@ -23,13 +25,26 @@ RSpec.describe SessionsController, type: :controller do
         expect(session[:user_id]).to eq(user.id)
         expect(response).to redirect_to(user_path(user))
       end
+
+      it 'does not set an error flash message' do
+        post :create, params: { session: { username_or_email: 'user1', password: 'password' } }
+        expect(flash[:danger]).to be_nil
+      end
+
     end
 
     context 'with invalid credentials' do
       it 'renders the login template with an error' do
         post :create, params: { session: { username_or_email: 'wronguser', password: 'wrongpassword' } }
         expect(session[:user_id]).to be_nil
-        expect(flash[:danger]).to be_present
+        expect(flash[:danger]).to eq('Invalid username/email and password combination, please try again')
+        expect(response).to render_template(:login)
+      end
+
+      it 'does not log in with non-existent username or email' do
+        post :create, params: { session: { username_or_email: 'nonexistent@example.com', password: 'password' } }
+        expect(session[:user_id]).to be_nil
+        expect(flash[:danger]).to eq('Invalid username/email and password combination, please try again')
         expect(response).to render_template(:login)
       end
     end
@@ -41,7 +56,7 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     it "logs out the user" do
-      delete :destroy  # This assumes your log_out action is a DELETE request to the destroy method
+      delete :destroy 
       expect(session[:user_id]).to be_nil
       expect(assigns(:current_user)).to be_nil
     end

@@ -1,11 +1,25 @@
 class ImageSearchController < ApplicationController
   def search
-    # @artwork = Artwork.find_by(uid: params[:uid])
-    @artwork = Artwork.find_by(uid: "1")
-    unless @artwork
-      redirect_to root_path, alert: 'No image found with that UID.'
-      return  # 使用 return 确保动作在此处停止执行
+    if params[:file].present?
+      # Simulate artwork identification by fetching a pre-stored artwork
+      # @artwork = Artwork.find_by(id: params[:id])
+
+      # only for test purpose, need to update once image recognition is implemented
+      if params[:file].original_filename == 'no_match_image.jpeg'
+        @artwork = nil
+      else
+        #fetch default artwork
+        @artwork = Artwork.find_by(id: '1')
+      end
+
+      if @artwork
+          redirect_to artwork_path(@artwork)
+      else
+        redirect_to root_path, alert: 'No artwork found for the uploaded image.'
+      end
+
+    else
+      redirect_to root_path, alert: 'No file uploaded.'
     end
-    redirect_to artwork_path(@artwork.uid)
   end
 end

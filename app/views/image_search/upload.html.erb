@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Photo</title>
+</head>
+<body>
+<h1>Upload Your Photo</h1>
+
+<%= form_with url: search_path, method: :post, local: true, html: { enctype: "multipart/form-data" } do |form| %>
+  <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
+  <%= form.file_field :file %>
+  <%= form.submit "Upload" %>
+<% end %>
+
+<% if @error %>
+  <p><%= @error %></p>
+<% end %>
+</body>
+</html>

@@ -1,7 +1,7 @@
 Feature: User Login
-  As a user
-  I want to log in to my account
-  So that I can access personalized features
+  As a user,
+  I want to log in and out of my account,
+  So that I can access personalized features and end my session securely
 
   Background: 
     Given a user with username "user1" and password "password" exists
@@ -11,11 +11,40 @@ Feature: User Login
     When I fill in "Username" with "user1"
     And I fill in "Password" with "password"
     And I press "Log In"
-    Then I should see "Welcome, user1"
+    Then I should be redirected to the "user's profile" page
+    And I should see "Welcome, user1"
 
-  Scenario: Unsuccessful login with incorrect credentials
+  Scenario: Successful login with email
+    Given I am on the login page
+    When I fill in "Username" with "user1@example.com"
+    And I fill in "Password" with "password"
+    And I press "Log In"
+    Then I should be redirected to the "user's profile" page
+    And I should see "Welcome, user1"
+
+  Scenario: Unsuccessful login with incorrect username
+    Given I am on the login page
+    When I fill in "Username" with "wronguser"
+    And I fill in "Password" with "password"
+    And I press "Log In"
+    Then I should see "Invalid username/email and password combination, please try again"
+
+  Scenario: Unsuccessful login with incorrect email
+    Given I am on the login page
+    When I fill in "Username" with "wrongemail@example.com"
+    And I fill in "Password" with "password"
+    And I press "Log In"
+    Then I should see "Invalid username/email and password combination, please try again"
+
+  Scenario: Unsuccessful login with incorrect password
     Given I am on the login page
     When I fill in "Username" with "user1"
     And I fill in "Password" with "wrongpassword"
     And I press "Log In"
-    Then I should see "Invalid username/email and password combination"
+    Then I should see "Invalid username/email and password combination, please try again"
+
+  Scenario: Successfully logging out
+    Given I am a logged-in user
+    When I press "Logout"
+    Then I should be logged out
+    And I should be redirected to the "homepage" page

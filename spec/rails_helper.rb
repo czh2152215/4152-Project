@@ -5,6 +5,7 @@ SimpleCov.start 'rails' do
   add_filter '/db/'
   add_filter '/spec/'  # for RSpec
 end
+
 require 'spec_helper'
 require 'factory_bot_rails'
 require 'rails-controller-testing'

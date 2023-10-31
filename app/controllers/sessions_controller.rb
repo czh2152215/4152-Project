@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(user)
     else
       Rails.logger.info("Logging in failed!")  # 添加这行日志记录
-      flash.now[:danger] = 'Invalid username/email and password combination，please try again'
+      flash.now[:danger] = 'Invalid username/email and password combination, please try again'
       render 'login'
     end
   end
@@ -32,8 +32,8 @@ class SessionsController < ApplicationController
   end
 
   # Define the log_out method to log the user out by removing the session
-  def log_out
-    session.delete(:user_id)
-    @current_user = user # Set an instance variable to store the logged-in user
-  end
+  # def log_out
+  #   session.delete(:user_id)
+  #   @current_user = user # Set an instance variable to store the logged-in user
+  # end
 end

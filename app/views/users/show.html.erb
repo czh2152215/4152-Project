@@ -2,4 +2,6 @@
 <% if @current_user %>
   <p>Welcome, <%= @current_user.username %></p>
   <%= link_to 'Edit my account', edit_user_path(@current_user), class: 'btn btn-primary' %>
+  <%= link_to 'Logout', logout_path, method: :get, class: 'btn btn-danger' %>
+
 <% end %>
