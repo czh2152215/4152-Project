@@ -1,0 +1,18 @@
+<!-- app/views/artworks/show.html.erb -->
+<div class="artwork-show">
+  <% if @artwork %>
+  <h1><%= @artwork.artwork_name %></h1>
+  <img src="<%= @artwork.image_url %>" alt="<%= @artwork.artwork_name %>" style="max-width: 100%; height: auto;">
+  <p><%= @artwork.background_information %></p>
+
+  <!-- Displaying the author of the artwork -->
+  <p>Author: <%= @artwork.author %></p>
+
+  <!-- Navigation links -->
+  <!-- <%= link_to 'Back to All Artworks', artworks_path %> -->
+  
+  <% else %>
+    <p>No artwork found.</p>
+  <% end %>
+
+</div>

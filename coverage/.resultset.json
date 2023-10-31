@@ -122,6 +122,18 @@
           2,
           null,
           null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
           null,
           1,
           null,
@@ -149,26 +161,6 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/aprilzhou/Desktop/4152-Project/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/aprilzhou/Desktop/4152-Project/app/controllers/artwork_controller.rb": {
         "lines": [
           0,
@@ -184,31 +176,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/aprilzhou/Desktop/4152-Project/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/aprilzhou/Desktop/4152-Project/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1698645298
+    "timestamp": 1698718466
   }
 }

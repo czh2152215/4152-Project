@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, except: :index
   resources :users, only: [:edit, :update]
-  resources :artwork, only: [:index], param: :uid
+  resources :artworks
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -20,5 +20,4 @@ Rails.application.routes.draw do
   post 'register', to: 'users#create'
   get 'upload', to: 'image_search#upload', as: 'upload'
   post 'search', to: 'image_search#search', as: 'search'
-  get 'artwork/:uid', to: 'artwork#index', as: 'artwork'
 end

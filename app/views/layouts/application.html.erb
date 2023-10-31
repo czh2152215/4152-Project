@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SmartArtGuide</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ </head>
+
+<body>
+  <!-- Header -->
+  <header style="background-color: #f8f9fa; padding: 10px 20px; text-align: left;">
+    <%= link_to 'SmartArtGuide', root_path, style: "text-decoration: none; color: black; font-size: 24px;" %>
+  </header>
+
+    <!-- Flash messages display section -->
+    <% flash.each do |key, message| %>
+        <%= content_tag :div, message, id: "flash_#{key}", class: "flash #{key}" %>
+    <% end %>
+
+    <!-- Main content yield -->
+    <%= yield %>
+
+
+  <!-- Footer (if you have a common footer for all pages) -->
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <!-- Common JavaScripts -->
+  <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
+
+  <!-- Additional scripts for your template, if needed -->
+  <script>
+    // Your additional scripts
+  </script>
+</body>
+</html>
