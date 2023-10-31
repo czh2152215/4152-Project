@@ -16,7 +16,7 @@ Lingxi Zhou lz2648
 2. UsersController and its View: register, profile
 3. ArtworksController and its View: main, show
 4. LikesController and its View: like, cancel_like
-5. ImageSearchController and its view: upload 
+5. ImageSearchController and its view: upload, search
 
 # Set up:
  - Ruby version: 3.2.2

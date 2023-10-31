@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 202310290141) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_31_051053) do
+  create_table "artworks", force: :cascade do |t|
+    t.string "uid"
+    t.string "artwork_name"
+    t.text "background_information"
+    t.string "author"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
