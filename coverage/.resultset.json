@@ -1,25 +1,25 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/application_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/artworks_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/artworks_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/image_search_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/image_search_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/sessions_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -40,19 +40,19 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/users_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/welcome_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/artworks_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/artworks_controller.rb": {
         "lines": [
           1,
           1,
@@ -64,13 +64,13 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/application_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/image_search_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/image_search_controller.rb": {
         "lines": [
           1,
           1,
@@ -99,7 +99,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/sessions_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -142,7 +142,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/users_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -185,21 +185,21 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/models/artwork.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/models/artwork.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/models/application_record.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/models/user.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -210,11 +210,11 @@
         ]
       }
     },
-    "timestamp": 1698791997
+    "timestamp": 1698859561
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/aprilzhou/Desktop/4152-Project/app/models/user.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -224,14 +224,14 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/models/application_record.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/sessions_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -274,31 +274,31 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/application_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/application_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/artworks_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/artworks_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/image_search_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/image_search_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/sessions_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -319,19 +319,19 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/users_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/helpers/welcome_helper.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/users_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -374,14 +374,14 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/models/artwork.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/models/artwork.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/image_search_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/image_search_controller.rb": {
         "lines": [
           1,
           1,
@@ -410,7 +410,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Desktop/4152-Project/app/controllers/artworks_controller.rb": {
+      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/artworks_controller.rb": {
         "lines": [
           1,
           1,
@@ -423,6 +423,6 @@
         ]
       }
     },
-    "timestamp": 1698791342
+    "timestamp": 1698859545
   }
 }
