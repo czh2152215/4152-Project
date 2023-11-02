@@ -1,16 +1,19 @@
-SmartArtGuide: Where Art Comes to Life.
+# SmartArtGuide: Where Art Comes to Life.
 
-Team member:
+## Team member:
 
-Zihao Cui zc2715
+- Zihao Cui zc2715
 
-Shulin Chen sc5320
+- Shulin Chen sc5320
 
-Yixiao Yuan yy3425
+- Yixiao Yuan yy3425
 
-Lingxi Zhou lz2648
+- Lingxi Zhou lz2648
 
-# Minimal Viable Prototype(Heroku link): [SmartArtGuide](https://safe-ravine-39931-4dcfeebeaa67.herokuapp.com/)
+  
+
+# Minimal Viable Prototype(Heroku link): [SmartArtGuide](https://safe-ravine-39931-4dcfeebeaa67.herokuapp.com/)(iter1)
+
 
 
 # MVC
@@ -51,3 +54,18 @@ Lingxi Zhou lz2648
 
 - run 'bundle exec cucumber': current coverage 95.8%
 - run 'bundle exec rspec': current coverage 100%
+
+# Deployment
+- We deploy our application on Heroku using the subsequent commands
+
+```
+git pull
+heroku login -i
+git checkout master
+heroku create
+heroku stack:set heroku-20
+heroku addons:create heroku-postgresql
+git push heroku master
+heroku run rake db:migrate
+```
+
