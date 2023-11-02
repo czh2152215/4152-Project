@@ -18,6 +18,9 @@ Lingxi Zhou lz2648
 4. LikesController and its View: like, cancel_like (to implement in next iteration)
 5. ImageSearchController and its view: upload, search
 
+# Heroku link: [SmartArtGuide](https://safe-ravine-39931-4dcfeebeaa67.herokuapp.com/)
+
+
 # Framework version
 
 - Ruby version: 3.2.2
