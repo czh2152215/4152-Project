@@ -10,6 +10,9 @@ Yixiao Yuan yy3425
 
 Lingxi Zhou lz2648
 
+# Minimal Viable Prototype(Heroku link): [SmartArtGuide](https://safe-ravine-39931-4dcfeebeaa67.herokuapp.com/)
+
+
 # MVC
 
 1. SessionsController and its View: welcome, login, logout
@@ -18,7 +21,7 @@ Lingxi Zhou lz2648
 4. LikesController and its View: like, cancel_like (to implement in next iteration)
 5. ImageSearchController and its view: upload, search
 
-# Heroku link: [SmartArtGuide](https://safe-ravine-39931-4dcfeebeaa67.herokuapp.com/)
+
 
 
 # Framework version
