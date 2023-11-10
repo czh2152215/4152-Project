@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   post 'register', to: 'users#create'
   get 'upload', to: 'image_search#upload', as: 'upload'
   post 'search', to: 'image_search#search', as: 'search'
+
+  get '/users/:id/profile', to: 'users#profile', as: 'user_profile'
 end

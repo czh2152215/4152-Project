@@ -3,4 +3,6 @@ class User < ApplicationRecord
   validates :email, presence: { message: "cannot be null" }, uniqueness: { message: "email has been used" }
 
   has_secure_password
+
+  has_one_attached :profile_picture
 end

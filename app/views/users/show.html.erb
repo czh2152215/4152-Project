@@ -1,7 +1,14 @@
 <p>Welcome</p>
-<% if @current_user %>
-  <p>Welcome, <%= @current_user.username %></p>
-  <%= link_to 'Edit my account', edit_user_path(@current_user), class: 'btn btn-primary' %>
+
+<% if @user %>
+  <p>Welcome, <%= @user.username %></p>
+  <% if @user && @user.profile_picture.attached? %>
+    <%= image_tag @user.profile_picture, class: "img-fluid profile-picture" %>
+  <% else %>
+    <p>No profile picture uploaded.</p>
+  <% end %>
+  <%= link_to 'Edit my account', edit_user_path(@user), class: 'btn btn-primary' %>
+  <%= link_to 'View Profile', user_profile_path(@user), class: 'btn btn-info' %>
   <%= link_to 'Logout', logout_path, method: :get, class: 'btn btn-danger' %>
 
 <% end %>

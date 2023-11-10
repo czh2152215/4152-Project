@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def register
     @user = User.new
   end
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show #login in successfully
-    @current_user ||= User.find_by(id: session[:user_id])
+    @user ||= User.find_by(id: session[:user_id])
   end
 
   def edit
@@ -24,16 +25,20 @@ class UsersController < ApplicationController
   def update
     @user = User.find(session[:user_id])
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'User Info Updated'
+      redirect_to user_profile_path(@user), notice: 'User Info Updated'
     else
       render :edit
     end
+  end
+
+  def profile
+    @user = User.find(session[:user_id])
   end
 
   private
 
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :profile_picture)
   end
 end

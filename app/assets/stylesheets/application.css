@@ -26,3 +26,12 @@
   padding: 10px;
   margin-bottom: 20px;
 }
+
+.profile-picture {
+  width: 150px; /* 控制图片的宽度 */
+  height: 150px; /* 控制图片的高度 */
+  object-fit: cover; /* 确保图片在调整大小时保持比例 */
+  margin-bottom: 20px; /* 添加底部外边距 */
+}
+
+
