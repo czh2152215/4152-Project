@@ -29,6 +29,20 @@
 
             <%= link_to 'Edit my account', edit_user_path(@user), class: 'btn btn-primary btn-block' %>
             <!-- 此处可以添加更多链接，例如浏览历史等 -->
+            <h3 class="mt-3">Artwork History:</h3>
+            <% if @user.artworks_history.present? %>
+              <ul>
+                <% @user.artworks_history.each do |artwork_id| %>
+                <% artwork = Artwork.find_by(id: artwork_id) %>
+                  <li>
+                    <%= link_to artwork.artwork_name, artwork_path(artwork_id) %>
+                    <!-- Add more artwork details here if available -->
+                  </li>
+                <% end %>
+              </ul>
+            <% else %>
+              <p>No artwork history available.</p>
+            <% end %>
           <% else %>
             <p>User not found.</p>
           <% end %>

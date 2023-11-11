@@ -15,20 +15,6 @@
  *
  *= require_self
  */
-.flash.notice {
-  background-color: green;
-  color: white;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.flash.alert {
-  background-color: red;
-  color: white;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
 .profile-picture {
   width: 150px; /* 控制图片的宽度 */
   height: 150px; /* 控制图片的高度 */

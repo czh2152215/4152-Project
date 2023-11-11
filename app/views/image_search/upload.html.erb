@@ -4,16 +4,29 @@
   <title>Upload Photo</title>
 </head>
 <body>
-<h1>Upload Your Photo</h1>
+<div class="container d-flex">
+    <div class="row justify-content-center align-self-center w-100">
+      <div class="col-md-6 text-center">
+        <br><br>
+        <h1>Upload Your Photo</h1>
+        <br>
+        <%= form_with url: search_path, method: :post, local: true, html: { enctype: "multipart/form-data", class: "form-group" } do |form| %>
+          <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
+          <div class="form-group">
+            <%= form.file_field :file, class: "form-control" %>
+          </div>
+          <br>
+          <div class="form-group">
+            <%= form.submit "Upload", class: "btn btn-primary" %>
+          </div>
+        <% end %>
 
-<%= form_with url: search_path, method: :post, local: true, html: { enctype: "multipart/form-data" } do |form| %>
-  <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
-  <%= form.file_field :file %>
-  <%= form.submit "Upload" %>
-<% end %>
+        <% if @error %>
+          <p class="text-danger"><%= @error %></p>
+        <% end %>
 
-<% if @error %>
-  <p><%= @error %></p>
-<% end %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

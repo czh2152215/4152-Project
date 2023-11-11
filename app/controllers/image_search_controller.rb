@@ -17,13 +17,21 @@ class ImageSearchController < ApplicationController
       end
 
       if @artwork
+        update_artworks_history(current_user, @artwork.id)
         redirect_to artwork_path(@artwork)
       else
-        redirect_to root_path, alert: 'No artwork found for the uploaded image.'
+        redirect_to upload_path, alert: 'No artwork found for the uploaded image. Try another one.'
       end
 
     else
-      redirect_to root_path, alert: 'No file uploaded.'
+      redirect_to upload_path, alert: 'No file uploaded.'
     end
+  end
+
+  def update_artworks_history(user, artwork_id)
+    # Assuming artwork_history is an array of artwork IDs
+    user.artworks_history = [] unless user.artworks_history
+    user.artworks_history.push(artwork_id)
+    user.save
   end
 end

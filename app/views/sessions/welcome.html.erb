@@ -50,12 +50,10 @@
 </head>
 <body>
 <div class="bg-image1"></div>
-<div class="container welcome-container">
-  <h1>Welcome to SmartArtGuide</h1>
-  <p>Your ultimate guide to art!</p>
-  <%= link_to "Start Exploring", login_path, class: "btn btn-primary welcome-button" %>
-  <%= link_to "Register Now", register_path, class: "btn btn-success welcome-button" %>
-  <%= link_to "Upload Photo", upload_path, class: "btn btn-warning welcome-button" %>
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+  <h1 class = "text-white">Welcome to SmartArtGuide</h1>
+  <h3 class = "text-white">Your ultimate guide to art</h3>
+  <%= link_to "Upload Photo", upload_path, class: "btn btn-outline-light"%>
 </div>
 </body>
 </html>

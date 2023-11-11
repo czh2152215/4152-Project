@@ -1,18 +1,25 @@
 <!-- app/views/artworks/show.html.erb -->
-<div class="artwork-show">
+<div class="artwork-show mt-4 mb-4">
   <% if @artwork %>
-  <h1><%= @artwork.artwork_name %></h1>
-  <img src="<%= @artwork.image_url %>" alt="<%= @artwork.artwork_name %>" style="max-width: 100%; height: auto;">
-  <p><%= @artwork.background_information %></p>
+    <!-- Title centered -->
+    <h1 class="text-center mb-4"><%= @artwork.artwork_name %></h1>
 
-  <!-- Displaying the author of the artwork -->
-  <p>Author: <%= @artwork.author %></p>
+    <div class="row mx-3">
+      <!-- Image on the left -->
+      <div class="col-md-6 px-4">
+        <img src="<%= @artwork.image_url %>" alt="<%= @artwork.artwork_name %>" class="img-fluid" style="display: block; margin: 0 auto;">
+      </div>
 
-  <!-- Navigation links -->
-  <!-- <%= link_to 'Back to All Artworks', artworks_path %> -->
-  
+      <!-- Description and author on the right -->
+      <div class="col-md-6 px-4">
+        <p><%= @artwork.background_information %></p>
+        <p>Author: <%= @artwork.author %></p>
+      </div>
+    </div>
+
+    <!-- Navigation links -->
+    <!-- <%= link_to 'Back to All Artworks', artworks_path %> -->
   <% else %>
     <p>No artwork found.</p>
   <% end %>
-
 </div>
