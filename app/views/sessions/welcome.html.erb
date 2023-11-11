@@ -5,79 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to SmartArtGuide</title>
   <style>
-        
-      body {
-          font-family: 'Times New Roman', serif;
-          background-color: white;
-          margin: 0;
-          overflow: hidden;
-          display: flex;
-          flex-direction: column;
-          justify-content: center; /* Center horizontally */
-          align-items: center;     /* Center vertically */
-          height: 100vh;           /* Make body height equal to the viewport height */
-      }
 
-      .bg-image1 {
-          position: fixed;
-          top: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100vh;
-          background-size: cover;
-          background-repeat: no-repeat;
-          z-index: -1;
-      }
-
-      .bg-image1 {
-          center: 0;
-          background-image: url('welcome_page.png');
-      }
-
-      h1, p {
-          font-weight: bold;
-          color: white;
-      }
-
-      h1 {
-          font-size: 6em;
-      }
-
-      p {
-          font-size: 4em;
-      }
-
-      /* Buttons styling */
+    .bg-image1 {
+        position: fixed;
+        top: 0;
+        left: 0; /* Ensure full coverage */
+        right: 0; /* Ensure full coverage */
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('welcome_page.png');
+        z-index: -1;
+    }
+    .welcome-container {
+      position: relative; /* Added for positioning within the viewport */
+      z-index: 2; /* Ensure it's above the background image */
+      text-align: center; /* Center text */
+      color: white;
+      padding-top: 100px; /* Space from top */
+    }
+    
+      /* Buttons styling 
       .button {
           padding: 15px 30px;
           font-size: 1em;
           margin: 10px;
           cursor: pointer;
           border: none;
-          border-radius: 20px; /* Rounded borders */
-          text-decoration: none; /* Remove the underline from links */
-          color: white; /* Text color */
-          background-color: #f56565; /* Red background */
+          border-radius: 20px; 
+          text-decoration: none;
+          color: white; 
+          background-color: #f56565;
           transition: background-color 0.3s;
       }
 
       .button:hover {
-          background-color: #d53f52; /* Background color on mouse hover */
+          background-color: #d53f52; 
       }
+      */
 
   </style>
 </head>
 <body>
 <div class="bg-image1"></div>
-<div>  <!-- Text container -->
+<div class="container welcome-container">
   <h1>Welcome to SmartArtGuide</h1>
   <p>Your ultimate guide to art!</p>
-
-  <!-- Buttons -->
-<!--  这里的path我不太懂，需要改一下-->
-  <%= link_to "Login Now", login_path, class: "button" %>
-  <%= link_to "Register Now", register_path, class: "button" %>
-  <%= link_to "Upload Photo", upload_path, class: "button" %>
+  <%= link_to "Start Exploring", login_path, class: "btn btn-primary welcome-button" %>
+  <%= link_to "Register Now", register_path, class: "btn btn-success welcome-button" %>
+  <%= link_to "Upload Photo", upload_path, class: "btn btn-warning welcome-button" %>
 </div>
 </body>
 </html>

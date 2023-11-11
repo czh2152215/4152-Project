@@ -4,34 +4,51 @@
   <title>SmartArtGuide</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
- </head>
+</head>
 
 <body>
-  <!-- Header -->
-  <header style="background-color: #f8f9fa; padding: 10px 20px; text-align: left;">
-    <%= link_to 'SmartArtGuide', root_path, style: "text-decoration: none; color: black; font-size: 24px;" %>
-  </header>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", register_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  </nav>
 
-    <!-- Flash messages display section -->
-    <% flash.each do |key, message| %>
-        <%= content_tag :div, message, id: "flash_#{key}", class: "flash #{key}" %>
-    <% end %>
+  <% flash.each do |key, message| %>
+    <%= content_tag :div, message, id: "flash_#{key}", class: "flash #{key}" %>
+  <% end %>
 
-    <!-- Main content yield -->
-    <%= yield %>
+  <%= yield %>
 
-
-  <!-- Footer (if you have a common footer for all pages) -->
   <footer>
     <!-- Footer content -->
   </footer>
 
-  <!-- Common JavaScripts -->
-  <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
-
-  <!-- Additional scripts for your template, if needed -->
   <script>
     // Your additional scripts
   </script>

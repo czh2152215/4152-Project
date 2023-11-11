@@ -1,2 +1,4 @@
 // app/assets/javascripts/application.js
-//= require_tree .
+import 'bootstrap';
+import 'bootswatch/dist/lux/bootstrap.min.css';
+

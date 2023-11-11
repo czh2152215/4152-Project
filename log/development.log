@@ -3512,3 +3512,659 @@ Processing by ActiveStorage::DiskController#show as PNG
 Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 136)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (3.0ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", nil], ["artwork_name", "The Starry Night"], ["background_information", "The Starry Night is an oil on canvas painting by Dutch Post-Impressionist painter Vincent van Gogh. Painted in June 1889, it depicts the view from the east-facing window of his asylum room at Saint-Rémy-de-Provence, just before sunrise, with the addition of an imaginary village."], ["author", "Vincent van Gogh"], ["image_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"], ["created_at", "2023-11-11 19:14:00.735460"], ["updated_at", "2023-11-11 19:14:00.735460"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:14:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.6ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 4995.4ms | Allocations: 135054)
+Completed 200 OK in 5018ms (Views: 5008.4ms | ActiveRecord: 0.0ms | Allocations: 139246)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-11 14:15:26 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2030)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 7579)
+Completed 200 OK in 112ms (Views: 27.0ms | ActiveRecord: 0.8ms | Allocations: 31733)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-11 14:20:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2009)
+  Rendered layout layouts/application.html.erb (Duration: 107.9ms | Allocations: 35855)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.7ms | Allocations: 64826)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<ActionView::Base:0x0000000000d688>):
+    17:     </button>
+    18:     <div class="collapse navbar-collapse" id="navbarNav">
+    19:       <ul class="navbar-nav ml-auto">
+    20:         <% if user_signed_in? %> <!-- Assuming 'user_signed_in?' is your method to check user authentication -->
+    21:           <li class="nav-item">
+    22:             <%= link_to "View My Profile", profile_path, class: "nav-link" %> <!-- Replace 'profile_path' with your actual profile path -->
+    23:           </li>
+  
+app/views/layouts/application.html.erb:20
+app/controllers/image_search_controller.rb:4:in `upload'
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:20:22 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.8ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 6741)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 7144)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<ActionView::Base:0x0000000000da20>):
+    17:     </button>
+    18:     <div class="collapse navbar-collapse" id="navbarNav">
+    19:       <ul class="navbar-nav ml-auto">
+    20:         <% if user_signed_in? %> <!-- Assuming 'user_signed_in?' is your method to check user authentication -->
+    21:           <li class="nav-item">
+    22:             <%= link_to "View My Profile", profile_path, class: "nav-link" %> <!-- Replace 'profile_path' with your actual profile path -->
+    23:           </li>
+  
+app/views/layouts/application.html.erb:20
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:22:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.7ms | Allocations: 563)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 206.5ms | Allocations: 58941)
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 0.7ms | Allocations: 61325)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile_path' for #<ActionView::Base:0x0000000000d688>):
+    19:       <ul class="navbar-nav ml-auto">
+    20:         <% if user_signed_in? %>
+    21:           <li class="nav-item">
+    22:             <%= link_to "View My Profile", profile_path, class: "nav-link" %> <!-- Replace 'profile_path' with your actual profile path -->
+    23:           </li>
+    24:           <li class="nav-item">
+    25:             <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %> <!-- Replace 'logout_path' with your actual logout path -->
+  
+app/views/layouts/application.html.erb:22
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:24:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.6ms | Allocations: 563)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 210.3ms | Allocations: 57806)
+Completed 200 OK in 220ms (Views: 215.7ms | ActiveRecord: 0.8ms | Allocations: 60241)
+
+
+Started GET "/users/4/profile" for 127.0.0.1 at 2023-11-11 14:24:54 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:21
+  Rendered users/profile.html.erb within layouts/application (Duration: 102.8ms | Allocations: 28657)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 119.2ms | Allocations: 34177)
+Completed 200 OK in 125ms (Views: 119.5ms | ActiveRecord: 1.3ms | Allocations: 35315)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--b3a6c9243a22db9171ba9a25158c47abe3d3db06/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 14:24:54 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--b3a6c9243a22db9171ba9a25158c47abe3d3db06", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (2.3ms) [0m[34mGenerated URL for file at key: ib73pzlkymoqvhyb07mqnbyfz2tz (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjI5OjU0LjMwMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8f3d867d2744cbd0b874f9d2306cc29d75f2c05a/Screenshot%202023-10-21%20at%204.16.39%20PM.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjI5OjU0LjMwMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8f3d867d2744cbd0b874f9d2306cc29d75f2c05a/Screenshot%202023-10-21%20at%204.16.39%20PM.png
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 2587)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjI5OjU0LjMwMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8f3d867d2744cbd0b874f9d2306cc29d75f2c05a/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 14:24:54 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 262)
+
+
+Started GET "/users/4/profile" for 127.0.0.1 at 2023-11-11 14:26:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:21
+  Rendered users/profile.html.erb within layouts/application (Duration: 76.1ms | Allocations: 25429)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 167.3ms | Allocations: 57653)
+Completed 200 OK in 283ms (Views: 172.4ms | ActiveRecord: 1.7ms | Allocations: 86710)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjI5OjU0LjMwMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8f3d867d2744cbd0b874f9d2306cc29d75f2c05a/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 14:26:14 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+Started GET "/users/4/profile" for 127.0.0.1 at 2023-11-11 14:30:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:21
+  Rendered users/profile.html.erb within layouts/application (Duration: 77.4ms | Allocations: 25428)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 4831.1ms | Allocations: 95773)
+Completed 200 OK in 4944ms (Views: 4835.3ms | ActiveRecord: 2.3ms | Allocations: 124751)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--b3a6c9243a22db9171ba9a25158c47abe3d3db06/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 14:30:23 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--b3a6c9243a22db9171ba9a25158c47abe3d3db06", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (3.2ms) [0m[34mGenerated URL for file at key: ib73pzlkymoqvhyb07mqnbyfz2tz (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjM1OjIzLjM0OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4c12ef717c05c46f05b23443b6604b293b3c2222/Screenshot%202023-10-21%20at%204.16.39%20PM.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjM1OjIzLjM0OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4c12ef717c05c46f05b23443b6604b293b3c2222/Screenshot%202023-10-21%20at%204.16.39%20PM.png
+Completed 302 Found in 12ms (ActiveRecord: 0.1ms | Allocations: 2791)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjM1OjIzLjM0OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4c12ef717c05c46f05b23443b6604b293b3c2222/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 14:30:23 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 264)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:30:25 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 343)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 6243)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.1ms | Allocations: 6631)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:33:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.2ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 146.4ms | Allocations: 39976)
+Completed 200 OK in 156ms (Views: 152.0ms | ActiveRecord: 0.0ms | Allocations: 42410)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:33:31 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 80)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 6444)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.0ms | Allocations: 6682)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-11 14:33:35 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1960)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 7095)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.0ms | Allocations: 7396)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-11 14:33:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"april", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "april"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/users/4
+Completed 302 Found in 1853ms (ActiveRecord: 0.9ms | Allocations: 23610)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2023-11-11 14:33:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 69.5ms | Allocations: 25099)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 85.0ms | Allocations: 30586)
+Completed 200 OK in 90ms (Views: 84.9ms | ActiveRecord: 1.5ms | Allocations: 32183)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--b3a6c9243a22db9171ba9a25158c47abe3d3db06/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 14:33:41 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--b3a6c9243a22db9171ba9a25158c47abe3d3db06", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (1.7ms) [0m[34mGenerated URL for file at key: ib73pzlkymoqvhyb07mqnbyfz2tz (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjM4OjQxLjMzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--57a1a86e6114c4f785c0b891bf3b82e52ef5f18b/Screenshot%202023-10-21%20at%204.16.39%20PM.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjM4OjQxLjMzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--57a1a86e6114c4f785c0b891bf3b82e52ef5f18b/Screenshot%202023-10-21%20at%204.16.39%20PM.png
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 2443)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjM4OjQxLjMzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--57a1a86e6114c4f785c0b891bf3b82e52ef5f18b/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 14:33:41 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 245)
+
+
+Started GET "/users/4/profile" for 127.0.0.1 at 2023-11-11 14:33:45 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:21
+  Rendered users/profile.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1796)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 7245)
+Completed 200 OK in 38ms (Views: 29.5ms | ActiveRecord: 0.4ms | Allocations: 8084)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDE5OjM4OjQxLjMzNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--57a1a86e6114c4f785c0b891bf3b82e52ef5f18b/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 14:33:45 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 136)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:33:48 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 80)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 5769)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.1ms | Allocations: 6006)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:38:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.6ms | Allocations: 563)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 178.0ms | Allocations: 57780)
+Completed 200 OK in 187ms (Views: 183.4ms | ActiveRecord: 0.6ms | Allocations: 60214)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:45:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.0ms | Allocations: 538)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 199.6ms | Allocations: 57795)
+Completed 200 OK in 209ms (Views: 204.7ms | ActiveRecord: 0.7ms | Allocations: 60228)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:50:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.0ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 322.4ms | Allocations: 21493)
+Completed 500 Internal Server Error in 331ms (ActiveRecord: 0.0ms | Allocations: 23888)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: ~bootswatch/dist/lux/variables.
+        on line 2:1 of app/assets/stylesheets/application.scss
+>> @import "~bootswatch/dist/lux/variables";
+
+   ^
+):
+     5:   <%= csrf_meta_tags %>
+     6:   <%= csp_meta_tag %>
+     7:   <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:54:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.0ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 4769.4ms | Allocations: 73175)
+Completed 500 Internal Server Error in 4778ms (ActiveRecord: 0.0ms | Allocations: 75573)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$font-size-sm".
+        on line 15:14 of app/assets/stylesheets/_bootswatch.scss
+>>   font-size: $font-size-sm;
+
+   -------------^
+):
+  
+sassc (2.4.0) lib/sassc/engine.rb:50:in `render'
+sassc-rails (2.1.2) lib/sassc/rails/template.rb:40:in `block in call'
+sprockets (4.2.1) lib/sprockets/utils.rb:145:in `block in module_include'
+sprockets (4.2.1) lib/sprockets/utils.rb:130:in `synchronize'
+sprockets (4.2.1) lib/sprockets/utils.rb:130:in `module_include'
+sassc-rails (2.1.2) lib/sassc/rails/template.rb:39:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:22:in `block in <class:CompositeProcessor>'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:33:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:32:in `block in call'
+/Users/aprilzhou/.rbenv/versions/3.2.2/lib/ruby/3.2.0/set.rb:511:in `each_key'
+/Users/aprilzhou/.rbenv/versions/3.2.2/lib/ruby/3.2.0/set.rb:511:in `each'
+sprockets (4.2.1) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:56:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.5ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 186.2ms | Allocations: 53030)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 0.0ms | Allocations: 55416)
+
+
+  
+ActionView::Template::Error (Asset `application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link application.css
+
+and restart your server):
+     5:   <%= csrf_meta_tags %>
+     6:   <%= csp_meta_tag %>
+     7:   <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8
+Started GET "/" for 127.0.0.1 at 2023-11-11 14:59:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.0ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 4598.9ms | Allocations: 85322)
+Completed 500 Internal Server Error in 4608ms (ActiveRecord: 0.0ms | Allocations: 87708)
+
+
+  
+ActionView::Template::Error (Asset `application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link application.css
+
+and restart your server):
+     5:   <%= csrf_meta_tags %>
+     6:   <%= csp_meta_tag %>
+     7:   <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10: </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8
+Started GET "/" for 127.0.0.1 at 2023-11-11 15:00:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.0ms | Allocations: 538)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 239.7ms | Allocations: 65012)
+Completed 200 OK in 249ms (Views: 244.9ms | ActiveRecord: 0.7ms | Allocations: 67445)
+
+
+Started GET "/users/4/profile" for 127.0.0.1 at 2023-11-11 15:00:24 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  Rendered users/profile.html.erb within layouts/application (Duration: 79.8ms | Allocations: 25190)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 97.6ms | Allocations: 30763)
+Completed 200 OK in 105ms (Views: 98.2ms | ActiveRecord: 1.4ms | Allocations: 31887)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--b3a6c9243a22db9171ba9a25158c47abe3d3db06/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 15:00:24 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--b3a6c9243a22db9171ba9a25158c47abe3d3db06", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (2.1ms) [0m[34mGenerated URL for file at key: ib73pzlkymoqvhyb07mqnbyfz2tz (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDIwOjA1OjI0LjgzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--99895232e4ceb9ce625f8610f1d42025fb015938/Screenshot%202023-10-21%20at%204.16.39%20PM.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDIwOjA1OjI0LjgzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--99895232e4ceb9ce625f8610f1d42025fb015938/Screenshot%202023-10-21%20at%204.16.39%20PM.png
+Completed 302 Found in 9ms (ActiveRecord: 0.1ms | Allocations: 2555)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJpYjczcHpsa3ltb3F2aHliMDdtcW5ieWZ6MnR6IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDIzLTEwLTIxIGF0IDQuMTYuMzkgUE0ucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMDIwMjMtMTAtMjElMjBhdCUyMDQuMTYuMzklMjBQTS5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTExVDIwOjA1OjI0LjgzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--99895232e4ceb9ce625f8610f1d42025fb015938/Screenshot%202023-10-21%20at%204.16.39%20PM.png" for 127.0.0.1 at 2023-11-11 15:00:24 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot 2023-10-21 at 4.16.39 PM"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 262)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 15:03:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.0ms | Allocations: 538)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 209.0ms | Allocations: 58807)
+Completed 200 OK in 218ms (Views: 214.0ms | ActiveRecord: 0.7ms | Allocations: 61240)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-11 15:03:51 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1835)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 7110)
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 0.2ms | Allocations: 8305)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 15:03:52 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 80)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 6025)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.1ms | Allocations: 6262)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-11 15:03:53 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 544)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 15:03:53 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 80)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 5646)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 5881)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-11 15:03:55 -0500
+Processing by ImageSearchController#upload as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 536)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-11 15:03:55 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1593)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 6852)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 7152)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 15:03:57 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 80)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 5653)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 5888)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-11 15:04:03 -0500
+Processing by ImageSearchController#upload as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 479)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-11 15:04:03 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 2.6ms | Allocations: 746)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 6004)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 6242)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-11 15:04:04 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 80)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 5656)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 5891)
+
+
