@@ -1,4 +1,8 @@
 class ImageSearchController < ApplicationController
+  before_action :require_login, only: [:upload, :search]
+  def upload
+    render 'image_search/upload'
+  end
   def search
     if params[:file].present?
       # Simulate artwork identification by fetching a pre-stored artwork
@@ -13,7 +17,7 @@ class ImageSearchController < ApplicationController
       end
 
       if @artwork
-          redirect_to artwork_path(@artwork)
+        redirect_to artwork_path(@artwork)
       else
         redirect_to root_path, alert: 'No artwork found for the uploaded image.'
       end
