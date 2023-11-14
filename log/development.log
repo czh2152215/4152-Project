@@ -5535,3 +5535,932 @@ Processing by SessionsController#welcome as HTML
 Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.1ms | Allocations: 6200)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-14 03:09:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 445)
+  Rendered layout layouts/application.html.erb (Duration: 4219.3ms | Allocations: 134254)
+Completed 200 OK in 4226ms (Views: 4223.4ms | ActiveRecord: 0.0ms | Allocations: 138445)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "artworks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "uid" varchar, "artwork_name" varchar, "background_information" text, "author" varchar, "image_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "year" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "artworks_history" text)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "active_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "active_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "aactive_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_variant_records_uniqueness" ON "aactive_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "active_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "aactive_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '0f86808f7fb51965997d9e914a0d9f1433f7db7d', '2023-11-14 17:10:34.669914', '2023-11-14 17:10:34.669916') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "artworks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "uid" varchar, "artwork_name" varchar, "background_information" text, "author" varchar, "image_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "year" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "artworks_history" text)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "active_storage_attachments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "active_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "aactive_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_variant_records_uniqueness" ON "aactive_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "aactive_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231111162143)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231110210950),
+(20231031051053),
+(202310290141);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-11-14 17:10:34.710633', '2023-11-14 17:10:34.710635') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-11-14 17:10:34.711277' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '0f86808f7fb51965997d9e914a0d9f1433f7db7d', '2023-11-14 17:10:34.711940', '2023-11-14 17:10:34.711941') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/eshoyuan/Code/Course/CU-4152/SmartArtGuide/app/models/user.rb:2)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "artworks_history") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@admin.com"], ["password_digest", "[FILTERED]"], ["artworks_history", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.7ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "1"], ["artwork_name", "Shoes"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1947.jpg"], ["created_at", "2023-11-14 17:10:45.047301"], ["updated_at", "2023-11-14 17:10:45.047301"], ["year", "1888"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "2"], ["artwork_name", "Self-Portrait with a Straw Hat (obverse: The Potato Peeler)"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1502_cropped2.jpg"], ["created_at", "2023-11-14 17:10:45.048990"], ["updated_at", "2023-11-14 17:10:45.048990"], ["year", "1887"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "3"], ["artwork_name", "Irises"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP346474.jpg"], ["created_at", "2023-11-14 17:10:45.050115"], ["updated_at", "2023-11-14 17:10:45.050115"], ["year", "1890"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "4"], ["artwork_name", "La Berceuse (Woman Rocking a Cradle; Augustine-Alix Pellicot Roulin, 1851–1930)"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-19279-001.jpg"], ["created_at", "2023-11-14 17:10:45.051129"], ["updated_at", "2023-11-14 17:10:45.051129"], ["year", "1889"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "5"], ["artwork_name", "L'Arlésienne: Madame Joseph-Michel Ginoux (Marie Julien, 1848–1911)"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1396.jpg"], ["created_at", "2023-11-14 17:10:45.052495"], ["updated_at", "2023-11-14 17:10:45.052495"], ["year", "1888–89"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.6ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "6"], ["artwork_name", "Wheat Field with Cypresses"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg"], ["created_at", "2023-11-14 17:10:45.054156"], ["updated_at", "2023-11-14 17:10:45.054156"], ["year", "1889"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "7"], ["artwork_name", "Madame Roulin and Her Baby"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/rl/original/DT3154.jpg"], ["created_at", "2023-11-14 17:10:45.055787"], ["updated_at", "2023-11-14 17:10:45.055787"], ["year", "1888"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "8"], ["artwork_name", "Oleanders"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1494.jpg"], ["created_at", "2023-11-14 17:10:45.057008"], ["updated_at", "2023-11-14 17:10:45.057008"], ["year", "1888"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "9"], ["artwork_name", "The Flowering Orchard"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-045.jpg"], ["created_at", "2023-11-14 17:10:45.058221"], ["updated_at", "2023-11-14 17:10:45.058221"], ["year", "1888"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "10"], ["artwork_name", "The Potato Peeler (reverse: Self-Portrait with a Straw Hat)"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1503.jpg"], ["created_at", "2023-11-14 17:10:45.059345"], ["updated_at", "2023-11-14 17:10:45.059345"], ["year", "1885"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "11"], ["artwork_name", "Sunflowers"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP229743.jpg"], ["created_at", "2023-11-14 17:10:45.060479"], ["updated_at", "2023-11-14 17:10:45.060479"], ["year", "1887"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "12"], ["artwork_name", "Women Picking Olives"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-17161-001.jpg"], ["created_at", "2023-11-14 17:10:45.061435"], ["updated_at", "2023-11-14 17:10:45.061435"], ["year", "1889"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "13"], ["artwork_name", "Olive Trees"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1946.jpg"], ["created_at", "2023-11-14 17:10:45.062587"], ["updated_at", "2023-11-14 17:10:45.062587"], ["year", "1889"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "14"], ["artwork_name", "First Steps, after Millet"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP124808.jpg"], ["created_at", "2023-11-14 17:10:45.063751"], ["updated_at", "2023-11-14 17:10:45.063751"], ["year", "1890"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "15"], ["artwork_name", "Peasant Woman Cooking by a Fireplace"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT2163.jpg"], ["created_at", "2023-11-14 17:10:45.064847"], ["updated_at", "2023-11-14 17:10:45.064847"], ["year", "1885"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "16"], ["artwork_name", "Cypresses"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP130999.jpg"], ["created_at", "2023-11-14 17:10:45.066001"], ["updated_at", "2023-11-14 17:10:45.066001"], ["year", "1889"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "17"], ["artwork_name", "Road in Etten"], ["background_information", "Chalk, pencil, pastel, watercolor.  Underdrawing in pen and brown ink."], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/rl/original/DP359031.jpg"], ["created_at", "2023-11-14 17:10:45.067145"], ["updated_at", "2023-11-14 17:10:45.067145"], ["year", "1881"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "18"], ["artwork_name", "Bouquet of Flowers in a Vase"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT7098.jpg"], ["created_at", "2023-11-14 17:10:45.068206"], ["updated_at", "2023-11-14 17:10:45.068206"], ["year", "1890"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "19"], ["artwork_name", "Roses"], ["background_information", "Oil on canvas"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP346475.jpg"], ["created_at", "2023-11-14 17:10:45.069188"], ["updated_at", "2023-11-14 17:10:45.069188"], ["year", "1890"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "20"], ["artwork_name", "Corridor in the Asylum"], ["background_information", "Oil color and essence over black chalk on pink laid (\"Ingres\") paper"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DT365509.jpg"], ["created_at", "2023-11-14 17:10:45.071285"], ["updated_at", "2023-11-14 17:10:45.071285"], ["year", "September 1889"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.8ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "21"], ["artwork_name", "Nursery on Schenkweg"], ["background_information", "Black chalk, graphite, pen, brush, and ink, heightened with white body color on laid paper watermarked ED & CIE (in a cartouche)"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP108508.jpg"], ["created_at", "2023-11-14 17:10:45.072652"], ["updated_at", "2023-11-14 17:10:45.072652"], ["year", "April–May 1882"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "22"], ["artwork_name", "Street in Saintes-Maries-de-la-Mer"], ["background_information", "Reed pen, quill, and brown ink over black chalk on wove paper (backed with wove paper)"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP108504.jpg"], ["created_at", "2023-11-14 17:10:45.074283"], ["updated_at", "2023-11-14 17:10:45.074283"], ["year", "ca. July 15, 1888"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "23"], ["artwork_name", "Wheat Field"], ["background_information", "Reed pen and logwood ink over graphite on wove paper"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP108507.jpg"], ["created_at", "2023-11-14 17:10:45.075535"], ["updated_at", "2023-11-14 17:10:45.075535"], ["year", "July 1888"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "24"], ["artwork_name", "Vincent Van Gogh on his Deathbed"], ["background_information", "Etching and drypoint"], ["author", "Dr. Paul Ferdinand Gachet"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP-28286-001.jpg"], ["created_at", "2023-11-14 17:10:45.076464"], ["updated_at", "2023-11-14 17:10:45.076464"], ["year", "ca. 1890"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "25"], ["artwork_name", "Burning Weeds"], ["background_information", "Transfer lithograph with pen and ink"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP-22759-001.jpg"], ["created_at", "2023-11-14 17:10:45.077576"], ["updated_at", "2023-11-14 17:10:45.077576"], ["year", "mid-July, 1883"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "26"], ["artwork_name", "Gardener by an Apple Tree"], ["background_information", "Transfer lithograph with pen and ink"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP-22758-001.jpg"], ["created_at", "2023-11-14 17:10:45.078477"], ["updated_at", "2023-11-14 17:10:45.078477"], ["year", "mid-July, 1883"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "27"], ["artwork_name", "The Zouave"], ["background_information", "Reed pen and brown ink, wax crayon and watercolor, over graphite on wove paper"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP108506.jpg"], ["created_at", "2023-11-14 17:10:45.079434"], ["updated_at", "2023-11-14 17:10:45.079434"], ["year", "ca. June 20, 1888"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "28"], ["artwork_name", "At Eternity's Gate"], ["background_information", "Transfer lithograph"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP-22757-001.jpg"], ["created_at", "2023-11-14 17:10:45.080321"], ["updated_at", "2023-11-14 17:10:45.080321"], ["year", "November 26−27, 1882"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "29"], ["artwork_name", "Portrait of Doctor Gachet or Man with a Pipe"], ["background_information", "Etching"], ["author", "Vincent van Gogh"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP-22761-001.jpg"], ["created_at", "2023-11-14 17:10:45.081214"], ["updated_at", "2023-11-14 17:10:45.081214"], ["year", "1890"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "30"], ["artwork_name", "Aristotle with a Bust of Homer"], ["background_information", "Oil on canvas"], ["author", "Rembrandt (Rembrandt van Rijn)"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP319026.jpg"], ["created_at", "2023-11-14 17:10:45.082380"], ["updated_at", "2023-11-14 17:10:45.082380"], ["year", "1653"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "31"], ["artwork_name", "Woman Combing Her Hair"], ["background_information", "Pastel on light green wove paper, now discolored to warm gray, affixed to original pulpboard mount"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1917.jpg"], ["created_at", "2023-11-14 17:10:45.083393"], ["updated_at", "2023-11-14 17:10:45.083393"], ["year", "ca. 1888–90"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "32"], ["artwork_name", "The Denial of Saint Peter"], ["background_information", "Oil on canvas"], ["author", "Caravaggio (Michelangelo Merisi)"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-12413-001.jpg"], ["created_at", "2023-11-14 17:10:45.084390"], ["updated_at", "2023-11-14 17:10:45.084390"], ["year", "1610"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "33"], ["artwork_name", "The Funeral"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1931.jpg"], ["created_at", "2023-11-14 17:10:45.085266"], ["updated_at", "2023-11-14 17:10:45.085266"], ["year", "ca. 1867"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "34"], ["artwork_name", "The \"Kearsarge\" at Boulogne"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25464-001.jpg"], ["created_at", "2023-11-14 17:10:45.086286"], ["updated_at", "2023-11-14 17:10:45.086286"], ["year", "1864"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "35"], ["artwork_name", "Antoine Dominique Sauveur Aubert (born 1817), the Artist's Uncle"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1408.jpg"], ["created_at", "2023-11-14 17:10:45.087184"], ["updated_at", "2023-11-14 17:10:45.087184"], ["year", "1866"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "36"], ["artwork_name", "Christ Asleep during the Tempest"], ["background_information", "Oil on canvas"], ["author", "Eugène Delacroix"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14343-001.jpg"], ["created_at", "2023-11-14 17:10:45.088162"], ["updated_at", "2023-11-14 17:10:45.088162"], ["year", "ca. 1853"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "37"], ["artwork_name", "The Return to the Fold"], ["background_information", "Oil on canvas"], ["author", "Anton Mauve"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-23076-001.jpg"], ["created_at", "2023-11-14 17:10:45.089487"], ["updated_at", "2023-11-14 17:10:45.089487"], ["year", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "38"], ["artwork_name", "The Toilet of Bathsheba"], ["background_information", "Oil on wood"], ["author", "Rembrandt (Rembrandt van Rijn)"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP145915.jpg"], ["created_at", "2023-11-14 17:10:45.090381"], ["updated_at", "2023-11-14 17:10:45.090381"], ["year", "1643"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (1.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "39"], ["artwork_name", "The Garden of the Tuileries on a Winter Afternoon"], ["background_information", "Oil on canvas"], ["author", "Camille Pissarro"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1559.jpg"], ["created_at", "2023-11-14 17:10:45.091250"], ["updated_at", "2023-11-14 17:10:45.091250"], ["year", "1899"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "40"], ["artwork_name", "A Cowherd at Valhermeil, Auvers-sur-Oise"], ["background_information", "Oil on canvas"], ["author", "Camille Pissarro"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1556.jpg"], ["created_at", "2023-11-14 17:10:45.093469"], ["updated_at", "2023-11-14 17:10:45.093469"], ["year", "1874"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "41"], ["artwork_name", "A Bashi-Bazouk"], ["background_information", "Oil on canvas"], ["author", "Charles Bargue"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-29211-001.jpg"], ["created_at", "2023-11-14 17:10:45.095152"], ["updated_at", "2023-11-14 17:10:45.095152"], ["year", "1875"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "42"], ["artwork_name", "Haystacks: Autumn"], ["background_information", "Oil on canvas"], ["author", "Jean-François Millet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP124093.jpg"], ["created_at", "2023-11-14 17:10:45.096394"], ["updated_at", "2023-11-14 17:10:45.096394"], ["year", "ca. 1874"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "43"], ["artwork_name", "Woman from the French Colonies"], ["background_information", "Algerian onyx-marble, bronze, enamel, amethyst; white marble socle"], ["author", "Charles-Henri-Joseph Cordier"], ["image_url", "https://images.metmuseum.org/CRDImages/es/original/DP250574.jpg"], ["created_at", "2023-11-14 17:10:45.097633"], ["updated_at", "2023-11-14 17:10:45.097633"], ["year", "1861"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "44"], ["artwork_name", "Flowers in a Blue Vase"], ["background_information", "Oil on wood"], ["author", "Adolphe Monticelli"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT2791.jpg"], ["created_at", "2023-11-14 17:10:45.098620"], ["updated_at", "2023-11-14 17:10:45.098620"], ["year", "1879–1883"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "45"], ["artwork_name", "Jo, La Belle Irlandaise"], ["background_information", "Oil on canvas"], ["author", "Gustave Courbet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-23236-001.jpg"], ["created_at", "2023-11-14 17:10:45.099740"], ["updated_at", "2023-11-14 17:10:45.099740"], ["year", "1865–66"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "46"], ["artwork_name", "Tilla Durieux (Ottilie Godeffroy, 1880–1971)"], ["background_information", "Oil on canvas"], ["author", "Auguste Renoir"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25036-001.jpg"], ["created_at", "2023-11-14 17:10:45.100756"], ["updated_at", "2023-11-14 17:10:45.100756"], ["year", "1914"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "47"], ["artwork_name", "Venus and the Sphinx"], ["background_information", "Tinted plaster"], ["author", "Auguste Préault"], ["image_url", "https://images.metmuseum.org/CRDImages/es/original/DP244023.jpg"], ["created_at", "2023-11-14 17:10:45.101646"], ["updated_at", "2023-11-14 17:10:45.101646"], ["year", "1868"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "48"], ["artwork_name", "Jupiter and the Sphinx"], ["background_information", "Tinted plaster"], ["author", "Auguste Préault"], ["image_url", "https://images.metmuseum.org/CRDImages/es/original/DP242123.jpg"], ["created_at", "2023-11-14 17:10:45.102617"], ["updated_at", "2023-11-14 17:10:45.102617"], ["year", "1868"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "49"], ["artwork_name", "Mask from Libro di Variate Mascare"], ["background_information", "Engraving"], ["author", "René Boyvin"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP889669.jpg"], ["created_at", "2023-11-14 17:10:45.103822"], ["updated_at", "2023-11-14 17:10:45.103822"], ["year", "1560"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "50"], ["artwork_name", "Woman of Algiers [originally titled \"The Jewish Woman of Algiers\"]"], ["background_information", "Algerian onyx-marble, bronze, gilt bronze, enamel, and amethyst eyes; white marble socle"], ["author", "Charles-Henri-Joseph Cordier"], ["image_url", "https://images.metmuseum.org/CRDImages/es/original/DP250149.jpg"], ["created_at", "2023-11-14 17:10:45.104819"], ["updated_at", "2023-11-14 17:10:45.104819"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "51"], ["artwork_name", "The Collector of Prints"], ["background_information", "Oil on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25461-001.jpg"], ["created_at", "2023-11-14 17:10:45.106109"], ["updated_at", "2023-11-14 17:10:45.106109"], ["year", "1866"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "52"], ["artwork_name", "George Moore (1852–1933) at the Café"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25220-001.jpg"], ["created_at", "2023-11-14 17:10:45.107328"], ["updated_at", "2023-11-14 17:10:45.107328"], ["year", "1878 or 1879"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "53"], ["artwork_name", "The Englishman (William Tom Warrener, 1861–1934) at the Moulin Rouge"], ["background_information", "Oil on cardboard"], ["author", "Henri de Toulouse-Lautrec"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1500.jpg"], ["created_at", "2023-11-14 17:10:45.108282"], ["updated_at", "2023-11-14 17:10:45.108282"], ["year", "1892"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "54"], ["artwork_name", "Night Voyage or Net Fishing"], ["background_information", "Pen and ink on tracing paper, redrawn in graphite on verso"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879631.jpg"], ["created_at", "2023-11-14 17:10:45.109372"], ["updated_at", "2023-11-14 17:10:45.109372"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "55"], ["artwork_name", "The Departure or The Return"], ["background_information", "Pen and ink on tracing paper, redrawn in graphite on verso"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879637.jpg"], ["created_at", "2023-11-14 17:10:45.110317"], ["updated_at", "2023-11-14 17:10:45.110317"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "56"], ["artwork_name", "Breton Fishermen and Their Families"], ["background_information", "Oil on canvas"], ["author", "Théodule-Augustin Ribot"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-23429-001.jpg"], ["created_at", "2023-11-14 17:10:45.111371"], ["updated_at", "2023-11-14 17:10:45.111371"], ["year", "possibly ca. 1880–85"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "57"], ["artwork_name", "Guzzling or Lunch on the Boat"], ["background_information", "Pen and ink on tracing paper, redrawn in graphite on verso"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879627.jpg"], ["created_at", "2023-11-14 17:10:45.112506"], ["updated_at", "2023-11-14 17:10:45.112506"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "58"], ["artwork_name", "The Cabin Boy Fishing or Line Fishing"], ["background_information", "Pen and ink on tracing paper, redrawn in graphite on verso"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879632.jpg"], ["created_at", "2023-11-14 17:10:45.113469"], ["updated_at", "2023-11-14 17:10:45.113469"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "59"], ["artwork_name", "A Woman Seated beside a Vase of Flowers (Madame Paul Valpinçon?)"], ["background_information", "Oil on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25460-001.jpg"], ["created_at", "2023-11-14 17:10:45.115187"], ["updated_at", "2023-11-14 17:10:45.115187"], ["year", "1865"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.6ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "60"], ["artwork_name", "Dish of Apples"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1939.jpg"], ["created_at", "2023-11-14 17:10:45.116113"], ["updated_at", "2023-11-14 17:10:45.116113"], ["year", "ca. 1876–77"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "61"], ["artwork_name", "Interior of an Inn or The Corridor of an Inn"], ["background_information", "Pen and ink on tracing paper"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879630.jpg"], ["created_at", "2023-11-14 17:10:45.117318"], ["updated_at", "2023-11-14 17:10:45.117318"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "62"], ["artwork_name", "Cabin Boy Hauling the Tow-Rope or Hauling by Rope"], ["background_information", "Pen and ink on tracing paper, redrawn in graphite on verso"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879626.jpg"], ["created_at", "2023-11-14 17:10:45.118538"], ["updated_at", "2023-11-14 17:10:45.118538"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "63"], ["artwork_name", "Taking Over the Cart or Children with the Cart"], ["background_information", "Pen and ink on tracing paper, redrawn in graphite on verso"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879625.jpg"], ["created_at", "2023-11-14 17:10:45.119479"], ["updated_at", "2023-11-14 17:10:45.119479"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "64"], ["artwork_name", "Bedding Down Aboard the Botin or Night on the Boat"], ["background_information", "Pen and ink on tracing paper, redrawn in graphite on verso"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879635.jpg"], ["created_at", "2023-11-14 17:10:45.120602"], ["updated_at", "2023-11-14 17:10:45.120602"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "65"], ["artwork_name", "The Steamboats or Watch Out for the Steamers"], ["background_information", "Pen and ink on tracing paper, redrawn in graphite on verso"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP879634.jpg"], ["created_at", "2023-11-14 17:10:45.121479"], ["updated_at", "2023-11-14 17:10:45.121479"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "66"], ["artwork_name", "The Third-Class Carriage"], ["background_information", "Oil on canvas"], ["author", "Honoré Daumier"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-21027-001.jpg"], ["created_at", "2023-11-14 17:10:45.122537"], ["updated_at", "2023-11-14 17:10:45.122537"], ["year", "ca. 1862–64"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "67"], ["artwork_name", "Changing Pasture"], ["background_information", "Oil on canvas"], ["author", "Anton Mauve"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-22428-001.jpg"], ["created_at", "2023-11-14 17:10:45.123623"], ["updated_at", "2023-11-14 17:10:45.123623"], ["year", "ca. 1880"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "68"], ["artwork_name", "Boy with a Sword"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-027.jpg"], ["created_at", "2023-11-14 17:10:45.124560"], ["updated_at", "2023-11-14 17:10:45.124560"], ["year", "1861"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "69"], ["artwork_name", "Ornamental Panel"], ["background_information", "Engraving"], ["author", "Agostino Veneziano (Agostino dei Musi)"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP888668.jpg"], ["created_at", "2023-11-14 17:10:45.125643"], ["updated_at", "2023-11-14 17:10:45.125643"], ["year", "ca. 1514–36"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "70"], ["artwork_name", "Ornamental Panel"], ["background_information", "Engraving"], ["author", "Agostino Veneziano (Agostino dei Musi)"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP888667.jpg"], ["created_at", "2023-11-14 17:10:45.126753"], ["updated_at", "2023-11-14 17:10:45.126753"], ["year", "ca. 1514–36"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "71"], ["artwork_name", "Young Man in the Costume of a Majo"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT862.jpg"], ["created_at", "2023-11-14 17:10:45.127854"], ["updated_at", "2023-11-14 17:10:45.127854"], ["year", "1863"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "72"], ["artwork_name", "Still Life with Apples and a Pot of Primroses"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT47.jpg"], ["created_at", "2023-11-14 17:10:45.128869"], ["updated_at", "2023-11-14 17:10:45.128869"], ["year", "ca. 1890"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "73"], ["artwork_name", "Pedestal [for Woman from the French Colonies]"], ["background_information", "Red and white marble pedestal with gilt-bronze mounts and ornaments"], ["author", "Charles-Henri-Joseph Cordier"], ["image_url", "https://images.metmuseum.org/CRDImages/es/original/SF2006_112d.jpg"], ["created_at", "2023-11-14 17:10:45.129888"], ["updated_at", "2023-11-14 17:10:45.129888"], ["year", "1861"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "74"], ["artwork_name", "An Early Summer Morning in the Forest of Fontainebleau"], ["background_information", "Oil on wood"], ["author", "Théodore Rousseau"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT240033.jpg"], ["created_at", "2023-11-14 17:10:45.130821"], ["updated_at", "2023-11-14 17:10:45.130821"], ["year", "probably 1861"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "75"], ["artwork_name", "Eclectus Roratus Polychloros"], ["background_information", "Watercolor and  gouache (bodycolor) over graphite or chalk"], ["author", "Edward Lear"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP821097.jpg"], ["created_at", "2023-11-14 17:10:45.131801"], ["updated_at", "2023-11-14 17:10:45.131801"], ["year", "ca. 1830–32"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "76"], ["artwork_name", "Alphonse Promayet (1822–1872)"], ["background_information", "Oil on canvas"], ["author", "Gustave Courbet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1958.jpg"], ["created_at", "2023-11-14 17:10:45.133046"], ["updated_at", "2023-11-14 17:10:45.133046"], ["year", "1851"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "77"], ["artwork_name", "A Man Reading in a Garden (recto); Preliminary sketch for a Man Reading in a Garden (verso)"], ["background_information", "Watercolor over black chalk, with pen and ink, brush and wash, and lithographic crayon.\r\nVerso: pen and brown ink, black gray wash, and lithographic crayon"], ["author", "Honoré Daumier"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP824210.jpg"], ["created_at", "2023-11-14 17:10:45.134017"], ["updated_at", "2023-11-14 17:10:45.134017"], ["year", "ca. 1865"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "78"], ["artwork_name", "The Ballet from \"Robert le Diable\""], ["background_information", "Oil on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1911.jpg"], ["created_at", "2023-11-14 17:10:45.135701"], ["updated_at", "2023-11-14 17:10:45.135701"], ["year", "1871"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "79"], ["artwork_name", "Fantastical Mask with Strapwork"], ["background_information", "Etching and engraving"], ["author", "Anonymous, French, 16th century"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP829206.jpg"], ["created_at", "2023-11-14 17:10:45.136763"], ["updated_at", "2023-11-14 17:10:45.136763"], ["year", "mid-16th century"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "80"], ["artwork_name", "The Birth of Venus"], ["background_information", "Oil on canvas"], ["author", "Alexandre Cabanel"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-22432-001.jpg"], ["created_at", "2023-11-14 17:10:45.137961"], ["updated_at", "2023-11-14 17:10:45.137961"], ["year", "1875"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.6ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "81"], ["artwork_name", "Girl in the Dunes"], ["background_information", "Watercolor and touches of black chalk"], ["author", "Jozef Israëls"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP800935.jpg"], ["created_at", "2023-11-14 17:10:45.138847"], ["updated_at", "2023-11-14 17:10:45.138847"], ["year", "mid-19th–early 20th century"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "82"], ["artwork_name", "Woman Having Her Hair Combed"], ["background_information", "Pastel on light green wove paper, now discolored to warm gray, affixed to original pulpboard mount"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP253480.jpg"], ["created_at", "2023-11-14 17:10:45.140036"], ["updated_at", "2023-11-14 17:10:45.140036"], ["year", "ca. 1886–88"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "83"], ["artwork_name", "Circus Sideshow (Parade de cirque)"], ["background_information", "Oil on canvas"], ["author", "Georges Seurat"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP375450_cropped.jpg"], ["created_at", "2023-11-14 17:10:45.141141"], ["updated_at", "2023-11-14 17:10:45.141141"], ["year", "1887–88"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "84"], ["artwork_name", "Sleep"], ["background_information", "Oil on canvas"], ["author", "Pierre Puvis de Chavannes"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-033.jpg"], ["created_at", "2023-11-14 17:10:45.142231"], ["updated_at", "2023-11-14 17:10:45.142231"], ["year", "ca. 1867–70"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "85"], ["artwork_name", "At the Milliner's"], ["background_information", "Pastel on pale gray wove paper (industrial wrapping paper), laid down on silk bolting"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1046.jpg"], ["created_at", "2023-11-14 17:10:45.143386"], ["updated_at", "2023-11-14 17:10:45.143386"], ["year", "1882"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "86"], ["artwork_name", "The Sofa"], ["background_information", "Oil on cardboard"], ["author", "Henri de Toulouse-Lautrec"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1924.jpg"], ["created_at", "2023-11-14 17:10:45.144376"], ["updated_at", "2023-11-14 17:10:45.144376"], ["year", "ca. 1894–96"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "87"], ["artwork_name", "The Good Samaritan"], ["background_information", "Oil on wood"], ["author", "Domenico Fetti"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP278746.jpg"], ["created_at", "2023-11-14 17:10:45.145275"], ["updated_at", "2023-11-14 17:10:45.145275"], ["year", "ca. 1618–22"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "88"], ["artwork_name", "Washerwoman, Study"], ["background_information", "Oil on canvas"], ["author", "Camille Pissarro"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-21955-001.jpg"], ["created_at", "2023-11-14 17:10:45.146291"], ["updated_at", "2023-11-14 17:10:45.146291"], ["year", "1880"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "89"], ["artwork_name", "Study for \"A Sunday on La Grande Jatte\""], ["background_information", "Oil on canvas"], ["author", "Georges Seurat"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP259921.jpg"], ["created_at", "2023-11-14 17:10:45.147190"], ["updated_at", "2023-11-14 17:10:45.147190"], ["year", "1884"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "90"], ["artwork_name", "Soap Bubbles"], ["background_information", "Oil on canvas"], ["author", "Jean Siméon Chardin"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP356133.jpg"], ["created_at", "2023-11-14 17:10:45.148228"], ["updated_at", "2023-11-14 17:10:45.148228"], ["year", "ca. 1733–34"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "91"], ["artwork_name", "Pedestal [Woman of Algiers]"], ["background_information", "Red and white marble pedestal with gilt-bronze mounts and ornaments"], ["author", "Charles-Henri-Joseph Cordier"], ["image_url", "https://images.metmuseum.org/CRDImages/es/original/SF2006_113d.jpg"], ["created_at", "2023-11-14 17:10:45.149204"], ["updated_at", "2023-11-14 17:10:45.149204"], ["year", "1862"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "92"], ["artwork_name", "The Dead Christ with Angels"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-17679-001.jpg"], ["created_at", "2023-11-14 17:10:45.150259"], ["updated_at", "2023-11-14 17:10:45.150259"], ["year", "1864"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "93"], ["artwork_name", "James-Jacques-Joseph Tissot (1836–1902)"], ["background_information", "Oil on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25462-001.jpg"], ["created_at", "2023-11-14 17:10:45.151154"], ["updated_at", "2023-11-14 17:10:45.151154"], ["year", "ca. 1867–68"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "94"], ["artwork_name", "At the Milliner's"], ["background_information", "Pastel on five pieces of wove paper, backed with paper, and laid down on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1915.jpg"], ["created_at", "2023-11-14 17:10:45.152162"], ["updated_at", "2023-11-14 17:10:45.152162"], ["year", "1881"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "95"], ["artwork_name", "Young Lady in 1866"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP273977.jpg"], ["created_at", "2023-11-14 17:10:45.153090"], ["updated_at", "2023-11-14 17:10:45.153090"], ["year", "1866"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "96"], ["artwork_name", "A Road in Louveciennes"], ["background_information", "Oil on canvas"], ["author", "Auguste Renoir"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP265242.jpg"], ["created_at", "2023-11-14 17:10:45.154120"], ["updated_at", "2023-11-14 17:10:45.154120"], ["year", "ca. 1870"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.9ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "97"], ["artwork_name", "The Natchez"], ["background_information", "Oil on canvas"], ["author", "Eugène Delacroix"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14345-001.jpg"], ["created_at", "2023-11-14 17:10:45.155021"], ["updated_at", "2023-11-14 17:10:45.155021"], ["year", "1823–24 and 1835"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "98"], ["artwork_name", "The Death of Socrates"], ["background_information", "Oil on canvas"], ["author", "Jacques Louis David"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-13139-001.jpg"], ["created_at", "2023-11-14 17:10:45.156641"], ["updated_at", "2023-11-14 17:10:45.156641"], ["year", "1787"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "99"], ["artwork_name", "The Forest at Pontaubert"], ["background_information", "Oil on canvas"], ["author", "Georges Seurat"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT2165.jpg"], ["created_at", "2023-11-14 17:10:45.157550"], ["updated_at", "2023-11-14 17:10:45.157550"], ["year", "1881"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "100"], ["artwork_name", "The Forest in Winter at Sunset"], ["background_information", "Oil on canvas"], ["author", "Théodore Rousseau"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP247630.jpg"], ["created_at", "2023-11-14 17:10:45.158758"], ["updated_at", "2023-11-14 17:10:45.158758"], ["year", "ca. 1846–67"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "101"], ["artwork_name", "Antoine Dominique Sauveur Aubert (born 1817), the Artist's Uncle, as a Monk"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1977.jpg"], ["created_at", "2023-11-14 17:10:45.159919"], ["updated_at", "2023-11-14 17:10:45.159919"], ["year", "1866"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "102"], ["artwork_name", "The Sea"], ["background_information", "Oil on canvas"], ["author", "Gustave Courbet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-24650-001.jpg"], ["created_at", "2023-11-14 17:10:45.160787"], ["updated_at", "2023-11-14 17:10:45.160787"], ["year", "1865 or later"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "103"], ["artwork_name", "Border Designs for the Mortlake \"Acts of the Apostles\" Tapestries"], ["background_information", "Watercolor with white heightening, details in pen and ink and graphite"], ["author", "Franz Cleyn"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP-22581-001.jpg"], ["created_at", "2023-11-14 17:10:45.161883"], ["updated_at", "2023-11-14 17:10:45.161883"], ["year", "ca. 1626–36"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "104"], ["artwork_name", "Still Life with Apples and Pears"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-049.jpg"], ["created_at", "2023-11-14 17:10:45.162852"], ["updated_at", "2023-11-14 17:10:45.162852"], ["year", "ca. 1891–92"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "105"], ["artwork_name", "The Baker's Cart"], ["background_information", "Oil on canvas"], ["author", "Jean Michelin"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP366472.jpg"], ["created_at", "2023-11-14 17:10:45.163706"], ["updated_at", "2023-11-14 17:10:45.163706"], ["year", "1656"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "106"], ["artwork_name", "The Hamlet of Optevoz"], ["background_information", "Oil on canvas"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT332111.jpg"], ["created_at", "2023-11-14 17:10:45.164732"], ["updated_at", "2023-11-14 17:10:45.164732"], ["year", "ca. 1852"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "107"], ["artwork_name", "Copy after Delacroix's \"Bark of Dante\""], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25457-001.jpg"], ["created_at", "2023-11-14 17:10:45.165890"], ["updated_at", "2023-11-14 17:10:45.165890"], ["year", "ca. 1859"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "108"], ["artwork_name", "Etruscan Vase with Flowers"], ["background_information", "Tempera on canvas"], ["author", "Odilon Redon"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT323419.jpg"], ["created_at", "2023-11-14 17:10:45.166823"], ["updated_at", "2023-11-14 17:10:45.166823"], ["year", "1900–1910"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "109"], ["artwork_name", "Armor"], ["background_information", "Charcoal and conté crayon"], ["author", "Odilon Redon"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP139626.jpg"], ["created_at", "2023-11-14 17:10:45.167734"], ["updated_at", "2023-11-14 17:10:45.167734"], ["year", "1891"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "110"], ["artwork_name", "Mask from Libro di Variate mascare"], ["background_information", "Engraving"], ["author", "René Boyvin"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP889668.jpg"], ["created_at", "2023-11-14 17:10:45.168747"], ["updated_at", "2023-11-14 17:10:45.168747"], ["year", "1560"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "111"], ["artwork_name", "The Siesta"], ["background_information", "Oil on canvas"], ["author", "Paul Gauguin"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1952.jpg"], ["created_at", "2023-11-14 17:10:45.169646"], ["updated_at", "2023-11-14 17:10:45.169646"], ["year", "ca. 1892–94"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "112"], ["artwork_name", "Madame Théodore Gobillard (Yves Morisot, 1838–1893)"], ["background_information", "Oil on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25620-001.jpg"], ["created_at", "2023-11-14 17:10:45.170635"], ["updated_at", "2023-11-14 17:10:45.170635"], ["year", "1869"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "113"], ["artwork_name", "Jalais Hill, Pontoise"], ["background_information", "Oil on canvas"], ["author", "Camille Pissarro"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1859.jpg"], ["created_at", "2023-11-14 17:10:45.171586"], ["updated_at", "2023-11-14 17:10:45.171586"], ["year", "1867"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "114"], ["artwork_name", "Young Woman (La Servante)"], ["background_information", "Oil on canvas"], ["author", "Auguste Renoir"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1488.jpg"], ["created_at", "2023-11-14 17:10:45.172589"], ["updated_at", "2023-11-14 17:10:45.172589"], ["year", "ca. 1875"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "115"], ["artwork_name", "Still Life with Flowers and Prickly Pears"], ["background_information", "Oil on canvas"], ["author", "Auguste Renoir"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP257756.jpg"], ["created_at", "2023-11-14 17:10:45.173620"], ["updated_at", "2023-11-14 17:10:45.173620"], ["year", "ca. 1885"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "116"], ["artwork_name", "Two Tahitian Women"], ["background_information", "Oil on canvas"], ["author", "Paul Gauguin"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1342.jpg"], ["created_at", "2023-11-14 17:10:45.174554"], ["updated_at", "2023-11-14 17:10:45.174554"], ["year", "1899"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "117"], ["artwork_name", "Gray Weather, Grande Jatte"], ["background_information", "Oil on canvas"], ["author", "Georges Seurat"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1945.jpg"], ["created_at", "2023-11-14 17:10:45.176045"], ["updated_at", "2023-11-14 17:10:45.176045"], ["year", "ca. 1886–88"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "118"], ["artwork_name", "The Prodigal Son Squanders his Fortune with Prostitutes"], ["background_information", "Pen and brown ink, brush and brown wash"], ["author", "Augustin Braun"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DP802895.jpg"], ["created_at", "2023-11-14 17:10:45.176961"], ["updated_at", "2023-11-14 17:10:45.176961"], ["year", "late 16th–mid-17th century"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "119"], ["artwork_name", "Florentine Poet"], ["background_information", "Oil on wood"], ["author", "Alexandre Cabanel"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP208015.jpg"], ["created_at", "2023-11-14 17:10:45.178121"], ["updated_at", "2023-11-14 17:10:45.178121"], ["year", "1861"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "120"], ["artwork_name", "Joan of Arc"], ["background_information", "Oil on canvas"], ["author", "Jules Bastien-Lepage"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-049.jpg"], ["created_at", "2023-11-14 17:10:45.179273"], ["updated_at", "2023-11-14 17:10:45.179273"], ["year", "1879"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "121"], ["artwork_name", "Auti Te Pape"], ["background_information", "Woodcut printed in color on wove paper"], ["author", "Paul Gauguin"], ["image_url", "https://images.metmuseum.org/CRDImages/dp/original/DT306424.jpg"], ["created_at", "2023-11-14 17:10:45.180569"], ["updated_at", "2023-11-14 17:10:45.180569"], ["year", "1893–94"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "122"], ["artwork_name", "Mont Sainte-Victoire and the Viaduct of the Arc River Valley"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-20099-001.jpg"], ["created_at", "2023-11-14 17:10:45.181761"], ["updated_at", "2023-11-14 17:10:45.181761"], ["year", "1882–85"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "123"], ["artwork_name", "The Brioche"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-13655-001.jpg"], ["created_at", "2023-11-14 17:10:45.182676"], ["updated_at", "2023-11-14 17:10:45.182676"], ["year", "1870"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "124"], ["artwork_name", "Eglise d'Auvers"], ["background_information", "Salted paper print from paper negative"], ["author", "Edouard Baldus"], ["image_url", "https://images.metmuseum.org/CRDImages/ph/original/DT6523.jpg"], ["created_at", "2023-11-14 17:10:45.183677"], ["updated_at", "2023-11-14 17:10:45.183677"], ["year", "1855, printed 1855–57"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "125"], ["artwork_name", "The Bay of Naples"], ["background_information", "Oil on canvas"], ["author", "Auguste Renoir"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1878.jpg"], ["created_at", "2023-11-14 17:10:45.184668"], ["updated_at", "2023-11-14 17:10:45.184668"], ["year", "1881"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "126"], ["artwork_name", "Ia Orana Maria (Hail Mary)"], ["background_information", "Oil on canvas"], ["author", "Paul Gauguin"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1025.jpg"], ["created_at", "2023-11-14 17:10:45.185551"], ["updated_at", "2023-11-14 17:10:45.185551"], ["year", "1891"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "127"], ["artwork_name", "Lachrymae"], ["background_information", "Oil on canvas"], ["author", "Frederic, Lord Leighton"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP124813.jpg"], ["created_at", "2023-11-14 17:10:45.186582"], ["updated_at", "2023-11-14 17:10:45.186582"], ["year", "1894–95"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "128"], ["artwork_name", "Bather in the Woods"], ["background_information", "Oil on canvas"], ["author", "Camille Pissarro"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT837.jpg"], ["created_at", "2023-11-14 17:10:45.187495"], ["updated_at", "2023-11-14 17:10:45.187495"], ["year", "1895"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "129"], ["artwork_name", "Still Life with Peaches"], ["background_information", "Oil on canvas"], ["author", "Auguste Renoir"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1140.jpg"], ["created_at", "2023-11-14 17:10:45.188575"], ["updated_at", "2023-11-14 17:10:45.188575"], ["year", "1881"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "130"], ["artwork_name", "Madame Cézanne (Hortense Fiquet, 1850–1922) in the Conservatory"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP317780.jpg"], ["created_at", "2023-11-14 17:10:45.189680"], ["updated_at", "2023-11-14 17:10:45.189680"], ["year", "1891"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "131"], ["artwork_name", "Gossip"], ["background_information", "Oil on wood"], ["author", "Giovanni Boldini"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT219388.jpg"], ["created_at", "2023-11-14 17:10:45.190769"], ["updated_at", "2023-11-14 17:10:45.190769"], ["year", "1873"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "132"], ["artwork_name", "The Missionary's Adventures"], ["background_information", "Oil on wood"], ["author", "Jean-Georges Vibert"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/EP1435.jpg"], ["created_at", "2023-11-14 17:10:45.191694"], ["updated_at", "2023-11-14 17:10:45.191694"], ["year", "ca. 1883"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "133"], ["artwork_name", "The House with the Cracked Walls"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1943.jpg"], ["created_at", "2023-11-14 17:10:45.192781"], ["updated_at", "2023-11-14 17:10:45.192781"], ["year", "1892–94"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "134"], ["artwork_name", "Ludus pro patria (Patriotic Games)"], ["background_information", "Oil on canvas"], ["author", "Pierre Puvis de Chavannes"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-037.jpg"], ["created_at", "2023-11-14 17:10:45.194124"], ["updated_at", "2023-11-14 17:10:45.194124"], ["year", "ca. 1883–89"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "135"], ["artwork_name", "Madame Cézanne (Hortense Fiquet, 1850–1922) in a Red Dress"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP320128.jpg"], ["created_at", "2023-11-14 17:10:45.195149"], ["updated_at", "2023-11-14 17:10:45.195149"], ["year", "1888–90"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (1.0ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "136"], ["artwork_name", "The Monet Family in Their Garden at Argenteuil"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-25465-001.jpg"], ["created_at", "2023-11-14 17:10:45.196065"], ["updated_at", "2023-11-14 17:10:45.196065"], ["year", "1874"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "137"], ["artwork_name", "Madame Georges Charpentier (Marguérite-Louise Lemonnier, 1848–1904) and Her Children, Georgette-Berthe (1872–1945) and Paul-Émile-Charles (1875–1895)"], ["background_information", "Oil on canvas"], ["author", "Auguste Renoir"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT49.jpg"], ["created_at", "2023-11-14 17:10:45.197709"], ["updated_at", "2023-11-14 17:10:45.197709"], ["year", "1878"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "138"], ["artwork_name", "The Spanish Singer"], ["background_information", "Oil on canvas"], ["author", "Edouard Manet"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/dp130799.jpg"], ["created_at", "2023-11-14 17:10:45.199040"], ["updated_at", "2023-11-14 17:10:45.199040"], ["year", "1860"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "139"], ["artwork_name", "Still Life with Jar, Cup, and Apples"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP130322.jpg"], ["created_at", "2023-11-14 17:10:45.200031"], ["updated_at", "2023-11-14 17:10:45.200031"], ["year", "ca. 1877"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "140"], ["artwork_name", "Landscape with a Sunlit Stream"], ["background_information", "Oil on canvas"], ["author", "Charles-François Daubigny"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-23369-001.jpg"], ["created_at", "2023-11-14 17:10:45.201258"], ["updated_at", "2023-11-14 17:10:45.201258"], ["year", "ca. 1877"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "141"], ["artwork_name", "Dancers in the Rehearsal Room with a Double Bass"], ["background_information", "Oil on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP275510.jpg"], ["created_at", "2023-11-14 17:10:45.202202"], ["updated_at", "2023-11-14 17:10:45.202202"], ["year", "ca. 1882–85"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "142"], ["artwork_name", "The Experts"], ["background_information", "Oil on canvas"], ["author", "Alexandre-Gabriel Decamps"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT209332.jpg"], ["created_at", "2023-11-14 17:10:45.203355"], ["updated_at", "2023-11-14 17:10:45.203355"], ["year", "1837"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "143"], ["artwork_name", "Cider"], ["background_information", "Oil on paper, laid down on canvas"], ["author", "Pierre Puvis de Chavannes"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-027.jpg"], ["created_at", "2023-11-14 17:10:45.204373"], ["updated_at", "2023-11-14 17:10:45.204373"], ["year", "ca. 1864"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "144"], ["artwork_name", "The River"], ["background_information", "Oil on paper, laid down on canvas"], ["author", "Pierre Puvis de Chavannes"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-029.jpg"], ["created_at", "2023-11-14 17:10:45.205271"], ["updated_at", "2023-11-14 17:10:45.205271"], ["year", "ca. 1864"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "145"], ["artwork_name", "The Environs of Paris"], ["background_information", "Oil on wood"], ["author", "Camille Corot"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT225534.jpg"], ["created_at", "2023-11-14 17:10:45.206266"], ["updated_at", "2023-11-14 17:10:45.206266"], ["year", "1860s"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "146"], ["artwork_name", "The Dispatch-Bearer"], ["background_information", "Oil on wood"], ["author", "Giovanni Boldini"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP223662.jpg"], ["created_at", "2023-11-14 17:10:45.207303"], ["updated_at", "2023-11-14 17:10:45.207303"], ["year", "?1879"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "147"], ["artwork_name", "Dancers Practicing at the Barre"], ["background_information", "Mixed media on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT840.jpg"], ["created_at", "2023-11-14 17:10:45.208185"], ["updated_at", "2023-11-14 17:10:45.208185"], ["year", "1877"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "148"], ["artwork_name", "The Horse Fair"], ["background_information", "Oil on canvas"], ["author", "Rosa Bonheur"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-23550-001.jpg"], ["created_at", "2023-11-14 17:10:45.209206"], ["updated_at", "2023-11-14 17:10:45.209206"], ["year", "1852–55"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "149"], ["artwork_name", "Gardanne"], ["background_information", "Oil on canvas"], ["author", "Paul Cézanne"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14936-047.jpg"], ["created_at", "2023-11-14 17:10:45.210311"], ["updated_at", "2023-11-14 17:10:45.210311"], ["year", "1885–86"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "150"], ["artwork_name", "The Rehearsal Onstage"], ["background_information", "Pastel over brush-and-ink drawing on thin cream-colored wove paper, laid down on bristol board and mounted on canvas"], ["author", "Edgar Degas"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DT1006.jpg"], ["created_at", "2023-11-14 17:10:45.211242"], ["updated_at", "2023-11-14 17:10:45.211242"], ["year", "ca. 1874"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.3ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "151"], ["artwork_name", "George Sand's Garden at Nohant"], ["background_information", "Oil on canvas"], ["author", "Eugène Delacroix"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-14092-001.jpg"], ["created_at", "2023-11-14 17:10:45.212277"], ["updated_at", "2023-11-14 17:10:45.212277"], ["year", "ca. 1842–43"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "152"], ["artwork_name", "A Woman Reading"], ["background_information", "Oil on canvas"], ["author", "Camille Corot"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-16589-001.jpg"], ["created_at", "2023-11-14 17:10:45.213285"], ["updated_at", "2023-11-14 17:10:45.213285"], ["year", "1869 and 1870"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtwork Create (0.5ms)[0m  [1m[32mINSERT INTO "artworks" ("uid", "artwork_name", "background_information", "author", "image_url", "created_at", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["uid", "153"], ["artwork_name", "Flowers in a Grotesque Vase"], ["background_information", "Oil on canvas"], ["author", "Orsola Maddalena Caccia"], ["image_url", "https://images.metmuseum.org/CRDImages/ep/original/DP-19714-001.jpg"], ["created_at", "2023-11-14 17:10:45.214356"], ["updated_at", "2023-11-14 17:10:45.214356"], ["year", "ca. 1635"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-11-14 12:10:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 445)
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | Allocations: 36307)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.0ms | Allocations: 38743)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-14 12:10:51 -0500
+Processing by ImageSearchController#upload as HTML
+Redirected to http://0.0.0.0:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 549)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-14 12:10:52 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2117)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 7375)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 7676)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-14 12:11:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"admin@admin.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/eshoyuan/Code/Course/CU-4152/SmartArtGuide/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://0.0.0.0:3000/users/1
+Completed 302 Found in 273ms (ActiveRecord: 0.4ms | Allocations: 24267)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-11-14 12:11:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (Duration: 14.9ms | Allocations: 7874)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 13481)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.4ms | Allocations: 15072)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 12:11:25 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 5838)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.1ms | Allocations: 6074)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-14 12:11:27 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1820)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 7095)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 8046)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-14 12:11:29 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Upload"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://0.0.0.0:3000/upload
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 708)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-14 12:11:29 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 6457)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 7229)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-14 12:11:34 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000010b9f0298 @tempfile=#<Tempfile:/var/folders/q8/bq8zhq5d6gv49nv9s43z71z80000gn/T/RackMultipart20231114-53192-ytmz2k.log>, @content_type="application/octet-stream", @original_filename="java_error_in_rubymine_36769.log", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"java_error_in_rubymine_36769.log\"\r\nContent-Type: application/octet-stream\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:16:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:35:in `update_artworks_history'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:35:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 1\n"], ["id", 1]]
+  ↳ app/controllers/image_search_controller.rb:35:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:35:in `update_artworks_history'
+Redirected to http://0.0.0.0:3000/artworks/1
+Completed 302 Found in 22ms (ActiveRecord: 1.5ms | Allocations: 16919)
+
+
+Started GET "/artworks/1" for 127.0.0.1 at 2023-11-14 12:11:34 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 316)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 6150)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.1ms | Allocations: 6961)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-14 12:12:14 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000010b758e40 @tempfile=#<Tempfile:/var/folders/q8/bq8zhq5d6gv49nv9s43z71z80000gn/T/RackMultipart20231114-53192-43rfwf.log>, @content_type="application/octet-stream", @original_filename="java_error_in_rubymine_36769.log", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"java_error_in_rubymine_36769.log\"\r\nContent-Type: application/octet-stream\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mArtwork Load (0.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:16:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:35:in `update_artworks_history'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:35:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 1\n- 1\n"], ["id", 1]]
+  ↳ app/controllers/image_search_controller.rb:35:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:35:in `update_artworks_history'
+Redirected to http://0.0.0.0:3000/artworks/1
+Completed 302 Found in 17ms (ActiveRecord: 2.0ms | Allocations: 3568)
+
+
+Started GET "/artworks/1" for 127.0.0.1 at 2023-11-14 12:12:14 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 47)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 5852)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.1ms | Allocations: 6449)
+
+
+Started GET "/artworks/1" for 127.0.0.1 at 2023-11-14 12:12:49 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 350)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/eshoyuan/Code/Course/CU-4152/SmartArtGuide/app/models/user.rb:2)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 14880)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 1.3ms | Allocations: 21500)
+
+
+Started GET "/artworks/1" for 127.0.0.1 at 2023-11-14 12:13:05 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 347)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/eshoyuan/Code/Course/CU-4152/SmartArtGuide/app/models/user.rb:2)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 14868)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 1.3ms | Allocations: 21505)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-14 12:33:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 445)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/eshoyuan/Code/Course/CU-4152/SmartArtGuide/app/models/user.rb:2)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 173.0ms | Allocations: 65172)
+Completed 200 OK in 178ms (Views: 174.0ms | ActiveRecord: 1.9ms | Allocations: 67608)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-14 12:33:18 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1871)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 7158)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 8199)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-14 12:33:22 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000010aeda3e0 @tempfile=#<Tempfile:/var/folders/q8/bq8zhq5d6gv49nv9s43z71z80000gn/T/RackMultipart20231114-54535-jzusxm.log>, @content_type="application/octet-stream", @original_filename="java_error_in_rubymine_36769.log", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"java_error_in_rubymine_36769.log\"\r\nContent-Type: application/octet-stream\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 1\n- 1\n- 69\n"], ["id", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://0.0.0.0:3000/artworks/69
+Completed 302 Found in 753ms (ActiveRecord: 3.7ms | Allocations: 18508)
+
+
+Started GET "/artworks/69" for 127.0.0.1 at 2023-11-14 12:33:22 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 339)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 6151)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 6958)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-14 12:33:31 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000010b21dc50 @tempfile=#<Tempfile:/var/folders/q8/bq8zhq5d6gv49nv9s43z71z80000gn/T/RackMultipart20231114-54535-755s0o.log>, @content_type="application/octet-stream", @original_filename="java_error_in_rubymine_36769.log", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"java_error_in_rubymine_36769.log\"\r\nContent-Type: application/octet-stream\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 1\n- 1\n- 69\n- 38\n"], ["id", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://0.0.0.0:3000/artworks/38
+Completed 302 Found in 911ms (ActiveRecord: 3.6ms | Allocations: 4412)
+
+
+Started GET "/artworks/38" for 127.0.0.1 at 2023-11-14 12:33:32 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 50)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 5843)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 6435)
+
+

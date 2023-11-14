@@ -1,3 +1,6 @@
+require 'net/http'
+require 'uri'
+require 'json'
 class ImageSearchController < ApplicationController
   before_action :require_login, only: [:upload, :search]
   def upload
@@ -5,6 +8,8 @@ class ImageSearchController < ApplicationController
   end
   def search
     if params[:file].present?
+      base64_image = convert_to_base64(params[:file])
+      artwork_id = get_artwork_id_from_api(base64_image)
       # Simulate artwork identification by fetching a pre-stored artwork
       # @artwork = Artwork.find_by(id: params[:id])
 
@@ -13,7 +18,7 @@ class ImageSearchController < ApplicationController
         @artwork = nil
       else
         #fetch default artwork
-        @artwork = Artwork.find_by(id: '1')
+        @artwork = Artwork.find_by(id: artwork_id)
       end
 
       if @artwork
@@ -34,4 +39,25 @@ class ImageSearchController < ApplicationController
     user.artworks_history.push(artwork_id)
     user.save
   end
+
+  def get_artwork_id_from_api(base64_image)
+    uri = URI('https://pm9i46r4p5.execute-api.us-east-1.amazonaws.com/default/ArtRecognition')
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    request = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
+    request.body = { image: base64_image }.to_json
+
+    response = http.request(request)
+    if response.code == '200'
+      JSON.parse(response.body)
+    else
+      nil
+    end
+  end
+
+  def convert_to_base64(file)
+    # Read the file and encode it
+    Base64.encode64(File.read(file.tempfile))
+  end
+
 end
