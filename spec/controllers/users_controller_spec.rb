@@ -44,14 +44,14 @@ RSpec.describe UsersController, type: :controller do
     end
 
     it 'assigns the current user' do
-      expect(assigns(:current_user)).to eq(user)
+      expect(assigns(:user)).to eq(user)
     end
 
     it 'renders the show template' do
       expect(response).to render_template(:show)
     end
   end
-
+  
   describe 'GET #edit' do
     let(:user) { create(:user) }  # Assuming you're using FactoryBot for fixtures
 
@@ -85,7 +85,7 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it 'redirects to the show page with a notice' do
-        expect(response).to redirect_to(user_path(user))
+        expect(response).to redirect_to(user_profile_path(user))
         expect(flash[:notice]).to be_present
       end
     end

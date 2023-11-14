@@ -67,6 +67,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Rails::Controller::Testing::TemplateAssertions, type: :controller
   config.include Rails::Controller::Testing::Integration, type: :controller
+  config.include SessionsHelper, type: :controller
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
