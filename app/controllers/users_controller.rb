@@ -16,7 +16,9 @@ class UsersController < ApplicationController
 
   def show #login in successfully
     @user ||= User.find_by(id: session[:user_id])
-    @random_artworks = Artwork.order(Arel.sql('RANDOM()')).limit(10)
+    #@random_artworks = Artwork.order(Arel.sql('RANDOM()')).limit(10)
+    @random_artworks = Artwork.order(Arel.sql('RANDOM()')).distinct(:some_unique_attribute).limit(10)
+
   end
 
   def edit

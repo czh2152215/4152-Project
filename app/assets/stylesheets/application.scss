@@ -23,3 +23,66 @@
 }
 
 
+.page-header {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.header-link:hover {
+  background-color: #e2e2e2;
+}
+
+.artworks-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.artwork-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.artwork-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.artwork-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.artwork-title {
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.no-artworks {
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
