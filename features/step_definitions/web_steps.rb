@@ -28,6 +28,8 @@ end
 
 Then('I should be redirected to the {string} page') do |page_name|
   path = case page_name
+         when "edit profile"
+           edit_user_path(@user)
          when "login"
            login_path
          when "Main"
@@ -70,4 +72,16 @@ end
 When('I go to the edit user page') do
   visit user_path(@user)
   click_link 'Edit My Account'
+end
+
+When('I attach the file {string} to {string}') do |file_path, field|
+  attach_file(field, Rails.root.join(file_path))
+end
+
+Then('I should see my profile picture displayed on my profile') do
+    if @user.profile_picture.attached?
+      expect(page).to have_css('img.profile-picture')
+    else
+      expect(page).to have_content('No profile picture uploaded.')
+    end
 end

@@ -4,6 +4,8 @@ Feature: User Profile and User information Update
 
   Scenario: Updating user information successfully
     Given I am a logged-in user
+    When I press "My Profile"
+    Then I should be redirected to the "user's profile" page
     When I go to the edit user page
     And I fill in "username" with "updateduser"
     And I press "update"
@@ -12,6 +14,8 @@ Feature: User Profile and User information Update
 
   Scenario: Unsuccessful information update due to empty username
     Given I am a logged-in user
+    When I press "My Profile"
+    Then I should be redirected to the "user's profile" page
     When I go to the edit user page
     And I fill in "username" with ""
     And I press "update"
@@ -50,7 +54,7 @@ Feature: User Profile and User information Update
     And I fill in "password" with "newpassword"
     And I press "update"
     Then I should be redirected to the "user's profile" page
-    When I press "Logout"
+    When I press "Log Out"
     Then I should be logged out
     And I should be redirected to the "homepage" page
     When I press "Login"
@@ -61,3 +65,20 @@ Feature: User Profile and User information Update
     Then I should be redirected to the "Main" page
     And I should see "Welcome, user1"
 
+  Scenario: No profile-picture with new user
+    Given I am a logged-in user
+    When I press "My Profile"
+    Then I should be redirected to the "user's profile" page
+    And I should see "No profile picture uploaded."
+
+  Scenario: Upload new profile-picture
+    Given I am a logged-in user
+    When I press "My Profile"
+    Then I should be redirected to the "user's profile" page
+    When I press "Edit my account"
+    Then I should be redirected to the "edit profile" page
+    When I attach the file "features/support/fixtures/starry_night.jpeg" to "Profile picture"
+    And I press "update"
+    Then I should be redirected to the "user's profile" page
+    And I should see "User Info Updated"
+    Then I should see my profile picture displayed on my profile
