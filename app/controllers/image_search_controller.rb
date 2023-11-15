@@ -10,12 +10,14 @@ class ImageSearchController < ApplicationController
     if params[:file].present?
       base64_image = convert_to_base64(params[:file])
       artwork_id = get_artwork_id_from_api(base64_image)
-      
+      # Simulate artwork identification by fetching a pre-stored artwork
+      # @artwork = Artwork.find_by(id: params[:id])
+
       # only for test purpose, need to update once image recognition is implemented
       if params[:file].original_filename == 'no_match_image.jpeg'
         @artwork = nil
       else
-        #fetch artwork
+        #fetch default artwork
         @artwork = Artwork.find_by(id: artwork_id)
       end
 

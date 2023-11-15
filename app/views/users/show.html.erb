@@ -11,4 +11,23 @@
   <%= link_to 'View Profile', user_profile_path(@user), class: 'btn btn-info' %>
   <%= link_to 'Logout', logout_path, method: :get, class: 'btn btn-danger' %>
 
+  <!-- Random artworks section -->
+  <div class="random-artworks-section">
+    <h2>Discover Artworks</h2>
+    <% if @random_artworks.present? %>
+      <div class="artwork-list">
+        <% @random_artworks.each do |artwork| %>
+          <div class="artwork-item">
+            <h3><%= artwork.artwork_name %></h3>
+            <p>By: <%= artwork.author %></p>
+            <p>Year: <%= artwork.year %></p>
+            <p><%= artwork.background_information %></p>
+            <%= image_tag artwork.image_url, alt: artwork.artwork_name, class: 'img-responsive' %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>No artworks available at the moment.</p>
+    <% end %>
+  </div>
 <% end %>

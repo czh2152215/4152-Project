@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # User registration successful, handle as needed (e.g., sign them in).
-      redirect_to root_path, notice: 'Registration successful!'
+      redirect_to root_path, notice: 'Registration Successful!'
     else
       render 'register'
     end
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show #login in successfully
     @user ||= User.find_by(id: session[:user_id])
+    @random_artworks = Artwork.order(Arel.sql('RANDOM()')).limit(10)
   end
 
   def edit

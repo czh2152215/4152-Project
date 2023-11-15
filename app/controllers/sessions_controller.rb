@@ -31,6 +31,16 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
   end
 
+  # def welcome
+  #   # Get ten random artworks in welcome page
+  #   if session[:user_id]
+  #     @user = User.find(session[:user_id])
+  #     @random_artworks = Artwork.order(Arel.sql('RANDOM()')).limit(10)
+  #   else
+  #     redirect_to login_path, alert: "You must be logged in to access this page."
+  #   end
+  # end
+
   # Define the log_out method to log the user out by removing the session
   # def log_out
   #   session.delete(:user_id)

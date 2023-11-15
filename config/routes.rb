@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users, except: :index
-  resources :users, only: [:edit, :update]
+  #resources :users, only: [:edit, :update]
+  resources :users, except: [:index]
   resources :artworks
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#login', as: 'login'
   post 'login', to: 'sessions#create'
+  # get 'welcome', to: 'sessions#welcome', as: 'welcome'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'register', to: 'users#register', as: 'register'
   post 'register', to: 'users#create'
