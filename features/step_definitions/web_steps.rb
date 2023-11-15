@@ -28,12 +28,18 @@ end
 
 Then('I should be redirected to the {string} page') do |page_name|
   path = case page_name
+         when "login"
+           login_path
+         when "Main"
+           user = User.find_by(id: @user.id)
+           raise "No user found with id" unless user
+           user_path(user)
          when "homepage"
            root_path
          when "user's profile"
            user = User.find_by(id: @user.id)
            raise "No user found with id" unless user
-           user_path(user)
+           user_profile_path(user)
          when "registration"
           register_path
          else
@@ -63,5 +69,5 @@ end
 
 When('I go to the edit user page') do
   visit user_path(@user)
-  click_link 'Edit my account'
+  click_link 'Edit My Account'
 end

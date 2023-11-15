@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   # get 'welcome', to: 'sessions#welcome', as: 'welcome'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  delete 'logout', to: 'sessions#destroy'
+
   get 'register', to: 'users#register', as: 'register'
   post 'register', to: 'users#create'
   get 'upload', to: 'image_search#upload', as: 'upload'

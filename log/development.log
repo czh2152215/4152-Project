@@ -16592,3 +16592,1478 @@ Please pass the class as a keyword argument:
 Completed 200 OK in 250ms (Views: 176.0ms | ActiveRecord: 2.2ms | Allocations: 80020)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-15 01:18:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.4ms | Allocations: 452)
+  Rendered layout layouts/application.html.erb (Duration: 2276.9ms | Allocations: 80091)
+Completed 200 OK in 2304ms (Views: 2293.7ms | ActiveRecord: 0.0ms | Allocations: 82774)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 01:18:25 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1782)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 7815)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.0ms | Allocations: 8134)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 01:18:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Logging in failed!
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.7ms | Allocations: 347)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 6379)
+Completed 200 OK in 111ms (Views: 23.9ms | ActiveRecord: 0.5ms | Allocations: 24146)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-11-15 01:18:31 -0500
+Processing by UsersController#register as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 4.9ms | Allocations: 1793)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 7830)
+Completed 200 OK in 65ms (Views: 31.5ms | ActiveRecord: 0.2ms | Allocations: 15961)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-11-15 01:18:35 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"tt", "email"=>"tt@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tt@columbia.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (9.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "artworks_history") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["username", "tt"], ["email", "tt@columbia.edu"], ["password_digest", "[FILTERED]"], ["artworks_history", nil]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 200ms (ActiveRecord: 12.7ms | Allocations: 4965)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 01:18:35 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 6300)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms | Allocations: 6553)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 01:18:40 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 557)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 6589)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 6841)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 01:18:42 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 179ms (ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 01:18:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 59.9ms | Allocations: 17297)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 82.3ms | Allocations: 23655)
+Completed 200 OK in 203ms (Views: 87.7ms | ActiveRecord: 1.4ms | Allocations: 38447)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 01:18:54 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1188)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 7528)
+Completed 200 OK in 36ms (Views: 30.5ms | ActiveRecord: 0.1ms | Allocations: 8382)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2023-11-15 01:18:57 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1430)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 7767)
+Completed 200 OK in 40ms (Views: 34.5ms | ActiveRecord: 0.1ms | Allocations: 8645)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2023-11-15 01:19:03 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"profile_picture"=>#<ActionDispatch::Http::UploadedFile:0x00000200bdad25e0 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-50096-81d4d4.png>, @content_type="image/png", @original_filename="book_club_er.png", @headers="Content-Disposition: form-data; name=\"user[profile_picture]\"; filename=\"book_club_er.png\"\r\nContent-Type: image/png\r\n">, "username"=>"tt", "email"=>"tt@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"update", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "nn0ljbivqttlo80ikgslzoysk7iw"], ["filename", "book_club_er.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 560015], ["checksum", "AXClVI/UV/6OhxhnYQUXaw=="], ["created_at", "2023-11-15 06:19:04.041877"]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "profile_picture"], ["record_type", "User"], ["record_id", 3], ["blob_id", 1], ["created_at", "2023-11-15 06:19:04.045020"]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[36m  Disk Storage (3.5ms) [0m[32mUploaded file to key: nn0ljbivqttlo80ikgslzoysk7iw (checksum: AXClVI/UV/6OhxhnYQUXaw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ecd5e603-7915-411f-b47d-a3fe82d55157) to Async(default) with arguments: #<GlobalID:0x00000200bdc8bb70 @uri=#<URI::GID gid://smart-art-guide/ActiveStorage::Blob/1>>
+[ActiveJob] ↳ app/controllers/users_controller.rb:30:in `update'
+Redirected to http://127.0.0.1:8080/users/3/profile
+Completed 302 Found in 221ms (ActiveRecord: 3.2ms | Allocations: 42153)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 01:19:04 -0500
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157] Performing ActiveStorage::AnalyzeJob (Job ID: ecd5e603-7915-411f-b47d-a3fe82d55157) from Async(default) enqueued at 2023-11-15T06:19:04.143881600Z with arguments: #<GlobalID:0x00000200bd8f47a0 @uri=#<URI::GID gid://smart-art-guide/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157]   [1m[36mActiveStorage::Blob Update (1.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  Rendered users/profile.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3056)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ecd5e603-7915-411f-b47d-a3fe82d55157] Performed ActiveStorage::AnalyzeJob (Job ID: ecd5e603-7915-411f-b47d-a3fe82d55157) from Async(default) in 96.08ms
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 68.2ms | Allocations: 17869)
+Completed 200 OK in 76ms (Views: 68.9ms | ActiveRecord: 2.4ms | Allocations: 18968)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 01:19:04 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.9ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA2OjI0OjA0LjQ3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--63784413aa34be3e62534df5033d78e42db8cb98/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA2OjI0OjA0LjQ3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--63784413aa34be3e62534df5033d78e42db8cb98/book_club_er.png
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 2280)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA2OjI0OjA0LjQ3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--63784413aa34be3e62534df5033d78e42db8cb98/book_club_er.png" for 127.0.0.1 at 2023-11-15 01:19:04 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 239)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 01:19:10 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 6625)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.1ms | Allocations: 6879)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 01:19:13 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2045)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 8478)
+Completed 200 OK in 52ms (Views: 47.3ms | ActiveRecord: 0.1ms | Allocations: 10400)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 01:19:18 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  Rendered users/profile.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2410)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 8776)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 0.3ms | Allocations: 9660)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA2OjI0OjA0LjQ3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--63784413aa34be3e62534df5033d78e42db8cb98/book_club_er.png" for 127.0.0.1 at 2023-11-15 01:19:19 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 242)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 01:19:57 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  Rendered users/profile.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1418)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 7757)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.2ms | Allocations: 8534)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA2OjI0OjA0LjQ3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--63784413aa34be3e62534df5033d78e42db8cb98/book_club_er.png" for 127.0.0.1 at 2023-11-15 01:19:57 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 01:19:58 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 7233)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 0.2ms | Allocations: 8008)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 01:19:59 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8080/upload
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 788)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 01:19:59 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 7239)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.1ms | Allocations: 8037)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 01:20:04 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000200bd1375d0 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-50096-jz8gj7.png>, @content_type="image/png", @original_filename="book_club_er.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"book_club_er.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8080/artworks/124
+Completed 302 Found in 464ms (ActiveRecord: 1.9ms | Allocations: 5751)
+
+
+Started GET "/artworks/124" for 127.0.0.1 at 2023-11-15 01:20:05 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"124"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 337)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 6943)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 0.1ms | Allocations: 7750)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 01:20:48 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 01:20:48 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 6301)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 6591)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 01:20:50 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 687)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 6719)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 6968)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 01:20:52 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 180ms (ActiveRecord: 0.2ms | Allocations: 797)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 01:20:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2415)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 8754)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.5ms | Allocations: 9616)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA2OjI0OjA0LjQ3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--63784413aa34be3e62534df5033d78e42db8cb98/book_club_er.png" for 127.0.0.1 at 2023-11-15 01:20:53 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 146)
+
+
+Started GET "/artworks/5" for 127.0.0.1 at 2023-11-15 01:21:03 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 6639)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.1ms | Allocations: 7237)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 01:23:20 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  [1m[36mArtwork Load (0.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:36
+  Rendered users/profile.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1883)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 8221)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.2ms | Allocations: 9002)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA2OjI0OjA0LjQ3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--63784413aa34be3e62534df5033d78e42db8cb98/book_club_er.png" for 127.0.0.1 at 2023-11-15 01:23:20 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 01:58:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.7ms | Allocations: 452)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 335.0ms | Allocations: 63143)
+Completed 200 OK in 365ms (Views: 353.0ms | ActiveRecord: 0.7ms | Allocations: 65826)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 01:58:10 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 436)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 01:58:10 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 6314)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 6569)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 01:58:11 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1774)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 7810)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.0ms | Allocations: 8128)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 01:58:14 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 180ms (ActiveRecord: 0.1ms | Allocations: 979)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 01:58:14 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 102.0ms | Allocations: 36593)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 126.5ms | Allocations: 43072)
+Completed 200 OK in 138ms (Views: 129.6ms | ActiveRecord: 1.8ms | Allocations: 44625)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 01:58:14 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjAzOjE0LjgzN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0125ecf97e269be8a52b01baf7ae936ea7caba63/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjAzOjE0LjgzN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0125ecf97e269be8a52b01baf7ae936ea7caba63/book_club_er.png
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 2378)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjAzOjE0LjgzN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0125ecf97e269be8a52b01baf7ae936ea7caba63/book_club_er.png" for 127.0.0.1 at 2023-11-15 01:58:14 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:03:15 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 331)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 02:03:15 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 6291)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 6545)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 02:03:16 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 566)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 6601)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.0ms | Allocations: 6853)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 02:06:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 191ms (ActiveRecord: 6.0ms | Allocations: 1042)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:06:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2449)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 8795)
+Completed 200 OK in 37ms (Views: 33.1ms | ActiveRecord: 0.7ms | Allocations: 9645)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:06:08 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjExOjA5LjAxMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--671d2e462fbda53f6a926af577e1f0f5901c4afd/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjExOjA5LjAxMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--671d2e462fbda53f6a926af577e1f0f5901c4afd/book_club_er.png
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 1188)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjExOjA5LjAxMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--671d2e462fbda53f6a926af577e1f0f5901c4afd/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:06:09 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 155)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:08:26 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 40.5ms | Allocations: 20799)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 68.1ms | Allocations: 27909)
+Completed 200 OK in 97ms (Views: 73.9ms | ActiveRecord: 5.4ms | Allocations: 35236)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjExOjA5LjAxMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--671d2e462fbda53f6a926af577e1f0f5901c4afd/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:08:28 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 5ms (ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:08:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:09:35 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 394)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 02:09:37 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 7264)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.0ms | Allocations: 7940)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 02:09:38 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 7011)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.0ms | Allocations: 7324)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 02:09:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 189ms (ActiveRecord: 2.8ms | Allocations: 5740)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:09:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 43.6ms | Allocations: 20787)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 69.2ms | Allocations: 27277)
+Completed 200 OK in 83ms (Views: 72.1ms | ActiveRecord: 1.7ms | Allocations: 29359)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjExOjA5LjAxMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--671d2e462fbda53f6a926af577e1f0f5901c4afd/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:09:41 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 6ms (ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:09:42 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 328)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 02:09:42 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 6401)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms | Allocations: 6654)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 02:15:12 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 254)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 7244)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 7955)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 02:15:14 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.6ms | Allocations: 967)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 7110)
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 7423)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 02:15:18 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 194ms (ActiveRecord: 2.5ms | Allocations: 5308)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:15:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 37.1ms | Allocations: 19429)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 61.6ms | Allocations: 25872)
+Completed 200 OK in 73ms (Views: 64.6ms | ActiveRecord: 0.8ms | Allocations: 27942)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:15:19 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjIwOjE5LjQxNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8156e9eb9dfe0b1ea5c5a2119210ebb9e5db61bd/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjIwOjE5LjQxNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8156e9eb9dfe0b1ea5c5a2119210ebb9e5db61bd/book_club_er.png
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms | Allocations: 2017)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjIwOjE5LjQxNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8156e9eb9dfe0b1ea5c5a2119210ebb9e5db61bd/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:15:19 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 220)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:15:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:15:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:16:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:16:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:16:39 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 39.1ms | Allocations: 20794)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 27903)
+Completed 200 OK in 89ms (Views: 68.2ms | ActiveRecord: 4.5ms | Allocations: 35177)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjIwOjE5LjQxNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8156e9eb9dfe0b1ea5c5a2119210ebb9e5db61bd/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:16:40 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 5ms (ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:16:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:19:17 -0500
+  
+ArgumentError (Invalid route name, already in use: 'logout' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:21:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:19:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 38.4ms | Allocations: 20799)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 27909)
+Completed 200 OK in 90ms (Views: 69.5ms | ActiveRecord: 4.0ms | Allocations: 35239)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjIwOjE5LjQxNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8156e9eb9dfe0b1ea5c5a2119210ebb9e5db61bd/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:19:30 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 9ms (ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:19:32 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 385)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 02:19:32 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 6491)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms | Allocations: 6856)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 02:20:43 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 2.5ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 6993)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 7306)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 02:20:44 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Logging in failed!
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.5ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 6415)
+Completed 200 OK in 33ms (Views: 27.3ms | ActiveRecord: 0.3ms | Allocations: 7843)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-11-15 02:27:13 -0500
+Processing by UsersController#register as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 154.5ms | Allocations: 18245)
+  Rendered layout layouts/application.html.erb (Duration: 181.4ms | Allocations: 24314)
+Completed 200 OK in 189ms (Views: 182.6ms | ActiveRecord: 0.0ms | Allocations: 24681)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-11-15 02:32:32 -0500
+Processing by UsersController#register as HTML
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 3.0ms | Allocations: 1542)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 8324)
+Completed 200 OK in 50ms (Views: 36.1ms | ActiveRecord: 0.0ms | Allocations: 13319)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-11-15 02:32:39 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"dd", "email"=>"dd@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dd@columbia.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "artworks_history") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["username", "dd"], ["email", "dd@columbia.edu"], ["password_digest", "[FILTERED]"], ["artworks_history", nil]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 201ms (ActiveRecord: 17.0ms | Allocations: 5128)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 02:32:39 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 225)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 6493)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 6890)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 02:38:55 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 2.0ms | Allocations: 941)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 6978)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 7291)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 02:38:58 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 183ms (ActiveRecord: 2.3ms | Allocations: 1193)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:38:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 40.0ms | Allocations: 19443)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 25905)
+Completed 200 OK in 220ms (Views: 64.7ms | ActiveRecord: 0.7ms | Allocations: 40561)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:38:58 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjQzOjU5LjA4NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c0f0f25d01e983384e716c0ba28845eb524c495d/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjQzOjU5LjA4NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c0f0f25d01e983384e716c0ba28845eb524c495d/book_club_er.png
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 2024)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjQzOjU5LjA4NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c0f0f25d01e983384e716c0ba28845eb524c495d/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:38:59 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 221)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 02:39:40 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:36
+  Rendered users/profile.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3103)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 9447)
+Completed 200 OK in 42ms (Views: 36.2ms | ActiveRecord: 0.3ms | Allocations: 10309)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjQzOjU5LjA4NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c0f0f25d01e983384e716c0ba28845eb524c495d/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:39:40 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms | Allocations: 146)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 02:47:29 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 02:47:29 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 6277)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 6530)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 02:47:30 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 551)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 6588)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 6840)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 02:47:32 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 182ms (ActiveRecord: 2.6ms | Allocations: 1032)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 02:47:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2446)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 8790)
+Completed 200 OK in 36ms (Views: 30.1ms | ActiveRecord: 0.9ms | Allocations: 9642)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:47:33 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjUyOjMzLjIwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4fd2903d85ee96f86b809668cb3ecc08d3e74fbc/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjUyOjMzLjIwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4fd2903d85ee96f86b809668cb3ecc08d3e74fbc/book_club_er.png
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 1190)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjUyOjMzLjIwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4fd2903d85ee96f86b809668cb3ecc08d3e74fbc/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:47:33 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 154)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 02:47:39 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:36
+  Rendered users/profile.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1856)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 8294)
+Completed 200 OK in 37ms (Views: 33.1ms | ActiveRecord: 0.4ms | Allocations: 9088)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA3OjUyOjMzLjIwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4fd2903d85ee96f86b809668cb3ecc08d3e74fbc/book_club_er.png" for 127.0.0.1 at 2023-11-15 02:47:39 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 03:00:33 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:36
+  Rendered users/profile.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1924)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 8361)
+Completed 200 OK in 36ms (Views: 29.7ms | ActiveRecord: 3.5ms | Allocations: 9436)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 03:00:33 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA4OjA1OjMzLjU3M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0ae4bf93936a5bd63ddf0afe086e38b9e3cf0133/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA4OjA1OjMzLjU3M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0ae4bf93936a5bd63ddf0afe086e38b9e3cf0133/book_club_er.png
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1192)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDA4OjA1OjMzLjU3M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0ae4bf93936a5bd63ddf0afe086e38b9e3cf0133/book_club_er.png" for 127.0.0.1 at 2023-11-15 03:00:33 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 154)
+
+
+Started GET "/artworks/124" for 127.0.0.1 at 2023-11-15 03:05:55 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"124"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 332)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 6965)
+Completed 200 OK in 36ms (Views: 30.4ms | ActiveRecord: 0.2ms | Allocations: 7781)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 03:05:58 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 03:05:58 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 6295)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 6548)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 03:05:59 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 6600)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 6852)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 03:06:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"dd", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/4
+Completed 302 Found in 181ms (ActiveRecord: 0.1ms | Allocations: 758)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2023-11-15 03:06:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1693)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 8038)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 0.6ms | Allocations: 8863)
+
+
+Started GET "/users/4/profile" for 127.0.0.1 at 2023-11-15 03:06:04 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 1.6ms | Allocations: 733)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 7077)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.1ms | Allocations: 7852)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2023-11-15 03:17:05 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 125.4ms | Allocations: 17775)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 151.6ms | Allocations: 24224)
+Completed 200 OK in 159ms (Views: 152.2ms | ActiveRecord: 2.5ms | Allocations: 25348)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2023-11-15 03:18:19 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 614)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 6958)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.1ms | Allocations: 7752)
+
+
+Started PATCH "/users/4" for 127.0.0.1 at 2023-11-15 03:18:23 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"dd", "email"=>"dd@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"update", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "dd"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Redirected to http://127.0.0.1:8080/users/4/profile
+Completed 302 Found in 191ms (ActiveRecord: 3.8ms | Allocations: 3354)
+
+
+Started GET "/users/4/profile" for 127.0.0.1 at 2023-11-15 03:18:23 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 2.2ms | Allocations: 761)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 7110)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.2ms | Allocations: 7910)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2023-11-15 03:20:20 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 614)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 6957)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.1ms | Allocations: 7741)
+
+
+Started PATCH "/users/4" for 127.0.0.1 at 2023-11-15 03:20:23 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"dd@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"update", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", ""], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1145)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 7539)
+Completed 200 OK in 35ms (Views: 26.3ms | ActiveRecord: 1.8ms | Allocations: 10831)
+
+
+Started PATCH "/users/4" for 127.0.0.1 at 2023-11-15 03:20:39 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"update", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", ""], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", ""], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1440)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 7834)
+Completed 200 OK in 37ms (Views: 27.6ms | ActiveRecord: 1.6ms | Allocations: 11723)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 03:55:29 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:8080/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 03:55:29 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 6370)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms | Allocations: 6623)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-11-15 03:55:30 -0500
+Processing by UsersController#register as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 1.1ms | Allocations: 875)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 6936)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 7205)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-11-15 04:10:15 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ddd", "email"=>"zc2715@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ddd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zc2715@columbia.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 1.5ms | Allocations: 1469)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 7571)
+Completed 200 OK in 39ms (Views: 28.4ms | ActiveRecord: 3.8ms | Allocations: 10885)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-11-15 04:10:23 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"zc2715@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zc2715@columbia.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 2.2ms | Allocations: 1831)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 7865)
+Completed 200 OK in 33ms (Views: 24.8ms | ActiveRecord: 1.3ms | Allocations: 10942)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-11-15 04:13:07 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 1.8ms | Allocations: 2241)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 8274)
+Completed 200 OK in 36ms (Views: 27.4ms | ActiveRecord: 1.4ms | Allocations: 11387)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 04:17:05 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 557)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 6594)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 6846)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 04:23:42 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 6301)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 6554)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 04:24:36 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 578)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 6615)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 6867)
+
+
