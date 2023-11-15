@@ -18067,3 +18067,1088 @@ Processing by SessionsController#login as HTML
 Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 6867)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:02:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.6ms | Allocations: 446)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 176.5ms | Allocations: 59005)
+Completed 200 OK in 186ms (Views: 181.3ms | ActiveRecord: 0.6ms | Allocations: 61439)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:02:51 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5885)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.1ms | Allocations: 6122)
+
+
+Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 13:02:55 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 16.9ms | Allocations: 5317)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 10937)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.7ms | Allocations: 11926)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:02:58 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 5987)
+Completed 200 OK in 29ms (Views: 29.0ms | ActiveRecord: 0.2ms | Allocations: 6225)
+
+
+Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 13:03:00 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 1.6ms | Allocations: 756)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 6352)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 7130)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:03:03 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5874)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 6110)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 13:03:04 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1812)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 7116)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.1ms | Allocations: 8165)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:03:06 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 5865)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.1ms | Allocations: 6101)
+
+
+Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 13:03:07 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 2.0ms | Allocations: 756)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6348)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.1ms | Allocations: 7134)
+
+
+Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 13:03:09 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 1.4ms | Allocations: 756)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 6348)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.2ms | Allocations: 7113)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 13:03:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (2.1ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 29.9ms | Allocations: 13098)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 40.9ms | Allocations: 18692)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 2.6ms | Allocations: 20054)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:05:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.1ms | Allocations: 446)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 151.3ms | Allocations: 59095)
+Completed 200 OK in 160ms (Views: 156.0ms | ActiveRecord: 0.7ms | Allocations: 61529)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 13:05:49 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1557)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 7214)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.1ms | Allocations: 7515)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 13:05:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"sc", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sc"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/2
+Completed 302 Found in 219ms (ActiveRecord: 0.2ms | Allocations: 1059)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-15 13:05:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 51.5ms | Allocations: 17135)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 59.3ms | Allocations: 22865)
+Completed 200 OK in 64ms (Views: 58.6ms | ActiveRecord: 1.7ms | Allocations: 24377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 13:05:56 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 558)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 6213)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.1ms | Allocations: 6452)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 13:05:59 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 537)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 6192)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.1ms | Allocations: 6431)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 13:06:01 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 540)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 6184)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 6419)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:07:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 446)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 150.1ms | Allocations: 59063)
+Completed 200 OK in 157ms (Views: 153.9ms | ActiveRecord: 0.8ms | Allocations: 61497)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-11-15 13:07:46 -0500
+  
+ActionController::RoutingError (uninitialized constant PagesController):
+  
+Started GET "/login" for 127.0.0.1 at 2023-11-15 13:08:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 17.0ms | Allocations: 3081)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 151.5ms | Allocations: 61383)
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.7ms | Allocations: 65395)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+    22:       </li>
+    23:       <% if user_signed_in? %>
+    24:         <li class="nav-item">
+    25:           <%= link_to 'Home', user_path, class: 'nav-link' %>
+    26:         </li>
+    27:         <li class="nav-item">
+    28:           <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+  
+app/views/layouts/application.html.erb:25
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:09:01 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1788)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2507)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <title>SmartArtGuide</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand ms-3" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Home', , class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", register_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  </nav>
+
+  <% flash.each do |key, message| %>
+    <div class="alert alert-dismissible <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <script>
+    // Your additional scripts
+  </script>
+</body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <title>SmartArtGuide</title>
+5:      <%= csrf_meta_tags %>
+6:      <%= csp_meta_tag %>
+7:      <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+8:      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+9:      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+10:    </head>
+11:    
+12:    <body>
+13:      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+14:        <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand ms-3" %>
+15:        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+16:          <span class="navbar-toggler-icon"></span>
+17:        </button>
+18:        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+19:        <ul class="navbar-nav ml-auto">
+20:          <li class="nav-item">
+21:            <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+22:          </li>
+23:          <% if user_signed_in? %>
+24:            <li class="nav-item">
+25:              <%= link_to 'Home', , class: 'nav-link' %>
+26:            </li>
+27:            <li class="nav-item">
+28:              <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+29:            </li>
+30:            <li class="nav-item">
+31:              <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+32:            </li>
+33:          <% else %>
+34:            <li class="nav-item">
+35:              <%= link_to "Login", login_path, class: "nav-link" %>
+36:            </li>
+37:            <li class="nav-item">
+38:              <%= link_to "Sign Up", register_path, class: "nav-link" %>
+39:            </li>
+40:          <% end %>
+41:        </ul>
+42:      </div>
+43:      </nav>
+44:    
+45:      <% flash.each do |key, message| %>
+46:        <div class="alert alert-dismissible <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+47:          <%= message %>
+48:          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+49:        </div>
+50:      <% end %>
+51:    
+52:      <%= yield %>
+53:    
+54:      <footer>
+55:        <!-- Footer content -->
+56:      </footer>
+57:    
+58:      <script>
+59:        // Your additional scripts
+60:      </script>
+61:    </body>
+62:    </html>
+  
+app/views/layouts/application.html.erb:25: syntax error, unexpected ','
+Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 13:09:02 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"2"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 15.2ms | Allocations: 5461)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 6905)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.7ms | Allocations: 13301)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <title>SmartArtGuide</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand ms-3" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Home', , class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", register_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  </nav>
+
+  <% flash.each do |key, message| %>
+    <div class="alert alert-dismissible <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <script>
+    // Your additional scripts
+  </script>
+</body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <title>SmartArtGuide</title>
+5:      <%= csrf_meta_tags %>
+6:      <%= csp_meta_tag %>
+7:      <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+8:      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+9:      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+10:    </head>
+11:    
+12:    <body>
+13:      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+14:        <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand ms-3" %>
+15:        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+16:          <span class="navbar-toggler-icon"></span>
+17:        </button>
+18:        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+19:        <ul class="navbar-nav ml-auto">
+20:          <li class="nav-item">
+21:            <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+22:          </li>
+23:          <% if user_signed_in? %>
+24:            <li class="nav-item">
+25:              <%= link_to 'Home', , class: 'nav-link' %>
+26:            </li>
+27:            <li class="nav-item">
+28:              <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+29:            </li>
+30:            <li class="nav-item">
+31:              <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+32:            </li>
+33:          <% else %>
+34:            <li class="nav-item">
+35:              <%= link_to "Login", login_path, class: "nav-link" %>
+36:            </li>
+37:            <li class="nav-item">
+38:              <%= link_to "Sign Up", register_path, class: "nav-link" %>
+39:            </li>
+40:          <% end %>
+41:        </ul>
+42:      </div>
+43:      </nav>
+44:    
+45:      <% flash.each do |key, message| %>
+46:        <div class="alert alert-dismissible <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+47:          <%= message %>
+48:          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+49:        </div>
+50:      <% end %>
+51:    
+52:      <%= yield %>
+53:    
+54:      <footer>
+55:        <!-- Footer content -->
+56:      </footer>
+57:    
+58:      <script>
+59:        // Your additional scripts
+60:      </script>
+61:    </body>
+62:    </html>
+  
+app/views/layouts/application.html.erb:25: syntax error, unexpected ','
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 13:09:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 25.0ms | Allocations: 13111)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 14671)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.3ms | Allocations: 16057)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <title>SmartArtGuide</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand ms-3" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Home', , class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", register_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  </nav>
+
+  <% flash.each do |key, message| %>
+    <div class="alert alert-dismissible <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <script>
+    // Your additional scripts
+  </script>
+</body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <title>SmartArtGuide</title>
+5:      <%= csrf_meta_tags %>
+6:      <%= csp_meta_tag %>
+7:      <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+8:      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+9:      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+10:    </head>
+11:    
+12:    <body>
+13:      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+14:        <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand ms-3" %>
+15:        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+16:          <span class="navbar-toggler-icon"></span>
+17:        </button>
+18:        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+19:        <ul class="navbar-nav ml-auto">
+20:          <li class="nav-item">
+21:            <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+22:          </li>
+23:          <% if user_signed_in? %>
+24:            <li class="nav-item">
+25:              <%= link_to 'Home', , class: 'nav-link' %>
+26:            </li>
+27:            <li class="nav-item">
+28:              <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+29:            </li>
+30:            <li class="nav-item">
+31:              <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+32:            </li>
+33:          <% else %>
+34:            <li class="nav-item">
+35:              <%= link_to "Login", login_path, class: "nav-link" %>
+36:            </li>
+37:            <li class="nav-item">
+38:              <%= link_to "Sign Up", register_path, class: "nav-link" %>
+39:            </li>
+40:          <% end %>
+41:        </ul>
+42:      </div>
+43:      </nav>
+44:    
+45:      <% flash.each do |key, message| %>
+46:        <div class="alert alert-dismissible <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+47:          <%= message %>
+48:          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+49:        </div>
+50:      <% end %>
+51:    
+52:      <%= yield %>
+53:    
+54:      <footer>
+55:        <!-- Footer content -->
+56:      </footer>
+57:    
+58:      <script>
+59:        // Your additional scripts
+60:      </script>
+61:    </body>
+62:    </html>
+  
+app/views/layouts/application.html.erb:25: syntax error, unexpected ','
+Started GET "/users/2" for 127.0.0.1 at 2023-11-15 13:09:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (2.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 23.0ms | Allocations: 1733)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 3291)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.1ms | Allocations: 4114)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <title>SmartArtGuide</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand ms-3" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Home', , class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", register_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  </nav>
+
+  <% flash.each do |key, message| %>
+    <div class="alert alert-dismissible <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <script>
+    // Your additional scripts
+  </script>
+</body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <title>SmartArtGuide</title>
+5:      <%= csrf_meta_tags %>
+6:      <%= csp_meta_tag %>
+7:      <%= stylesheet_link_tag 'https://bootswatch.com/5/lux/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'false' %>
+8:      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+9:      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+10:    </head>
+11:    
+12:    <body>
+13:      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+14:        <%= link_to 'SmartArtGuide', root_path, class: "navbar-brand ms-3" %>
+15:        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+16:          <span class="navbar-toggler-icon"></span>
+17:        </button>
+18:        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+19:        <ul class="navbar-nav ml-auto">
+20:          <li class="nav-item">
+21:            <%= link_to "Upload Photo", upload_path, class: "nav-link" %>
+22:          </li>
+23:          <% if user_signed_in? %>
+24:            <li class="nav-item">
+25:              <%= link_to 'Home', , class: 'nav-link' %>
+26:            </li>
+27:            <li class="nav-item">
+28:              <%= link_to "My Profile", user_profile_path(current_user), class: "nav-link" %>
+29:            </li>
+30:            <li class="nav-item">
+31:              <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+32:            </li>
+33:          <% else %>
+34:            <li class="nav-item">
+35:              <%= link_to "Login", login_path, class: "nav-link" %>
+36:            </li>
+37:            <li class="nav-item">
+38:              <%= link_to "Sign Up", register_path, class: "nav-link" %>
+39:            </li>
+40:          <% end %>
+41:        </ul>
+42:      </div>
+43:      </nav>
+44:    
+45:      <% flash.each do |key, message| %>
+46:        <div class="alert alert-dismissible <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>" role="alert">
+47:          <%= message %>
+48:          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+49:        </div>
+50:      <% end %>
+51:    
+52:      <%= yield %>
+53:    
+54:      <footer>
+55:        <!-- Footer content -->
+56:      </footer>
+57:    
+58:      <script>
+59:        // Your additional scripts
+60:      </script>
+61:    </body>
+62:    </html>
+  
+app/views/layouts/application.html.erb:25: syntax error, unexpected ','
+Started GET "/users/2" for 127.0.0.1 at 2023-11-15 13:10:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 32.9ms | Allocations: 17328)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 112.5ms | Allocations: 50672)
+Completed 200 OK in 198ms (Views: 116.7ms | ActiveRecord: 2.5ms | Allocations: 80350)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 13:10:12 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1578)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 7248)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.1ms | Allocations: 7699)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 13:10:14 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1676)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 6989)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.1ms | Allocations: 8035)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 13:10:16 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 541)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 6196)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.1ms | Allocations: 6435)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 13:10:22 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 537)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 6192)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.1ms | Allocations: 6431)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:10:23 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 218)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 6063)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 6299)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 13:10:28 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5890)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 6126)
+
+
+Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 13:10:28 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1208)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 6802)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 7643)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 13:10:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1738)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 7333)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.6ms | Allocations: 8157)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 13:13:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 26.7ms | Allocations: 17327)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 100.0ms | Allocations: 50748)
+Completed 200 OK in 172ms (Views: 103.9ms | ActiveRecord: 1.9ms | Allocations: 80435)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-15 13:13:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1737)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 7384)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 1.1ms | Allocations: 8210)
+
+
+Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 13:13:15 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1211)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 6852)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 7702)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 13:13:16 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1856)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 7171)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.1ms | Allocations: 8235)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-11-15 13:13:17 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1738)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7345)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 8178)
+
+

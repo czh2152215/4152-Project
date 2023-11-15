@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#login', as: 'login'
   post 'login', to: 'sessions#create'
+  get 'home', to: 'pages#home', as: 'home'
   # get 'welcome', to: 'sessions#welcome', as: 'welcome'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   delete 'logout', to: 'sessions#destroy'
