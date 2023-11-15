@@ -16378,3 +16378,217 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 1.3ms | Allocations: 8138)
 
 
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 00:15:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1737)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 7312)
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 1.2ms | Allocations: 8129)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 00:19:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 22.7ms | Allocations: 1738)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 7313)
+Completed 200 OK in 73ms (Views: 53.1ms | ActiveRecord: 1.6ms | Allocations: 8121)
+
+
+Started GET "/artworks/311" for 127.0.0.1 at 2023-11-15 00:19:07 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"311"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 311], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 50)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 5851)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.2ms | Allocations: 6448)
+
+
+Started GET "/artworks/136" for 127.0.0.1 at 2023-11-15 00:19:12 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"136"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5856)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 6453)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 00:19:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1736)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 7310)
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.8ms | Allocations: 8119)
+
+
+Started GET "/artworks/355" for 127.0.0.1 at 2023-11-15 00:20:04 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"355"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 355], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 5847)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.2ms | Allocations: 6445)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 00:22:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 43.5ms | Allocations: 1737)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 67.7ms | Allocations: 7419)
+Completed 200 OK in 75ms (Views: 68.2ms | ActiveRecord: 1.2ms | Allocations: 8243)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 00:26:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 446)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 211.1ms | Allocations: 58898)
+Completed 200 OK in 220ms (Views: 215.7ms | ActiveRecord: 1.1ms | Allocations: 61332)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 00:26:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1900)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 1992)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms | Allocations: 3516)
+
+
+  
+ActionView::Template::Error (undefined method `username!' for #<User id: 2, username: "sc", email: "sc@qq.com", password_digest: [FILTERED], artworks_history: []>):
+    1: <% if @user %>
+    2:   <p>Welcome, <%= @user.username! %></p>
+    3:   <% if @user && @user.profile_picture.attached? %>
+    4:     <%= image_tag @user.profile_picture, class: "img-fluid profile-picture" %>
+    5:   <% else %>
+  
+app/views/users/show.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-11-15 00:27:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.3ms | Allocations: 446)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 227.8ms | Allocations: 58988)
+Completed 200 OK in 236ms (Views: 231.2ms | ActiveRecord: 1.9ms | Allocations: 61422)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 00:27:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 37.0ms | Allocations: 17150)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 22784)
+Completed 200 OK in 62ms (Views: 55.0ms | ActiveRecord: 2.2ms | Allocations: 24312)
+
+
+Started GET "/users/2/" for 127.0.0.1 at 2023-11-15 00:28:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 31.3ms | Allocations: 17329)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 172.2ms | Allocations: 50354)
+Completed 200 OK in 250ms (Views: 176.0ms | ActiveRecord: 2.2ms | Allocations: 80020)
+
+

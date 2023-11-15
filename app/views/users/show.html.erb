@@ -1,16 +1,14 @@
-<p>Welcome</p>
-
 <% if @user %>
-  <p>Welcome, <%= @user.username %></p>
+  <p>Welcome, <%= @user.username%></p>
   <% if @user && @user.profile_picture.attached? %>
     <%= image_tag @user.profile_picture, class: "img-fluid profile-picture" %>
   <% else %>
-    <p>No profile picture uploaded.</p>
+    <p>No profile picture uploaded yet.</p>
   <% end %>
  <div class="page-header">
   <%= link_to 'Edit My Account', edit_user_path(@user), class: 'header-link' %>
   <%= link_to 'View Profile', user_profile_path(@user), class: 'header-link' %>
-  <%= link_to 'Logout', logout_path, method: :get, class: 'header-link' %>
+  <%= link_to 'Log Out', logout_path, method: :get, class: 'header-link' %>
 </div>
 
 <div class="artworks-feed">
