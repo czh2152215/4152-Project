@@ -6,7 +6,6 @@ class CreateArtworks < ActiveRecord::Migration[7.1]
       t.text :background_information
       t.string :author
       t.string :image_url
-      t.string :year
       t.timestamps
     end
   end
