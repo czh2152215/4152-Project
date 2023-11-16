@@ -18,13 +18,17 @@ class UsersController < ApplicationController
     @user ||= User.find_by(id: session[:user_id])
     #@random_artworks = Artwork.order(Arel.sql('RANDOM()')).limit(10)
     # @random_artworks = Artwork.select('DISTINCT ON (artworks.id) artworks.*').order('RANDOM()')
-    if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
-      # PostgreSQL-specific query
-      @random_artworks = Artwork.select('DISTINCT ON (artworks.id) artworks.*').order('RANDOM()')
-    else
-      # Fallback for SQLite and other databases
-      @random_artworks = Artwork.order('RANDOM()').distinct
-    end
+    # if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
+    #   # PostgreSQL-specific query
+    #   @random_artworks = Artwork.select('DISTINCT ON (artworks.id) artworks.*').order('RANDOM()')
+    # else
+    #   # Fallback for SQLite and other databases
+    #   @random_artworks = Artwork.order('RANDOM()').distinct
+    # end
+    #
+    artwork_ids = Artwork.pluck(:id).sample(10) # Fetch 10 random artwork IDs
+    @random_artworks = Artwork.where(id: artwork_ids)
+
 
   end
 
