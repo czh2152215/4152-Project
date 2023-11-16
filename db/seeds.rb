@@ -21,6 +21,7 @@ CSV.foreach(Rails.root.join('db', 'van_gogh_paintings.csv'), headers: true) do |
     uid: row['ID'],
     artwork_name: row['Title'],
     author: row['Artist'],
+    year: row['Year'],
     background_information: row['Description'],
     image_url: row['Image URL']
   )
