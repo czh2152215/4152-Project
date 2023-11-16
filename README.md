@@ -13,6 +13,8 @@
   
 
 # Minimal Viable Prototype(Heroku link): [SmartArtGuide](https://safe-ravine-39931-4dcfeebeaa67.herokuapp.com/)(iter1)
+# Minimal Viable Prototype(Heroku link): [SmartArtGuide](https://safe-ravine-39931-4dcfeebeaa67.herokuapp.com/)(iter2)
+
 
 
 
