@@ -16,7 +16,7 @@ require 'csv'
 User.create(username: 'admin', email: 'admin@admin.com', password: 'admin')
 
 # Create artworks with artwork_name, background_information, author, and image_url
-CSV.foreach('db/van_gogh_paintings.csv', headers: true) do |row|
+CSV.foreach(Rails.root.join('db', 'van_gogh_paintings.csv'), headers: true) do |row|
   Artwork.create(
     uid: row['ID'],
     artwork_name: row['Title'],
