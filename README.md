@@ -46,14 +46,21 @@
 # Functions
 
 - Users can register, log-in, log-out, and edit their information
+- Users now can view their profile page, edit their username, email or password
+- Users now can upload their own profile-picture
+- Users now can review their Artwork-History in the profile page
+- After user log in, they will be directed to the main page, Currently there are ten different artworks randomly recommended to the user, the user can choose their favorite artwork and click in to view the details!
+- User must be logged in to view the main page or upload photos, otherwise it will return "You must be logged in to access this page."
 - Users can upload images and get redirected to a detail page for that artwork, if the image cannot be recognized, we will return "No artwork found for the uploaded image."
-  - Image recognition will be implmented in our next iteration, currently upload a random picture will redirect to "Starry Night" details page by default
+  - The final detailed Image recognition will be implemented in our next iteration, currently upload a random picture will redirect to a random artwork page
   - To test the unhappy scenario, upload the image from this path: "features/support/fixtures/no_match_image.jpeg"
+  - 
 
 # Testing
 
-- run 'bundle exec cucumber': current coverage 95.8%
-- run 'bundle exec rspec': current coverage 100%
+- run 'bundle exec cucumber': current coverage 92.17%
+- run 'bundle exec rspec': current coverage 99.14%
+- combined test coverage: current coverage 99.13%
 
 # Deployment
 - We deploy our application on Heroku using the subsequent commands

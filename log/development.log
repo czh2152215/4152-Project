@@ -20477,3 +20477,21 @@ Processing by ImageSearchController#upload as HTML
 Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.1ms | Allocations: 8151)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-15 21:42:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 4.1ms | Allocations: 452)
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 923.1ms | Allocations: 63049)
+Completed 200 OK in 988ms (Views: 965.7ms | ActiveRecord: 2.1ms | Allocations: 65732)
+
+
