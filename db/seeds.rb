@@ -26,3 +26,5 @@ CSV.foreach('db/van_gogh_paintings.csv', headers: true) do |row|
     image_url: row['Image URL']
   )
 end
+
+puts 'Database seed successfully!'
