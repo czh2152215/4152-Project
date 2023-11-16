@@ -19152,341 +19152,1328 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 8178)
 
 
-Started GET "/" for 127.0.0.1 at 2023-11-15 15:44:16 -0500
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-15 15:47:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by SessionsController#welcome as HTML
   Rendering layout layouts/application.html.erb
   Rendering sessions/welcome.html.erb within layouts/application
-  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 446)
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.8ms | Allocations: 452)
+  Rendered layout layouts/application.html.erb (Duration: 646.1ms | Allocations: 36667)
+Completed 200 OK in 733ms (Views: 698.2ms | ActiveRecord: 0.0ms | Allocations: 39350)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 15:48:00 -0500
+Processing by ImageSearchController#upload as HTML
+Redirected to http://127.0.0.1:8080/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 55ms (ActiveRecord: 0.0ms | Allocations: 2223)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 15:48:00 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 37.2ms | Allocations: 1995)
+  Rendered layout layouts/application.html.erb (Duration: 138.7ms | Allocations: 8483)
+Completed 200 OK in 195ms (Views: 141.7ms | ActiveRecord: 0.0ms | Allocations: 9090)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 15:48:05 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 3.4ms | Allocations: 560)
+  Rendered layout layouts/application.html.erb (Duration: 156.4ms | Allocations: 6598)
+Completed 200 OK in 174ms (Views: 160.4ms | ActiveRecord: 0.0ms | Allocations: 6854)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 15:50:48 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
 DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
 
 Please pass the class as a keyword argument:
 
   serialize :artworks_history, type: Array
- (called from <class:User> at /Users/shulinchen/Documents/GitHub/4152-Project/app/models/user.rb:2)
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 256.3ms | Allocations: 58834)
-Completed 200 OK in 269ms (Views: 264.4ms | ActiveRecord: 1.0ms | Allocations: 61268)
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/3
+Completed 302 Found in 624ms (ActiveRecord: 1.5ms | Allocations: 25426)
 
 
-Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 15:44:18 -0500
-Processing by UsersController#profile as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:38:in `profile'
-  Rendering layout layouts/application.html.erb
-  Rendering users/profile.html.erb within layouts/application
-  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
-  ↳ app/views/users/profile.html.erb:18
-  Rendered users/profile.html.erb within layouts/application (Duration: 23.9ms | Allocations: 5317)
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 10948)
-Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.9ms | Allocations: 11951)
-
-
-Started GET "/users/2/edit" for 127.0.0.1 at 2023-11-15 15:44:21 -0500
-Processing by UsersController#edit as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:25:in `edit'
-  Rendering layout layouts/application.html.erb
-  Rendering users/edit.html.erb within layouts/application
-  Rendered users/edit.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1972)
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7574)
-Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.1ms | Allocations: 8416)
-
-
-Started PATCH "/users/2" for 127.0.0.1 at 2023-11-15 15:44:35 -0500
-Processing by UsersController#update as HTML
-  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"profile_picture"=>#<ActionDispatch::Http::UploadedFile:0x0000000114fbe518 @tempfile=#<Tempfile:/var/folders/dv/mvsl6cpj1vsf3zlzp9dknvqh0000gn/T/RackMultipart20231115-34866-wyksh6.jpg>, @content_type="image/jpeg", @original_filename="472_1941_CCCR-Press Site.jpg", @headers="Content-Disposition: form-data; name=\"user[profile_picture]\"; filename=\"472_1941_CCCR-Press Site.jpg\"\r\nContent-Type: image/jpeg\r\n">, "username"=>"shulin", "email"=>"sc@qq.com", "password"=>"[FILTERED]"}, "commit"=>"update", "id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:29:in `update'
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
-  ↳ app/controllers/users_controller.rb:30:in `update'
-  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "shulin"], ["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:30:in `update'
-  [1m[36mUser Update (3.1ms)[0m  [1m[33mUPDATE "users" SET "username" = ? WHERE "users"."id" = ?[0m  [["username", "shulin"], ["id", 2]]
-  ↳ app/controllers/users_controller.rb:30:in `update'
-  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:30:in `update'
-  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:30:in `update'
-  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "lolvrpl0vpclzsdhu3lsd8n1zxqv"], ["filename", "472_1941_CCCR-Press Site.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 430680], ["checksum", "fMgttZ1889OZxt+uviqLyQ=="], ["created_at", "2023-11-15 20:44:35.678200"]]
-  ↳ app/controllers/users_controller.rb:30:in `update'
-  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "profile_picture"], ["record_type", "User"], ["record_id", 2], ["blob_id", 2], ["created_at", "2023-11-15 20:44:35.682137"]]
-  ↳ app/controllers/users_controller.rb:30:in `update'
-  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
-  ↳ app/controllers/users_controller.rb:30:in `update'
-[36m  Disk Storage (2.9ms) [0m[32mUploaded file to key: lolvrpl0vpclzsdhu3lsd8n1zxqv (checksum: fMgttZ1889OZxt+uviqLyQ==)[0m
-[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 4586676f-ca7a-42ba-b2bc-2c614e5d5a4f) to Async(default) with arguments: #<GlobalID:0x0000000115ac88f0 @uri=#<URI::GID gid://smart-art-guide/ActiveStorage::Blob/2>>
-[ActiveJob] ↳ app/controllers/users_controller.rb:30:in `update'
-Redirected to http://127.0.0.1:8080/users/2/profile
-Completed 302 Found in 117ms (ActiveRecord: 11.0ms | Allocations: 37110)
-
-
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f] Performing ActiveStorage::AnalyzeJob (Job ID: 4586676f-ca7a-42ba-b2bc-2c614e5d5a4f) from Async(default) enqueued at 2023-11-15T20:44:35.715491000Z with arguments: #<GlobalID:0x0000000115c58670 @uri=#<URI::GID gid://smart-art-guide/ActiveStorage::Blob/2>>
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f] Skipping image analysis because the ruby-vips gem isn't installed
-Started GET "/users/2/profile" for 127.0.0.1 at 2023-11-15 15:44:35 -0500
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f]   [1m[36mActiveStorage::Blob Update (1.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 2]]
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
-[ActiveJob] [ActiveStorage::AnalyzeJob] [4586676f-ca7a-42ba-b2bc-2c614e5d5a4f] Performed ActiveStorage::AnalyzeJob (Job ID: 4586676f-ca7a-42ba-b2bc-2c614e5d5a4f) from Async(default) in 36.47ms
-Processing by UsersController#profile as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:38:in `profile'
-  Rendering layout layouts/application.html.erb
-  Rendering users/profile.html.erb within layouts/application
-  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
-  ↳ app/views/users/profile.html.erb:18
-  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/views/users/profile.html.erb:19
-  Rendered users/profile.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2649)
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 8364)
-Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms | Allocations: 9154)
-
-
-Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--1bc05aea9ef1d08f037bf8f2bdd095ff19b85fdf/472_1941_CCCR-Press%20Site.jpg" for 127.0.0.1 at 2023-11-15 15:44:35 -0500
-Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
-  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--1bc05aea9ef1d08f037bf8f2bdd095ff19b85fdf", "filename"=>"472_1941_CCCR-Press Site"}
-  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-[36m  Disk Storage (3.2ms) [0m[34mGenerated URL for file at key: lolvrpl0vpclzsdhu3lsd8n1zxqv (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsb2x2cnBsMHZwY2x6c2RodTNsc2Q4bjF6eHF2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiNDcyXzE5NDFfQ0NDUi1QcmVzcyBTaXRlLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJzQ3Ml8xOTQxX0NDQ1ItUHJlc3MlMjBTaXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjQ5OjM1Ljg0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dd8140aa9600160dcf33e716e1ca4f93d63ae763/472_1941_CCCR-Press%20Site.jpg)[0m
-Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsb2x2cnBsMHZwY2x6c2RodTNsc2Q4bjF6eHF2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiNDcyXzE5NDFfQ0NDUi1QcmVzcyBTaXRlLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJzQ3Ml8xOTQxX0NDQ1ItUHJlc3MlMjBTaXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjQ5OjM1Ljg0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dd8140aa9600160dcf33e716e1ca4f93d63ae763/472_1941_CCCR-Press%20Site.jpg
-Completed 302 Found in 7ms (ActiveRecord: 0.1ms | Allocations: 2337)
-
-
-Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsb2x2cnBsMHZwY2x6c2RodTNsc2Q4bjF6eHF2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiNDcyXzE5NDFfQ0NDUi1QcmVzcyBTaXRlLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJzQ3Ml8xOTQxX0NDQ1ItUHJlc3MlMjBTaXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjQ5OjM1Ljg0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dd8140aa9600160dcf33e716e1ca4f93d63ae763/472_1941_CCCR-Press%20Site.jpg" for 127.0.0.1 at 2023-11-15 15:44:35 -0500
-Processing by ActiveStorage::DiskController#show as JPEG
-  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"472_1941_CCCR-Press Site"}
-Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 244)
-
-
-Started GET "/users/2" for 127.0.0.1 at 2023-11-15 15:44:38 -0500
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 15:50:49 -0500
 Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/users_controller.rb:18:in `show'
   Rendering layout layouts/application.html.erb
   Rendering users/show.html.erb within layouts/application
-  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
   ↳ app/views/users/show.html.erb:3
-  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/views/users/show.html.erb:4
-  [1m[36mArtwork Load (2.6ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mArtwork Load (1.9ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
   ↳ app/views/users/show.html.erb:15
-  Rendered users/show.html.erb within layouts/application (Duration: 26.9ms | Allocations: 12888)
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (Duration: 575.9ms | Allocations: 36566)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 18493)
-Completed 200 OK in 41ms (Views: 33.2ms | ActiveRecord: 3.2ms | Allocations: 19880)
+  Rendered layout layouts/application.html.erb (Duration: 702.7ms | Allocations: 43088)
+Completed 200 OK in 749ms (Views: 714.9ms | ActiveRecord: 6.6ms | Allocations: 45251)
 
 
-Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsb2x2cnBsMHZwY2x6c2RodTNsc2Q4bjF6eHF2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiNDcyXzE5NDFfQ0NDUi1QcmVzcyBTaXRlLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJzQ3Ml8xOTQxX0NDQ1ItUHJlc3MlMjBTaXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjQ5OjM1Ljg0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dd8140aa9600160dcf33e716e1ca4f93d63ae763/472_1941_CCCR-Press%20Site.jpg" for 127.0.0.1 at 2023-11-15 15:44:38 -0500
-Processing by ActiveStorage::DiskController#show as JPEG
-  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"472_1941_CCCR-Press Site"}
-Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 146)
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 15:50:50 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.9ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjU1OjUxLjA0OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f171cb6490e208567a74b4e649be54c94fc3f777/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8080/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjU1OjUxLjA0OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f171cb6490e208567a74b4e649be54c94fc3f777/book_club_er.png
+Completed 302 Found in 32ms (ActiveRecord: 0.1ms | Allocations: 2389)
 
 
-Started GET "/logout" for 127.0.0.1 at 2023-11-15 15:44:51 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjU1OjUxLjA0OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f171cb6490e208567a74b4e649be54c94fc3f777/book_club_er.png" for 127.0.0.1 at 2023-11-15 15:50:51 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 9ms (ActiveRecord: 0.0ms | Allocations: 276)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-11-15 15:57:42 -0500
 Processing by SessionsController#destroy as HTML
 Redirected to http://127.0.0.1:8080/
-Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 338)
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 398)
 
 
-Started GET "/" for 127.0.0.1 at 2023-11-15 15:44:51 -0500
+Started GET "/" for 127.0.0.1 at 2023-11-15 15:57:48 -0500
 Processing by SessionsController#welcome as HTML
   Rendering layout layouts/application.html.erb
   Rendering sessions/welcome.html.erb within layouts/application
-  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
-  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5603)
-Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 5841)
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.5ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 47.1ms | Allocations: 7268)
+Completed 200 OK in 60ms (Views: 57.2ms | ActiveRecord: 0.0ms | Allocations: 7955)
 
 
-Started GET "/login" for 127.0.0.1 at 2023-11-15 15:44:53 -0500
+Started GET "/login" for 127.0.0.1 at 2023-11-15 15:57:51 -0500
 Processing by SessionsController#login as HTML
   Rendering layout layouts/application.html.erb
   Rendering sessions/login.html.erb within layouts/application
-  Rendered sessions/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 915)
-  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6179)
-Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 6477)
+  Rendered sessions/login.html.erb within layouts/application (Duration: 12.8ms | Allocations: 971)
+  Rendered layout layouts/application.html.erb (Duration: 98.0ms | Allocations: 7114)
+Completed 200 OK in 113ms (Views: 99.8ms | ActiveRecord: 0.0ms | Allocations: 7427)
 
 
-Started POST "/login" for 127.0.0.1 at 2023-11-15 15:44:59 -0500
+Started POST "/login" for 127.0.0.1 at 2023-11-15 15:57:58 -0500
 Processing by SessionsController#create as HTML
-  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"sc", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sc"], ["LIMIT", 1]]
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"dd", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dd"], ["LIMIT", 1]]
   ↳ app/controllers/sessions_controller.rb:7:in `create'
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sc"], ["LIMIT", 1]]
+Logging in failed!
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.9ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 87.9ms | Allocations: 6485)
+Completed 200 OK in 705ms (Views: 89.7ms | ActiveRecord: 8.1ms | Allocations: 12022)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 15:58:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"ddd", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ddd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ddd"], ["LIMIT", 1]]
   ↳ app/controllers/sessions_controller.rb:8:in `create'
 Logging in failed!
   Rendering layout layouts/application.html.erb
   Rendering sessions/login.html.erb within layouts/application
-  Rendered sessions/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 345)
-  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5602)
-Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 7011)
+  Rendered sessions/login.html.erb within layouts/application (Duration: 3.1ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 153.3ms | Allocations: 6381)
+Completed 200 OK in 184ms (Views: 157.1ms | ActiveRecord: 0.7ms | Allocations: 7662)
 
 
-Started POST "/login" for 127.0.0.1 at 2023-11-15 15:45:08 -0500
+Started GET "/register" for 127.0.0.1 at 2023-11-15 15:58:05 -0500
+Processing by UsersController#register as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 51.0ms | Allocations: 1774)
+  Rendered layout layouts/application.html.erb (Duration: 152.2ms | Allocations: 7819)
+Completed 200 OK in 189ms (Views: 169.5ms | ActiveRecord: 0.0ms | Allocations: 8339)
+
+
+Started POST "/register" for 127.0.0.1 at 2023-11-15 15:58:12 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"dd", "email"=>"dd@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dd@columbia.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/register.erb within layouts/application
+  Rendered users/register.erb within layouts/application (Duration: 8.7ms | Allocations: 1651)
+  Rendered layout layouts/application.html.erb (Duration: 96.7ms | Allocations: 7684)
+Completed 200 OK in 702ms (Views: 98.6ms | ActiveRecord: 3.3ms | Allocations: 11453)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 15:58:16 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 4.0ms | Allocations: 560)
+  Rendered layout layouts/application.html.erb (Duration: 147.0ms | Allocations: 6597)
+Completed 200 OK in 160ms (Views: 150.4ms | ActiveRecord: 0.0ms | Allocations: 6849)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 15:58:20 -0500
 Processing by SessionsController#create as HTML
-  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"shulin", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shulin"], ["LIMIT", 1]]
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"dd", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dd"], ["LIMIT", 1]]
   ↳ app/controllers/sessions_controller.rb:7:in `create'
-Redirected to http://127.0.0.1:8080/users/2
-Completed 302 Found in 218ms (ActiveRecord: 0.1ms | Allocations: 765)
+Logging in failed!
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 68.8ms | Allocations: 6463)
+Completed 200 OK in 621ms (Views: 70.5ms | ActiveRecord: 0.2ms | Allocations: 7336)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2023-11-15 15:45:08 -0500
+Started POST "/login" for 127.0.0.1 at 2023-11-15 15:58:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"ddd", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ddd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ddd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Logging in failed!
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 3.2ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 152.0ms | Allocations: 6479)
+Completed 200 OK in 180ms (Views: 154.9ms | ActiveRecord: 0.5ms | Allocations: 7652)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 15:58:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"ddd", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ddd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ddd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Logging in failed!
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 74.2ms | Allocations: 6387)
+Completed 200 OK in 89ms (Views: 75.9ms | ActiveRecord: 0.3ms | Allocations: 7548)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 15:58:31 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"dddd", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dddd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dddd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Logging in failed!
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 2.4ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 174.4ms | Allocations: 6381)
+Completed 200 OK in 204ms (Views: 178.1ms | ActiveRecord: 0.5ms | Allocations: 7560)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 15:58:36 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"dd", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8080/users/4
+Completed 302 Found in 962ms (ActiveRecord: 0.3ms | Allocations: 748)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2023-11-15 15:58:37 -0500
 Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
   ↳ app/controllers/users_controller.rb:18:in `show'
   Rendering layout layouts/application.html.erb
   Rendering users/show.html.erb within layouts/application
-  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
   ↳ app/views/users/show.html.erb:3
-  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArtwork Load (1.6ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 46.9ms | Allocations: 7896)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 125.4ms | Allocations: 14285)
+Completed 200 OK in 489ms (Views: 125.4ms | ActiveRecord: 2.2ms | Allocations: 28937)
+
+
+Started GET "/users/4/profile" for 127.0.0.1 at 2023-11-15 15:58:44 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  Rendered users/profile.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1187)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 161.2ms | Allocations: 7561)
+Completed 200 OK in 194ms (Views: 164.7ms | ActiveRecord: 0.6ms | Allocations: 8394)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2023-11-15 15:59:20 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 286.2ms | Allocations: 17773)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 360.5ms | Allocations: 24250)
+Completed 200 OK in 369ms (Views: 361.9ms | ActiveRecord: 0.1ms | Allocations: 25113)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2023-11-15 16:04:21 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 614)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 72.2ms | Allocations: 6986)
+Completed 200 OK in 81ms (Views: 73.7ms | ActiveRecord: 0.3ms | Allocations: 7776)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2023-11-15 16:06:36 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1218)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 137.2ms | Allocations: 8380)
+Completed 200 OK in 240ms (Views: 164.7ms | ActiveRecord: 12.1ms | Allocations: 15204)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 16:48:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.3ms | Allocations: 452)
+  Rendered layout layouts/application.html.erb (Duration: 243.1ms | Allocations: 36629)
+Completed 200 OK in 269ms (Views: 259.2ms | ActiveRecord: 0.0ms | Allocations: 39314)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 16:49:02 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 180.4ms | Allocations: 26143)
+Completed 200 OK in 183ms (Views: 181.1ms | ActiveRecord: 0.0ms | Allocations: 26399)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 16:49:05 -0500
+Processing by ImageSearchController#upload as HTML
+Redirected to http://127.0.0.1:8008/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 922)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 16:49:05 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2002)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 8382)
+Completed 200 OK in 40ms (Views: 34.6ms | ActiveRecord: 0.0ms | Allocations: 8997)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 16:49:40 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 572)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 6610)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 6866)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 16:49:43 -0500
+Processing by ImageSearchController#upload as HTML
+Redirected to http://127.0.0.1:8008/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 16:49:43 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 579)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 6623)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 6875)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 16:49:49 -0500
+Processing by ImageSearchController#upload as HTML
+Redirected to http://127.0.0.1:8008/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 16:49:49 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 606)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 6753)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 7006)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 16:50:36 -0500
+Processing by ImageSearchController#upload as HTML
+Redirected to http://127.0.0.1:8008/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 359)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 16:50:36 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 600)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 6641)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 6894)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-15 16:52:45 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 569)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 6606)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 6858)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 16:52:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8008/users/3
+Completed 302 Found in 270ms (ActiveRecord: 0.6ms | Allocations: 25422)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 16:52:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (Duration: 94.7ms | Allocations: 36577)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 116.5ms | Allocations: 43097)
+Completed 200 OK in 129ms (Views: 118.5ms | ActiveRecord: 1.6ms | Allocations: 45268)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 16:52:50 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.7ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8008/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIxOjU3OjUwLjExNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--695f9b7fc7e3762aa7e5c05edfe2e4f22b8ac0bf/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8008/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIxOjU3OjUwLjExNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--695f9b7fc7e3762aa7e5c05edfe2e4f22b8ac0bf/book_club_er.png
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 2388)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIxOjU3OjUwLjExNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--695f9b7fc7e3762aa7e5c05edfe2e4f22b8ac0bf/book_club_er.png" for 127.0.0.1 at 2023-11-15 16:52:50 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 267)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 16:52:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/views/users/show.html.erb:4
   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
   ↳ app/views/users/show.html.erb:15
-  Rendered users/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2456)
-  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2379)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 8060)
-Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.7ms | Allocations: 8867)
+  Rendered layout layouts/application.html.erb (Duration: 62.6ms | Allocations: 8752)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 0.6ms | Allocations: 9585)
 
 
-Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsb2x2cnBsMHZwY2x6c2RodTNsc2Q4bjF6eHF2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiNDcyXzE5NDFfQ0NDUi1QcmVzcyBTaXRlLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJzQ3Ml8xOTQxX0NDQ1ItUHJlc3MlMjBTaXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjQ5OjM1Ljg0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dd8140aa9600160dcf33e716e1ca4f93d63ae763/472_1941_CCCR-Press%20Site.jpg" for 127.0.0.1 at 2023-11-15 15:45:08 -0500
-Processing by ActiveStorage::DiskController#show as JPEG
-  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"472_1941_CCCR-Press Site"}
-Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 145)
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIxOjU3OjUwLjExNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--695f9b7fc7e3762aa7e5c05edfe2e4f22b8ac0bf/book_club_er.png" for 127.0.0.1 at 2023-11-15 16:52:54 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 147)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2023-11-15 15:45:29 -0500
+Started GET "/login" for 127.0.0.1 at 2023-11-15 16:52:57 -0500
+Processing by SessionsController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/login.html.erb within layouts/application
+  Rendered sessions/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 564)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 6998)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.1ms | Allocations: 7250)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-15 16:53:00 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username_or_email"=>"tt", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:8008/users/3
+Completed 302 Found in 186ms (ActiveRecord: 0.1ms | Allocations: 775)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-11-15 16:53:00 -0500
 Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/users_controller.rb:18:in `show'
   Rendering layout layouts/application.html.erb
   Rendering users/show.html.erb within layouts/application
-  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
   ↳ app/views/users/show.html.erb:3
-  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/views/users/show.html.erb:4
-  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
   ↳ app/views/users/show.html.erb:15
-  Rendered users/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2455)
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2382)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 8058)
-Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.8ms | Allocations: 8869)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 8756)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.5ms | Allocations: 9595)
 
 
-Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsb2x2cnBsMHZwY2x6c2RodTNsc2Q4bjF6eHF2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiNDcyXzE5NDFfQ0NDUi1QcmVzcyBTaXRlLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJzQ3Ml8xOTQxX0NDQ1ItUHJlc3MlMjBTaXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjQ5OjM1Ljg0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dd8140aa9600160dcf33e716e1ca4f93d63ae763/472_1941_CCCR-Press%20Site.jpg" for 127.0.0.1 at 2023-11-15 15:45:30 -0500
-Processing by ActiveStorage::DiskController#show as JPEG
-  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"472_1941_CCCR-Press Site"}
-Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 146)
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIxOjU3OjUwLjExNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--695f9b7fc7e3762aa7e5c05edfe2e4f22b8ac0bf/book_club_er.png" for 127.0.0.1 at 2023-11-15 16:53:00 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 146)
 
 
-Started GET "/artworks/8" for 127.0.0.1 at 2023-11-15 15:45:57 -0500
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 16:53:01 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1773)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 7863)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.1ms | Allocations: 8853)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 16:56:38 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 716)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 16:56:39 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 7272)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.1ms | Allocations: 8087)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 17:08:02 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:36
+  Rendered users/profile.html.erb within layouts/application (Duration: 40.1ms | Allocations: 20063)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 63.0ms | Allocations: 27242)
+Completed 200 OK in 86ms (Views: 68.5ms | ActiveRecord: 2.6ms | Allocations: 33739)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 17:08:04 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8008/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIyOjEzOjA0LjQ4NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--57e631e48d0f929237a491c2728b9c73e6c78948/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8008/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIyOjEzOjA0LjQ4NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--57e631e48d0f929237a491c2728b9c73e6c78948/book_club_er.png
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 2026)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIyOjEzOjA0LjQ4NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--57e631e48d0f929237a491c2728b9c73e6c78948/book_club_er.png" for 127.0.0.1 at 2023-11-15 17:08:04 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 220)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2023-11-15 17:08:05 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1281)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 7653)
+Completed 200 OK in 37ms (Views: 28.9ms | ActiveRecord: 0.1ms | Allocations: 8517)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:08:39 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1433)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 7523)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.1ms | Allocations: 8565)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:12:29 -0500
+Processing by ImageSearchController#upload as HTML
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1952)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 8828)
+Completed 200 OK in 42ms (Views: 29.1ms | ActiveRecord: 2.8ms | Allocations: 15714)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:13:36 -0500
+Processing by ImageSearchController#upload as HTML
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1946)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 8822)
+Completed 200 OK in 43ms (Views: 29.5ms | ActiveRecord: 2.2ms | Allocations: 15697)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:22:14 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Upload"}
+DEPRECATION WARNING: Passing the class as positional argument is deprecated and will be removed in Rails 7.2.
+
+Please pass the class as a keyword argument:
+
+  serialize :artworks_history, type: Array
+ (called from <class:User> at C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb:2)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 20ms (ActiveRecord: 2.6ms | Allocations: 5766)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:22:16 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1529)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 8409)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.1ms | Allocations: 9823)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:22:20 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 714)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:22:20 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 7271)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.1ms | Allocations: 8079)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:22:23 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026732ce1f58 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-w8c7dw.png>, @content_type="image/png", @original_filename="book_club_er.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"book_club_er.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 139], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/139
+Completed 302 Found in 330ms (ActiveRecord: 3.5ms | Allocations: 10755)
+
+
+Started GET "/artworks/139" for 127.0.0.1 at 2023-11-15 17:22:24 -0500
 Processing by ArtworksController#show as HTML
-  Parameters: {"id"=>"8"}
-  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Parameters: {"id"=>"139"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 139], ["LIMIT", 1]]
   ↳ app/controllers/artworks_controller.rb:8:in `show'
   Rendering layout layouts/application.html.erb
   Rendering artworks/show.html.erb within layouts/application
-  Rendered artworks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 327)
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 335)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 6185)
-Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 7557)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 7088)
+Completed 200 OK in 41ms (Views: 33.9ms | ActiveRecord: 0.1ms | Allocations: 7896)
 
 
-Started GET "/artworks/435" for 127.0.0.1 at 2023-11-15 15:46:08 -0500
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:25:37 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739a52808 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-5lquzx.png>, @content_type="image/png", @original_filename="book_club_er.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"book_club_er.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/6
+Completed 302 Found in 119ms (ActiveRecord: 2.1ms | Allocations: 4067)
+
+
+Started GET "/artworks/6" for 127.0.0.1 at 2023-11-15 17:25:37 -0500
 Processing by ArtworksController#show as HTML
-  Parameters: {"id"=>"435"}
-  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 435], ["LIMIT", 1]]
+  Parameters: {"id"=>"6"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 6692)
+Completed 200 OK in 31ms (Views: 26.3ms | ActiveRecord: 0.2ms | Allocations: 7290)
+
+
+Started GET "/users/3/profile" for 127.0.0.1 at 2023-11-15 17:25:44 -0500
+Processing by UsersController#profile as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering users/profile.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:19
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 124], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:36
+  [1m[36mArtwork Load (0.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 139], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:36
+  [1m[36mArtwork Load (0.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/profile.html.erb:36
+  Rendered users/profile.html.erb within layouts/application (Duration: 36.7ms | Allocations: 17224)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 58.2ms | Allocations: 23617)
+Completed 200 OK in 68ms (Views: 60.9ms | ActiveRecord: 1.0ms | Allocations: 24617)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395/book_club_er.png" for 127.0.0.1 at 2023-11-15 17:25:44 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--47581b4daadc0d6864fd6e3629624784a0ef5395", "filename"=>"book_club_er"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: nn0ljbivqttlo80ikgslzoysk7iw (http://127.0.0.1:8008/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIyOjMwOjQ0LjM2NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--6a31f7605b9a3dd50189c864425ec888e9bbd641/book_club_er.png)[0m
+Redirected to http://127.0.0.1:8008/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIyOjMwOjQ0LjM2NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--6a31f7605b9a3dd50189c864425ec888e9bbd641/book_club_er.png
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms | Allocations: 2024)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJubjBsamJpdnF0dGxvODBpa2dzbHpveXNrN2l3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYm9va19jbHViX2VyLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2Jvb2tfY2x1Yl9lci5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIyOjMwOjQ0LjM2NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--6a31f7605b9a3dd50189c864425ec888e9bbd641/book_club_er.png" for 127.0.0.1 at 2023-11-15 17:25:44 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"book_club_er"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 219)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:25:45 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1182)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 7271)
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 0.1ms | Allocations: 8074)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:25:45 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 705)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:25:45 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1186)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 7295)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.1ms | Allocations: 8125)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:27:45 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739e98c00 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-723lgs.png>, @content_type="image/png", @original_filename="book_club_er.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"book_club_er.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/17
+Completed 302 Found in 131ms (ActiveRecord: 1.9ms | Allocations: 4079)
+
+
+Started GET "/artworks/17" for 127.0.0.1 at 2023-11-15 17:27:45 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 6704)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.2ms | Allocations: 7301)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:37:48 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 7267)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 2.1ms | Allocations: 8330)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:37:52 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739dbb378 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-zlzst6.png>, @content_type="image/png", @original_filename="book_club_er.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"book_club_er.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (1.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/39
+Completed 302 Found in 131ms (ActiveRecord: 15.5ms | Allocations: 4124)
+
+
+Started GET "/artworks/39" for 127.0.0.1 at 2023-11-15 17:37:52 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 56.8ms | Allocations: 6701)
+Completed 200 OK in 62ms (Views: 58.1ms | ActiveRecord: 0.1ms | Allocations: 7298)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:41:42 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000267390ac628 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-ij3th2.png>, @content_type="image/png", @original_filename="book_club_er.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"book_club_er.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n- 121\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/121
+Completed 302 Found in 124ms (ActiveRecord: 1.6ms | Allocations: 4109)
+
+
+Started GET "/artworks/121" for 127.0.0.1 at 2023-11-15 17:41:42 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"121"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 121], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 6771)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.1ms | Allocations: 7368)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:43:13 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000002673921eb00 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-zl6r4s.png>, @content_type="image/png", @original_filename="book_club_er.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"book_club_er.png\"\r\nContent-Type: image/png\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 114], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n- 121\n- 114\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/114
+Completed 302 Found in 113ms (ActiveRecord: 1.2ms | Allocations: 4143)
+
+
+Started GET "/artworks/114" for 127.0.0.1 at 2023-11-15 17:43:13 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"114"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 114], ["LIMIT", 1]]
   ↳ app/controllers/artworks_controller.rb:8:in `show'
   Rendering layout layouts/application.html.erb
   Rendering artworks/show.html.erb within layouts/application
   Rendered artworks/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 5894)
-Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 6491)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 6774)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.3ms | Allocations: 7372)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2023-11-15 15:47:12 -0500
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:18:in `show'
-  Rendering layout layouts/application.html.erb
-  Rendering users/show.html.erb within layouts/application
-  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
-  ↳ app/views/users/show.html.erb:3
-  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/views/users/show.html.erb:4
-  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
-  ↳ app/views/users/show.html.erb:15
-  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2457)
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:43:33 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739e95730 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-l7ib0u.jpeg>, @content_type="image/jpeg", @original_filename="starry_night.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"starry_night.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 8061)
-Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.8ms | Allocations: 8885)
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 153], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n- 121\n- 114\n- 153\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/153
+Completed 302 Found in 131ms (ActiveRecord: 1.7ms | Allocations: 4140)
 
 
-Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsb2x2cnBsMHZwY2x6c2RodTNsc2Q4bjF6eHF2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiNDcyXzE5NDFfQ0NDUi1QcmVzcyBTaXRlLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJzQ3Ml8xOTQxX0NDQ1ItUHJlc3MlMjBTaXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjQ5OjM1Ljg0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dd8140aa9600160dcf33e716e1ca4f93d63ae763/472_1941_CCCR-Press%20Site.jpg" for 127.0.0.1 at 2023-11-15 15:47:12 -0500
-Processing by ActiveStorage::DiskController#show as JPEG
-  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"472_1941_CCCR-Press Site"}
-Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 145)
-
-
-Started GET "/users/2" for 127.0.0.1 at 2023-11-15 15:47:38 -0500
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/users_controller.rb:18:in `show'
-  Rendering layout layouts/application.html.erb
-  Rendering users/show.html.erb within layouts/application
-  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "profile_picture"], ["LIMIT", 1]]
-  ↳ app/views/users/show.html.erb:3
-  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/views/users/show.html.erb:4
-  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 10]]
-  ↳ app/views/users/show.html.erb:15
-  Rendered users/show.html.erb within layouts/application (Duration: 34.5ms | Allocations: 2454)
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 8163)
-Completed 200 OK in 52ms (Views: 49.4ms | ActiveRecord: 0.8ms | Allocations: 8990)
-
-
-Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsb2x2cnBsMHZwY2x6c2RodTNsc2Q4bjF6eHF2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiNDcyXzE5NDFfQ0NDUi1QcmVzcyBTaXRlLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJzQ3Ml8xOTQxX0NDQ1ItUHJlc3MlMjBTaXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDIzLTExLTE1VDIwOjQ5OjM1Ljg0M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dd8140aa9600160dcf33e716e1ca4f93d63ae763/472_1941_CCCR-Press%20Site.jpg" for 127.0.0.1 at 2023-11-15 15:47:38 -0500
-Processing by ActiveStorage::DiskController#show as JPEG
-  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"472_1941_CCCR-Press Site"}
-Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 147)
-
-
-Started GET "/artworks/285" for 127.0.0.1 at 2023-11-15 15:47:44 -0500
+Started GET "/artworks/153" for 127.0.0.1 at 2023-11-15 17:43:33 -0500
 Processing by ArtworksController#show as HTML
-  Parameters: {"id"=>"285"}
-  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 285], ["LIMIT", 1]]
+  Parameters: {"id"=>"153"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 153], ["LIMIT", 1]]
   ↳ app/controllers/artworks_controller.rb:8:in `show'
   Rendering layout layouts/application.html.erb
   Rendering artworks/show.html.erb within layouts/application
   Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 50)
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:6:in `current_user'
-  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5901)
-Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.2ms | Allocations: 6499)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 6682)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.1ms | Allocations: 7279)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:44:25 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739e4a460 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-1m8t3y.jpeg>, @content_type="image/jpeg", @original_filename="starry_night.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"starry_night.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 137], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n- 121\n- 114\n- 153\n- 137\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/137
+Completed 302 Found in 151ms (ActiveRecord: 2.0ms | Allocations: 4156)
+
+
+Started GET "/artworks/137" for 127.0.0.1 at 2023-11-15 17:44:25 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"137"}
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 137], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 6689)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.5ms | Allocations: 7286)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:44:28 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739c6fb40 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-zk2ewd.jpeg>, @content_type="image/jpeg", @original_filename="no_match_image.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"no_match_image.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 101ms (ActiveRecord: 0.1ms | Allocations: 1388)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:44:29 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 7368)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.1ms | Allocations: 8201)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:44:32 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000267397178a0 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-jp1k1j.jpeg>, @content_type="image/jpeg", @original_filename="no_match_image.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"no_match_image.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 109ms (ActiveRecord: 0.1ms | Allocations: 1356)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:44:32 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 7378)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.1ms | Allocations: 8180)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:44:48 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739e9c030 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-i7rxuh.jpeg>, @content_type="image/jpeg", @original_filename="starry_night.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"starry_night.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.0ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n- 121\n- 114\n- 153\n- 137\n- 54\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/54
+Completed 302 Found in 100ms (ActiveRecord: 1.7ms | Allocations: 4167)
+
+
+Started GET "/artworks/54" for 127.0.0.1 at 2023-11-15 17:44:49 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"54"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 51)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 6685)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.1ms | Allocations: 7282)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:44:53 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739e601e8 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-glg04p.jpeg>, @content_type="image/jpeg", @original_filename="no_match_image.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"no_match_image.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 91ms (ActiveRecord: 0.1ms | Allocations: 1363)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:44:53 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 7271)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.1ms | Allocations: 8078)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:51:17 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739c62710 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-i6oxwd.jpg>, @content_type="image/jpeg", @original_filename="test.jpg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n- 121\n- 114\n- 153\n- 137\n- 54\n- 29\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/29
+Completed 302 Found in 137ms (ActiveRecord: 15.7ms | Allocations: 4513)
+
+
+Started GET "/artworks/29" for 127.0.0.1 at 2023-11-15 17:51:17 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 6666)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.1ms | Allocations: 7263)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:53:56 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x000002673708ee40 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-na6c3f.jpg>, @content_type="image/jpeg", @original_filename="test.jpg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n- 121\n- 114\n- 153\n- 137\n- 54\n- 29\n- 1\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/1
+Completed 302 Found in 250ms (ActiveRecord: 1.9ms | Allocations: 4209)
+
+
+Started GET "/artworks/1" for 127.0.0.1 at 2023-11-15 17:53:56 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 48)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 6785)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.1ms | Allocations: 7383)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:54:02 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739db3628 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-w2rrll.jpeg>, @content_type="image/jpeg", @original_filename="starry_night.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"starry_night.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mArtwork Load (0.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:21:in `search'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "tt"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "artworks_history" = ? WHERE "users"."id" = ?[0m  [["artworks_history", "---\n- 124\n- 139\n- 6\n- 17\n- 39\n- 121\n- 114\n- 153\n- 137\n- 54\n- 29\n- 1\n- 90\n"], ["id", 3]]
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/image_search_controller.rb:40:in `update_artworks_history'
+Redirected to http://127.0.0.1:8008/artworks/90
+Completed 302 Found in 113ms (ActiveRecord: 1.7ms | Allocations: 4239)
+
+
+Started GET "/artworks/90" for 127.0.0.1 at 2023-11-15 17:54:03 -0500
+Processing by ArtworksController#show as HTML
+  Parameters: {"id"=>"90"}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = ? LIMIT ?[0m  [["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering artworks/show.html.erb within layouts/application
+  Rendered artworks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 6775)
+Completed 200 OK in 32ms (Views: 27.3ms | ActiveRecord: 0.3ms | Allocations: 7372)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 17:54:06 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739e6cf88 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-owa2ta.jpeg>, @content_type="image/jpeg", @original_filename="no_match_image.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"no_match_image.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 117ms (ActiveRecord: 0.1ms | Allocations: 1369)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 17:54:06 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 50.3ms | Allocations: 7272)
+Completed 200 OK in 56ms (Views: 51.3ms | ActiveRecord: 0.1ms | Allocations: 8073)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 18:18:43 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000026739c6ef10 @tempfile=#<Tempfile:C:/Users/Lenovo/AppData/Local/Temp/RackMultipart20231115-10360-jpdgq9.jpeg>, @content_type="image/jpeg", @original_filename="no_match_image.jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"no_match_image.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "commit"=>"Upload"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 129ms (ActiveRecord: 2.3ms | Allocations: 1638)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 18:18:43 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 7271)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 0.1ms | Allocations: 8087)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-11-15 18:18:58 -0500
+Processing by ImageSearchController#search as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Upload"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:8008/upload
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 705)
+
+
+Started GET "/upload" for 127.0.0.1 at 2023-11-15 18:18:58 -0500
+Processing by ImageSearchController#upload as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering image_search/upload.html.erb within layouts/application
+  Rendered image_search/upload.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 7365)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.1ms | Allocations: 8151)
 
 

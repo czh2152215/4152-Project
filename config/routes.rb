@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get 'register', to: 'users#register', as: 'register'
   post 'register', to: 'users#create'
+
+
   get 'upload', to: 'image_search#upload', as: 'upload'
   post 'search', to: 'image_search#search', as: 'search'
 

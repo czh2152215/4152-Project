@@ -65,6 +65,6 @@ Feature: User Login
 
   Scenario: Successfully logging out
     Given I am a logged-in user
-    When I press "Logout"
+    When I press "Log Out"
     Then I should be logged out
     And I should be redirected to the "homepage" page
