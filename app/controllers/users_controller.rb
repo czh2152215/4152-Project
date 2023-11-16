@@ -17,7 +17,14 @@ class UsersController < ApplicationController
   def show #login in successfully
     @user ||= User.find_by(id: session[:user_id])
     #@random_artworks = Artwork.order(Arel.sql('RANDOM()')).limit(10)
-    @random_artworks = Artwork.order(Arel.sql('RANDOM()')).distinct(:some_unique_attribute).limit(10)
+    # @random_artworks = Artwork.select('DISTINCT ON (artworks.id) artworks.*').order('RANDOM()')
+    if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
+      # PostgreSQL-specific query
+      @random_artworks = Artwork.select('DISTINCT ON (artworks.id) artworks.*').order('RANDOM()')
+    else
+      # Fallback for SQLite and other databases
+      @random_artworks = Artwork.order('RANDOM()').distinct
+    end
 
   end
 
