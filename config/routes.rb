@@ -31,5 +31,6 @@ Rails.application.routes.draw do
   get '/users/:id/profile', to: 'users#profile', as: 'user_profile'
 
   post 'favorite_artwork/:id', to: 'artworks#favorite', as: 'favorite_artwork'
+  delete 'unfavorite_artwork/:id', to: 'artworks#unfavorite', as: 'unfavorite_artwork'
 
 end

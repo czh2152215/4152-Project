@@ -79,6 +79,29 @@
   padding: 20px;
 }
 
+.btn-favorite {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.btn-favorite:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,.3);
+  transform: translateY(-2px);
+}
+
+.btn-primary.btn-favorite {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-warning.btn-favorite {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+
 
 
 

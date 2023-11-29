@@ -18,7 +18,16 @@
       </div>
     </div>
 
-    <%= button_to 'Favorite', favorite_artwork_path(@artwork), method: :post, class: 'btn btn-primary' %>
+    <!-- Favorite Button -->
+    <div class="text-center mt-3">
+      <% if current_user %>
+        <% if @is_favorited %>
+          <%= button_to 'Unfavorite', unfavorite_artwork_path(@artwork), method: :delete, class: 'btn btn-warning btn-favorite' %>
+        <% else %>
+          <%= button_to 'Favorite', favorite_artwork_path(@artwork), method: :post, class: 'btn btn-primary btn-favorite' %>
+        <% end %>
+      <% end %>
+    </div>
 
     <!-- Navigation links -->
     <!-- <%= link_to 'Back to All Artworks', artworks_path %> -->

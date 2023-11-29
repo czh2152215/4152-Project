@@ -9,6 +9,12 @@ class ArtworksController < ApplicationController
     unless @artwork
       redirect_to root_path, alert: 'No artwork found with that artwork ID.'
     end
+
+    if current_user
+      @is_favorited = current_user.favorited_artworks.include?(@artwork)
+    else
+      @is_favorited = false
+    end
   end
 
   def favorite
@@ -17,5 +23,10 @@ class ArtworksController < ApplicationController
     redirect_to artwork_path(artwork)
   end
 
+  def unfavorite
+    artwork = Artwork.find(params[:id])
+    current_user.remove_from_favorites(artwork)
+    redirect_to artwork_path(artwork)
+  end
 
 end
