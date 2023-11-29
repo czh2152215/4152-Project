@@ -43,6 +43,20 @@
             <% else %>
               <p>No artwork history available.</p>
             <% end %>
+
+            <h3 class="mt-3">My Favorites:</h3>
+            <% if @user.favorited_artworks.present? %>
+              <ul>
+                <% @user.favorited_artworks.each do |artwork| %>
+                  <li>
+                    <%= link_to artwork.artwork_name, artwork_path(artwork) %>
+                    <!-- 添加更多艺术品细节 -->
+                  </li>
+                <% end %>
+              </ul>
+            <% else %>
+              <p>No favorites yet.</p>
+            <% end %>
           <% else %>
             <p>User not found.</p>
           <% end %>

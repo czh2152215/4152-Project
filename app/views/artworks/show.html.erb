@@ -18,6 +18,8 @@
       </div>
     </div>
 
+    <%= button_to 'Favorite', favorite_artwork_path(@artwork), method: :post, class: 'btn btn-primary' %>
+
     <!-- Navigation links -->
     <!-- <%= link_to 'Back to All Artworks', artworks_path %> -->
   <% else %>

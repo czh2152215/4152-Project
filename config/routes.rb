@@ -29,4 +29,7 @@ Rails.application.routes.draw do
   post 'search', to: 'image_search#search', as: 'search'
 
   get '/users/:id/profile', to: 'users#profile', as: 'user_profile'
+
+  post 'favorite_artwork/:id', to: 'artworks#favorite', as: 'favorite_artwork'
+
 end

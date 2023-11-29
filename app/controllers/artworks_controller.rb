@@ -11,4 +11,11 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def favorite
+    artwork = Artwork.find(params[:id])
+    current_user.add_to_favorites(artwork)
+    redirect_to artwork_path(artwork)
+  end
+
+
 end
