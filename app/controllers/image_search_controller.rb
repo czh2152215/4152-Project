@@ -41,15 +41,14 @@ class ImageSearchController < ApplicationController
   end
 
   def get_artwork_id_from_api(base64_image)
-    uri = URI('https://pm9i46r4p5.execute-api.us-east-1.amazonaws.com/default/ArtRecognition')
+    uri = URI('http://3.84.212.73:5001/process_image')
     http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
     request = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
     request.body = { image: base64_image }.to_json
 
     response = http.request(request)
     if response.code == '200'
-      JSON.parse(response.body)
+      JSON.parse(response.body)['id']
     else
       nil
     end
