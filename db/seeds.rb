@@ -18,7 +18,7 @@ User.create(username: 'admin', email: 'admin@admin.com', password: 'admin')
 # Create artworks with artwork_name, background_information, author, and image_url
 CSV.foreach('db/van_gogh_paintings.csv', headers: true) do |row|
   Artwork.create(
-    uid: row['ID'],
+    id: row['ID'],
     artwork_name: row['Title'],
     author: row['Artist'],
     year: row['Year'],
