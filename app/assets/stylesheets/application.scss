@@ -101,6 +101,25 @@
   border-color: #ffc107;
 }
 
+.message {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
+    margin-bottom: 10px; /* Add margin between messages */
+}
+
+.user-message {
+    background-color: #E1F5FE; /* Light blue background for user messages */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.guide-message {
+    background-color: #d6d6d44b; /* Light grey background for guide messages */
+    padding: 5px;
+    border-radius: 5px;
+}
 
 
 

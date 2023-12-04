@@ -14,6 +14,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 gem 'bootstrap'
 gem 'sassc-rails'
+gem 'ruby-openai', '~> 6.3'
 
 group :production do
   gem 'pg', '~> 1.1'
@@ -26,6 +27,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'rails-controller-testing', '~> 1.0'
+  gem 'dotenv-rails'
 end
 
 group :development do

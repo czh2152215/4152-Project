@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #resources :users, only: [:edit, :update]
   resources :users, except: [:index]
   resources :artworks
-
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -32,5 +32,7 @@ Rails.application.routes.draw do
 
   post 'favorite_artwork/:id', to: 'artworks#favorite', as: 'favorite_artwork'
   delete 'unfavorite_artwork/:id', to: 'artworks#unfavorite', as: 'unfavorite_artwork'
+  get 'chat/:artwork_name', to: 'chat#show', as: 'chat'
+  post 'chat_responses', to: 'chat_responses#create'
 
 end

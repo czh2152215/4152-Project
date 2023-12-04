@@ -1,0 +1,108 @@
+<!-- app/views/chat/show.html.erb -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header text-center">
+          Virtual Art Guide
+        </div>
+        <div class="card-body" id="chat-box" <% if @artwork_name %> data-artwork-name="<%= @artwork_name %>" <% end %>>
+        </div>
+        <div class="card-footer">
+          <textarea class="form-control" id="prompt" placeholder="Type your message here..."></textarea>
+          <button class="btn btn-primary mt-2" id="send-message">Send</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let conversationHistory = [];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const promptElement = document.getElementById('prompt');
+    const chatBoxElement = document.getElementById('chat-box');
+    const artworkName = chatBoxElement.dataset.artworkName;
+
+    console.log(artworkName)
+
+    if (artworkName) {
+        autoGenerateArtworkResponse(artworkName);
+    }
+
+    function autoGenerateArtworkResponse(artworkName) {
+        createLabel('Art Guide', chatBoxElement);
+        conversationHistory.push({ role: 'user', content: `Tell me about '${artworkName}'.` });
+        sendChatData(conversationHistory);
+    }
+
+    document.getElementById('send-message').addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log(promptElement);
+        generateResponse(promptElement.value);
+    });
+
+    function generateResponse(prompt) {
+        console.log("prompt", prompt);
+        conversationHistory.push({ role: 'user', content: prompt });
+        createLabel('You', chatBoxElement);
+        createMessage(prompt, chatBoxElement, true);
+        sendChatData(conversationHistory);
+        promptElement.value = "";
+    }
+
+    function sendChatData(chatHistory) {
+        fetch('/chat_responses', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ chatHistory: chatHistory })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Chat data received", data);
+            handleServerResponse(data);
+        })
+        .catch(error => {
+            console.error('Error in sending chat data:', error);
+        });
+    }
+
+    function handleServerResponse(responseText) {
+        // Assuming data.message contains the response from the server
+        if(responseText.content) {
+            createLabel('Art Guide', chatBoxElement);
+            createMessage(responseText.content, chatBoxElement, false);
+            conversationHistory.push({ role: 'assistant', content: responseText.content });
+        }
+    }
+
+    function createLabel(text, chatBoxElement) {
+        const label = document.createElement('strong');
+        label.innerHTML = `${text}:`;
+        chatBoxElement.appendChild(label);
+    }
+
+    function createMessage(text, chatBoxElement, isUserMessage) {
+      const messageElement = document.createElement('div'); // Changed from 'pre' to 'div'
+      messageElement.className = 'message';
+      if (isUserMessage) {
+        messageElement.classList.add('user-message');
+      } else {
+          messageElement.classList.add('guide-message');
+      }
+      messageElement.innerText = text; // Use innerText for text content
+      chatBoxElement.appendChild(messageElement);
+    }
+});
+</script>

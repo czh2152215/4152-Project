@@ -8,6 +8,17 @@
       <!-- Image on the left -->
       <div class="col-md-6 px-4">
         <img src="<%= @artwork.image_url %>" alt="<%= @artwork.artwork_name %>" class="img-fluid" style="display: block; margin: 0 auto;">
+      
+      <!-- Favorite Button under the image -->
+        <% if current_user %>
+          <div class="text-center mt-3">
+            <% if @is_favorited %>
+              <%= button_to 'Unfavorite', unfavorite_artwork_path(@artwork), method: :delete, class: 'btn btn-warning btn-favorite' %>
+            <% else %>
+              <%= button_to 'Favorite', favorite_artwork_path(@artwork), method: :post, class: 'btn btn-primary btn-favorite' %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
 
       <!-- Description and author on the right -->
@@ -18,18 +29,14 @@
         <audio controls>
           <source src="https://artaudio.s3.amazonaws.com/<%= @artwork.id %>.mp3" type="audio/mpeg">
         </audio>
-      </div>
-    </div>
-
-    <!-- Favorite Button -->
-    <div class="text-center mt-3">
-      <% if current_user %>
-        <% if @is_favorited %>
-          <%= button_to 'Unfavorite', unfavorite_artwork_path(@artwork), method: :delete, class: 'btn btn-warning btn-favorite' %>
-        <% else %>
-          <%= button_to 'Favorite', favorite_artwork_path(@artwork), method: :post, class: 'btn btn-primary btn-favorite' %>
+        <!-- Ask Your Smart Art Guide Button under the description -->
+        <% if current_user %>
+          <div class="text-center mt-3">
+            <%= button_to 'Ask Your Smart Art Guide', chat_path(@artwork.artwork_name), method: :get, class: 'btn btn-info btn-favorite' %>
+          </div>
         <% end %>
-      <% end %>
+      </div>
+
     </div>
 
     <!-- Navigation links -->
