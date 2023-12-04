@@ -67,5 +67,6 @@ heroku stack:set heroku-20
 heroku addons:create heroku-postgresql
 git push heroku master
 heroku run rake db:migrate
+heroku run rake db:seed
 ```
 
