@@ -23,9 +23,9 @@
 
       <!-- Description and author on the right -->
       <div class="col-md-6 px-4">
+        <p><%= @artwork.background_information %></p>
         <p>Year: <%= @artwork.year %></p>
         <p>Author: <%= @artwork.author %></p>
-        <p><%= @artwork.background_information %></p>
         <audio controls>
           <source src="https://artaudio.s3.amazonaws.com/<%= @artwork.id %>.mp3" type="audio/mpeg">
         </audio>
