@@ -7,14 +7,22 @@ class DummyController < ApplicationController
   def unrestricted_action; end
 
   def restricted_action; end
+  def check_user_signed_in
+    render plain: user_signed_in?.to_s
+  end
 end
 
 RSpec.describe DummyController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
 
   before do
-    routes.draw { get "unrestricted_action" => "dummy#unrestricted_action"; get "restricted_action" => "dummy#restricted_action" }
+    routes.draw do
+      get "unrestricted_action" => "dummy#unrestricted_action"
+      get "restricted_action" => "dummy#restricted_action"
+      get "check_user_signed_in" => "dummy#check_user_signed_in"
+    end
   end
+
 
   describe '#current_user' do
     it 'returns the user when logged in' do
@@ -63,6 +71,22 @@ RSpec.describe DummyController, type: :controller do
       before { get :check_user_signed_in }
 
       it 'returns false' do
+        expect(response.body).to eq 'false'
+      end
+    end
+  end
+  describe '#user_signed_in?' do
+    context 'when the user is logged in' do
+      it 'returns true' do
+        session[:user_id] = user.id
+        get :check_user_signed_in
+        expect(response.body).to eq 'true'
+      end
+    end
+
+    context 'when no user is logged in' do
+      it 'returns false' do
+        get :check_user_signed_in
         expect(response.body).to eq 'false'
       end
     end

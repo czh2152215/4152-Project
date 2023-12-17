@@ -3,7 +3,7 @@ class ChatResponsesController < ApplicationController
     client = OpenAI::Client.new(access_token: ENV.fetch("OPENAI_ACCESS_TOKEN"))
 
     body = JSON.parse(request.body.read)
-    chat_history = body['chatHistory'] # Assuming this is an array of message objects
+    chat_history = body['chatHistory'] || []
     chat_history.map! { |message| message.transform_keys(&:to_sym) }
 
     response = client.chat(
