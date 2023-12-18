@@ -47,8 +47,10 @@
 
 - Users can register, log-in, log-out, and edit their information
 - Users can upload images and get redirected to a detail page for that artwork, if the image cannot be recognized, we will return "No artwork found for the uploaded image."
-  - Image recognition will be implmented in our next iteration, currently upload a random picture will redirect to "Starry Night" details page by default
+  - Image recognition has been implemented, currently the system will return the result based on the img user uploaded
   - To test the unhappy scenario, upload the image from this path: "features/support/fixtures/no_match_image.jpeg"
+- Now users can favorite/un-favorite an artwork and check their favorites in profile page
+- Users can ask some simple questions in "Virtual Art Guide"
 
 # Testing
 
