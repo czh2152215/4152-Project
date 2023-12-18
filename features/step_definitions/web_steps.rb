@@ -22,6 +22,10 @@ Then('I should see {string}') do |string|
   expect(page).to have_content(string)
 end
 
+Then('I should not see {string}') do |string|
+  expect(page).to have_no_content(string)
+end
+
 Given(/^I am on the registration page$/) do
   visit register_path # This corresponds to your custom route for registration
 end
@@ -85,3 +89,4 @@ Then('I should see my profile picture displayed on my profile') do
       expect(page).to have_content('No profile picture uploaded.')
     end
 end
+

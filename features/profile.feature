@@ -29,6 +29,7 @@ Feature: User Profile and User information Update
     And I should see "Username:"
     And I should see "Email:"
     And I should see "Artwork History"
+    And I should see "My Favorites"
 
   Scenario: Update username
     Given I am a logged-in user

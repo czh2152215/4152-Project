@@ -1,25 +1,25 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/application_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/artworks_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/artworks_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/image_search_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/image_search_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/sessions_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -40,19 +40,19 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/users_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/welcome_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/artworks_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/artworks_controller.rb": {
         "lines": [
           1,
           null,
@@ -88,7 +88,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/application_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -111,7 +111,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/chat_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/chat_controller.rb": {
         "lines": [
           1,
           1,
@@ -122,7 +122,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/chat_responses_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/chat_responses_controller.rb": {
         "lines": [
           1,
           1,
@@ -151,7 +151,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/image_search_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/image_search_controller.rb": {
         "lines": [
           1,
           1,
@@ -203,7 +203,7 @@
           null,
           3,
           3,
-          3,
+          0,
           null,
           null,
           null,
@@ -217,7 +217,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/sessions_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -270,7 +270,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/users_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -334,7 +334,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/models/artwork.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/artwork.rb": {
         "lines": [
           1,
           1,
@@ -343,22 +343,14 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/models/application_record.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/models/favorite.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/aprilzhou/Downloads/4152-Project/app/models/user.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -391,13 +383,21 @@
           null,
           null
         ]
+      },
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/favorite.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1702782438
+    "timestamp": 1702857638
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/aprilzhou/Downloads/4152-Project/app/models/user.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -405,17 +405,17 @@
           1,
           null,
           1,
-          0,
+          2,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
           null,
           1,
-          39,
+          41,
           null,
           1,
           1,
@@ -431,14 +431,14 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/models/application_record.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/sessions_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -446,13 +446,13 @@
           null,
           null,
           1,
-          21,
+          23,
           null,
           null,
           null,
-          21,
-          16,
-          16,
+          23,
+          18,
+          18,
           null,
           5,
           5,
@@ -470,7 +470,7 @@
           null,
           null,
           1,
-          16,
+          18,
           null,
           null,
           null,
@@ -491,7 +491,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/application_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -499,7 +499,7 @@
           null,
           1,
           null,
-          193,
+          252,
           null,
           null,
           1,
@@ -509,30 +509,30 @@
           null,
           null,
           1,
-          91,
+          103,
           null,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/application_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/artworks_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/artworks_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/image_search_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/image_search_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/sessions_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -553,19 +553,19 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/users_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/helpers/welcome_helper.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/users_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -584,7 +584,7 @@
           null,
           null,
           1,
-          21,
+          23,
           null,
           null,
           null,
@@ -595,8 +595,8 @@
           null,
           null,
           null,
-          21,
-          21,
+          23,
+          23,
           null,
           null,
           null,
@@ -615,7 +615,7 @@
           null,
           null,
           1,
-          10,
+          12,
           null,
           null,
           1,
@@ -629,7 +629,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/models/artwork.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/artwork.rb": {
         "lines": [
           1,
           1,
@@ -638,7 +638,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/models/favorite.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/models/favorite.rb": {
         "lines": [
           1,
           1,
@@ -646,7 +646,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/image_search_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/image_search_controller.rb": {
         "lines": [
           1,
           1,
@@ -698,7 +698,7 @@
           null,
           2,
           2,
-          2,
+          0,
           null,
           null,
           null,
@@ -712,7 +712,7 @@
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/artworks_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/artworks_controller.rb": {
         "lines": [
           1,
           null,
@@ -721,34 +721,34 @@
           null,
           null,
           1,
-          2,
-          2,
+          8,
+          8,
           1,
           null,
           null,
-          2,
-          0,
+          8,
+          6,
           null,
           2,
           null,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          2,
+          2,
+          2,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/chat_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/chat_controller.rb": {
         "lines": [
           0,
           0,
@@ -761,7 +761,7 @@
         "branches": {
         }
       },
-      "/Users/aprilzhou/Downloads/4152-Project/app/controllers/chat_responses_controller.rb": {
+      "C:/Users/Lenovo/Documents/GitHub/4152-Project/app/controllers/chat_responses_controller.rb": {
         "lines": [
           0,
           0,
@@ -793,6 +793,6 @@
         }
       }
     },
-    "timestamp": 1702782491
+    "timestamp": 1702857591
   }
 }

@@ -13,6 +13,10 @@ When("I visit the artwork page for {string}") do |artwork_name|
   visit artwork_path(artwork)
 end
 
+When("I visit the artwork page for id {string}") do |id|
+  visit "/artworks/1"
+end
+
 # Use existing "Then I should see" step for checking artwork details
 
 When("I visit the artwork page with an invalid ID") do
